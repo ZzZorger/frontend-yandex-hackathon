@@ -1,1 +1,1 @@
-# yandex-hackathon
+# frontend-yandex-hackathon
