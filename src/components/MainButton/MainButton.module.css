@@ -1,0 +1,14 @@
+.MainButton {
+  font: 3rem 'YandexSans', sans-serif;
+  font-weight: 500;
+  border: none;
+  border-radius: 1.5rem;
+  color: var(--main-text-color);
+  background: var(--main-bg-elem);
+  padding: auto 1rem;
+  width: 18.5rem;
+  height: 41.375rem;
+  cursor: pointer;
+  line-height: 3.5rem;
+  text-align: center;
+}
