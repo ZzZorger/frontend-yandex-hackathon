@@ -13,6 +13,7 @@
   height: 25px;
   position: relative;
   cursor: pointer;
+  padding-left: 39px;
 }
 .header__burger-menu span {
   position: absolute;
@@ -39,11 +40,22 @@
 }
 .header__logo {
   display: flex;
+  padding-left: 46px;
 }
 .header__title {
   margin: 0;
+  align-self: center;
+  font-family: YandexSans;
+}
+.header__profile-section {
+  display: flex;
+  align-items: center;
+  padding-right: 47px;
 }
 .header__func-menu {
+  margin-left: 41px;
+  padding-left: 10px;
+  padding-right: 10px;
   width: 5px;
   height: 25px;
   position: relative;
@@ -98,6 +110,7 @@
   height: 50px;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 .profile__img {
   height: 24px;
