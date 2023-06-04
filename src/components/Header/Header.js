@@ -1,8 +1,20 @@
 import yandex from '../../images/yandex.svg';
 import yandexMarket from '../../images/yandexMarket.svg';
 import turbo from '../../images/turbo.svg';
+import { useEffect, useState } from 'react';
 
-export default function Header() {
+export default function Header({ onPath }) {
+  const [titleStyle, setTitleStyle] = useState('');
+  useEffect(() => {
+    switch (onPath) {
+      case 'start':
+        setTitleStyle('Приступить к работе');
+        break;
+      case 'main':
+        setTitleStyle('Упаковка');
+        break;
+    }
+  });
   return (
     <header className="header">
       <nav className="header__nav">
@@ -15,7 +27,7 @@ export default function Header() {
           <h2 className="header__logo-title">Склад</h2>
         </div>
       </nav>
-      <h1 className="header__title">Упаковка</h1>
+      <h1 className="header__title">{titleStyle}</h1>
       <div className="header__profile-section">
         <div className="profile">
           <div className="profile__name">sof-natgemokee</div>

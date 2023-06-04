@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="body">
       <div className="page">
-        <Header />
+        <Header onPath={'start'} />
         <Main />
         <Footer />
       </div>
