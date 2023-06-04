@@ -7,10 +7,10 @@ export default function Header({ onPath }) {
   const [titleStyle, setTitleStyle] = useState('');
   useEffect(() => {
     switch (onPath) {
-      case 'start':
+      case '/start':
         setTitleStyle('Приступить к работе');
         break;
-      case 'main':
+      case '/main':
         setTitleStyle('Упаковка');
         break;
     }
