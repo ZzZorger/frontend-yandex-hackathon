@@ -1,0 +1,10 @@
+.TextItem {
+  display: inline;
+  font: 2.5rem 'YandexSans', sans-serif;
+  text-align: center;
+  padding: 2rem 0.625rem;
+  color: var(--main-text-color);
+  background: var(--main-bg-elem);
+  border-radius: 1.5rem;
+  align-items: center;
+}
