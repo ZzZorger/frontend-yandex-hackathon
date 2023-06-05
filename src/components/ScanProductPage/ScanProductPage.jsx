@@ -9,7 +9,7 @@ export default function ScanProductPage({ nextPage }) {
     <div className={style.ScanProductPage}>
       <MainButton text={'Есть проблема'} />
       <ScanProduct />
-      <MainButton text={`Упакуйте товары и сканикуйте коробку +`} nextPage={nextPage} />
+      <MainButton text={`Упакуйте товары и сканикуйте коробку`} nextPage={nextPage} />
     </div>
   );
 }
