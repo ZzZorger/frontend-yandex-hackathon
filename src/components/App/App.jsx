@@ -1,7 +1,7 @@
 import { useNavigate, Routes, Route } from 'react-router-dom';
-import Header from '../Header/Header.js';
-import Main from '../Main/Main.js';
-import Footer from '../Footer/Footer.js';
+import Header from '../Header/Header.jsx';
+import Main from '../Main/Main.jsx';
+import Footer from '../Footer/Footer.jsx';
 import './App.css';
 import { useState } from 'react';
 
