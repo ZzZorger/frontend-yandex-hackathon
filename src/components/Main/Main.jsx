@@ -2,6 +2,8 @@ import style from './Main.module.css';
 
 import ScanProductPage from '../ScanProductPage/ScanProductPage';
 import StartPage from '../StartPage/StartPage';
+import BoxFillingPage from '../BoxFillingPage/BoxFillingPage';
+import EndAssemblyPage from '../EndAssemblyPage/EndAssemblyPage';
 
 export default function Main(props) {
   function Page() {

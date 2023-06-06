@@ -1,13 +1,15 @@
 import { useNavigate, Routes, Route } from 'react-router-dom';
-import Header from '../Header/Header';
-import Main from '../Main/Main';
-import Footer from '../Footer/Footer';
+
+import Header from '../Header/Header.jsx';
+import Main from '../Main/Main.jsx';
+import Footer from '../Footer/Footer.jsx';
 import './App.css';
 import { useState } from 'react';
 
 function App() {
   const navigate = useNavigate();
   const [onPath, setOnPath] = useState('/start');
+
   const path = ['/start', '/scan', '/main', '/box', '/finish'];
   function nextPage() {
     switch (onPath) {
@@ -31,8 +33,7 @@ function App() {
         setOnPath(path[0]);
         navigate(path[0]);
         break;
-    }
-  }
+
   return (
     <div className="body">
       <div className="page">

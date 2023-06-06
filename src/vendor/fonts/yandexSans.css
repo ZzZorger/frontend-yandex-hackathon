@@ -1,5 +1,16 @@
-@font-face {
+/* @font-face {
   font-weight: 400;
   font-family: YandexSans;
   src: url('./yandexSans/YS\ Display-Regular.ttf');
+} */
+
+@font-face {
+  font-weight: 500;
+  font-family: YandexDisplay;
+  src: url('./yandexSans/YS\ Display-Medium.ttf');
+}
+@font-face {
+  font-weight: 500;
+  font-family: YandexText;
+  src: url('./yandexSans/YS\ Text-Medium.ttf');
 }
