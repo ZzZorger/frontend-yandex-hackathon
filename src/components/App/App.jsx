@@ -7,9 +7,9 @@ import { useState } from 'react';
 
 function App() {
   const navigate = useNavigate();
-  const [onPath, setOnPath] = useState('/');
+  const [onPath, setOnPath] = useState('/start');
   function nextPage() {
-    if (onPath === '/') {
+    if (onPath === '/start') {
       setOnPath('/main');
       navigate('/main');
     }

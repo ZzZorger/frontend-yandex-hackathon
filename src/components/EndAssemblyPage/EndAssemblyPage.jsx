@@ -8,7 +8,8 @@ export default function EndAssemblyPage() {
       <MainButton styles={{ visibility: 'hidden ' }} />
       <div className={style.EndAssembly}>
         <img src={done} />
-        <h2 className={style.EndAssemblyHeader}>Поставьте пакет на конвейер</h2>
+        {/* условие для надписи "Поставьте пакет на конвейер" */}
+        <h2 className={style.EndAssemblyHeader}>Поставьте коробку на конвейер</h2>
         <span className={style.EndAssemblyText}>Отличная работа!</span>
       </div>
       <MainButton styles={{ background: 'var(--active-bg-elem)' }} text={'Готово'} />

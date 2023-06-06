@@ -1,4 +1,5 @@
 .EndAssembly {
+  font-family: 'YandexDisplay', sans-serif;
   margin: 189px 0 0 0;
   display: flex;
   flex-direction: column;
@@ -9,10 +10,9 @@ h2 {
   margin: 0;
 }
 .EndAssemblyHeader {
-  font-family: 'YandexDisplay', sans-serif;
   font-weight: 700;
-  font-size: 56px;
-  line-height: 68px;
+  font-size: 72px;
+  line-height: 84px;
 }
 .EndAssemblyText {
   font-weight: 400;

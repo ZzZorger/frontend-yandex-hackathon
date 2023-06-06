@@ -5,6 +5,7 @@
   },
   "extends": [
     "eslint:recommended",
+    // "eslint:react/recommended",
     "plugin:react/recomended",
     "plugin:react-hooks/recommended",
     "plugin:jsx-a11y/recommended",

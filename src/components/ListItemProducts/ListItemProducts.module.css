@@ -23,30 +23,29 @@
   display: block;
   background: #f9f7f3;
   border-radius: 16px;
-  width: 11.6667rem;
-  height: 11.6667rem;
+  width: 210px;
+  height: 210px;
   position: relative;
 }
 .productCounter {
+  /*   font-family: 'YandexText', sans-serif; */
   display: inline;
   background-color: #2aad2e;
   border-radius: 100px;
-  /* width: 7.4444rem;
-  height: 2.6667rem; */
   color: #ffffff;
   text-align: center;
   vertical-align: middle;
-  padding: 0.6944rem 2.6944rem;
+  padding: 12px 48px;
   position: absolute;
-  top: 7.5rem;
+  top: 135px;
   left: 1.7778rem;
   z-index: 2;
 }
 .productText {
-  font-family: 'YandexSans', sans-serif;
+  font-family: 'YandexText', sans-serif;
   font-weight: 400;
-  font-size: 1rem;
-  line-height: 1.2222rem;
+  font-size: 20px;
+  line-height: 24px;
   color: var(--main-text-color);
   text-overflow: ellipsis;
   overflow: hidden;

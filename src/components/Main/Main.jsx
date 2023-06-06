@@ -7,9 +7,9 @@ import EndAssemblyPage from '../EndAssemblyPage/EndAssemblyPage';
 export default function Main({ nextPage }) {
   return (
     <div className={style.Main}>
-      {/* <ScanProductPage nextPage={nextPage} /> */}
+      <ScanProductPage nextPage={nextPage} />
       {/* <BoxFillingPage /> */}
-      <EndAssemblyPage />
+      {/* <EndAssemblyPage /> */}
     </div>
   );
 }
