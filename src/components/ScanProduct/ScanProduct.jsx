@@ -10,10 +10,10 @@ export default function ScanProduct() {
         <h2 className={style.ScanProductСell}>{'B - 09'}</h2>
       </div>
       <div className={style.ScanProductInformation}>
-        <TextItem styles={{ fontSize: '1.3333rem', fontWeight: '500', padding: '0.5833rem 1.3333rem' }}>{`${5} товаров`}</TextItem>
-        <TextItem styles={{ fontSize: '1.3333rem', fontWeight: '500', padding: '0.5833rem 1.3333rem' }}>{`Почта России`}</TextItem>
+        <TextItem styles={{ fontSize: '23.9994px', fontWeight: '500', padding: '10.4994px 23.9994px' }}>{`${5} товаров`}</TextItem>
+        <TextItem styles={{ fontSize: '23.9994px', fontWeight: '500', padding: '10.4994px 23.9994px' }}>{`Почта России`}</TextItem>
         <TextItem
-          styles={{ fontSize: '1.3333rem', fontWeight: '500', padding: '0.5833rem 1.3333rem', background: 'var( --active-bg-item)' }}
+          styles={{ fontSize: '23.9994px', fontWeight: '500', padding: '10.4994px 23.9994px', background: 'var( --active-bg-item)' }}
         >{`коробка ${'YMF'}`}</TextItem>
       </div>
       <div>
