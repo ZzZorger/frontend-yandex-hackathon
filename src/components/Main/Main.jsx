@@ -1,7 +1,7 @@
 import style from './Main.module.css';
 
 import ScanProductPage from '../ScanProductPage/ScanProductPage';
-import StartPage from '../StartPage/StartPage.js';
+import StartPage from '../StartPage/StartPage';
 
 export default function Main(props) {
   function Page() {
