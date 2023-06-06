@@ -1,10 +1,15 @@
-.main {
+.Content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.OperationGrid {
   display: grid;
   grid-template-columns: repeat(5, 20%);
   padding: 100px;
   gap: 10px;
 }
-.main__operation-button {
+.OperationButton {
   margin: 0;
   padding: 10px 32px;
   border: 0;

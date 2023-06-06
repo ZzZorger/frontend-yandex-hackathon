@@ -33,7 +33,8 @@ function App() {
         setOnPath(path[0]);
         navigate(path[0]);
         break;
-
+    }
+  }
   return (
     <div className="body">
       <div className="page">
