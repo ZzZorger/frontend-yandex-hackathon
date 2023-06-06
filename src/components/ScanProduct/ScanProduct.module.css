@@ -7,17 +7,18 @@
   display: flex;
   flex-direction: column;
   gap: 0.2222rem;
+  text-align: center;
 }
 h2 {
   margin: 0;
 }
 .ScanProductText {
-  font-weight: bold;
-  font-size: 2.6667rem;
-  line-height: 2.7778rem;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 50px;
 }
 .ScanProductСell {
-  font-weight: bold;
+  font-weight: 700;
   font-size: 4.5rem;
   line-height: 5.25rem;
   text-align: center;

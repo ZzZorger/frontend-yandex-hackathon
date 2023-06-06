@@ -4,15 +4,15 @@
     "es2021": true
   },
   "extends": [
-    // "eslint:recommended"
-    // "eslint:react/recommended"
-    // "plugin:react/recomended",
-    // "plugin:react-hooks/recommended",
-    // "plugin:jsx-a11y/recommended",
-    // "plugin:import/recommended",
-    // "airbnb",
-    // "plugin:react/jsx-runtime",
-    // "prettier"
+    "eslint:recommended",
+    "eslint:react/recommended",
+    "plugin:react/recomended",
+    "plugin:react-hooks/recommended",
+    "plugin:jsx-a11y/recommended",
+    "plugin:import/recommended",
+    "airbnb",
+    "plugin:react/jsx-runtime",
+    "prettier"
   ],
   "parserOptions": {
     "ecmaFeatures": {
