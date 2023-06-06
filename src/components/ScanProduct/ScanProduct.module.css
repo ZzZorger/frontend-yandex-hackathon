@@ -1,29 +1,30 @@
 .ScanProduct {
-  margin: 0 2.6667rem;
+  margin: 0 48.0006px;
 }
 .ScanProductHeader {
-  font-family: 'YandexSans', sans-serif;
+  font-family: 'YandexText', sans-serif;
   color: var(--main-text-color);
   display: flex;
   flex-direction: column;
-  gap: 0.2222rem;
+  gap: 3.9996px;
+  text-align: center;
 }
 h2 {
   margin: 0;
 }
 .ScanProductText {
-  font-weight: bold;
-  font-size: 2.6667rem;
-  line-height: 2.7778rem;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 50px;
 }
 .ScanProductСell {
-  font-weight: bold;
-  font-size: 4.5rem;
-  line-height: 5.25rem;
+  font-weight: 700;
+  font-size: 72px;
+  line-height: 84px;
   text-align: center;
 }
 .ScanProductInformation {
   display: flex;
   justify-content: center;
-  gap: 0.8889rem;
+  gap: 16px;
 }

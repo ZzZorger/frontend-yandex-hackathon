@@ -6,10 +6,10 @@ import TextItem from '../TextItem/TextItem';
 
 export default function ScanProductPage({ nextPage }) {
   return (
-    <div className={style.ScanProductPage}>
+    <>
       <MainButton text={'Есть проблема'} />
       <ScanProduct />
-      <MainButton text={`Упакуйте товары и сканикуйте коробку +`} nextPage={nextPage} />
-    </div>
+      <MainButton styles={{ background: 'var(--active-bg-elem)' }} text={`Упакуйте товары и сканикуйте коробку`} nextPage={nextPage} />
+    </>
   );
 }
