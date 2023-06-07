@@ -1,0 +1,33 @@
+.Content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.TableGrid {
+  display: grid;
+  grid-template-columns: repeat(5, 20%);
+  padding: 100px;
+  gap: 10px;
+}
+.TableButton {
+  margin: 0;
+  padding: 10px 32px;
+  border: 0;
+  border-radius: 32px;
+  cursor: pointer;
+}
+
+.Stages {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+.Stages:first-child {
+  background: linear-gradient(180deg, #ffe55b -23.8%, #ffcc00 109.49%);
+}
+.StageLine {
+  width: 30.8585%;
+  height: 20px;
+  border-radius: 20px;
+  background: #f3f0e9;
+}

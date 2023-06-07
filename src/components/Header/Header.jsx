@@ -3,16 +3,21 @@ import yandexMarket from '../../images/yandexMarket.svg';
 import turbo from '../../images/turbo.svg';
 import { useEffect, useState } from 'react';
 
-export default function Header({ onPath }) {
+export default function Header({ onPath, path }) {
   const [titleStyle, setTitleStyle] = useState('');
   useEffect(() => {
-    switch (onPath) {
-      case '/start':
-        setTitleStyle('Приступить к работе');
-        break;
-      case '/main':
-        setTitleStyle('Упаковка');
-        break;
+    // switch (onPath) {
+    //   case path[0]:
+    //     setTitleStyle('Приступить к работе');
+    //     break;
+    //   case path[0]:
+    //     setTitleStyle('Упаковка');
+    //     break;
+    // }
+    if (onPath === path[0]) {
+      setTitleStyle('Приступить к работе');
+    } else {
+      setTitleStyle('Упаковка');
     }
   });
   return (

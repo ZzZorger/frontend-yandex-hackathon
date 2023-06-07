@@ -8,9 +8,9 @@ import { useState } from 'react';
 
 function App() {
   const navigate = useNavigate();
-  const [onPath, setOnPath] = useState('/start');
+  const [onPath, setOnPath] = useState('/table');
 
-  const path = ['/start', '/scan', '/main', '/box', '/finish'];
+  const path = ['/operation', '/table', '/printer', '/task', '/scan-cell', '/scan-goods', '/scan-package', '/fill-box', '/end-task'];
   function nextPage() {
     switch (onPath) {
       case path[0]:
@@ -38,7 +38,7 @@ function App() {
   return (
     <div className="body">
       <div className="page">
-        <Header onPath={onPath} />
+        <Header onPath={onPath} path={path} />
         <Main nextPage={nextPage} onPath={onPath} path={path} />
         <Footer />
       </div>
