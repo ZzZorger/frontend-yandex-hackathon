@@ -52,8 +52,8 @@ export default function Main(props) {
     }
   }
   return (
-    <div className={style.Main}>
-      <Page />
-    </div>
+    // <div className={style.Main}>
+    <Page />
+    // </div>
   );
 }

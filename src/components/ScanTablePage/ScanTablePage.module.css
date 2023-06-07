@@ -3,30 +3,41 @@
   flex-direction: column;
   align-items: center;
 }
-.TableGrid {
-  display: grid;
-  grid-template-columns: repeat(5, 20%);
-  padding: 100px;
-  gap: 10px;
-}
-.TableButton {
+.Title {
+  font-family: 'YS Display';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 72px;
+  line-height: 84px;
+  text-align: center;
   margin: 0;
-  padding: 10px 32px;
-  border: 0;
-  border-radius: 32px;
-  cursor: pointer;
+  padding-bottom: 12px;
+  padding-top: 120px;
 }
-
+.Subtitle {
+  font-family: 'YS Display';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 32px;
+  text-align: center;
+  margin: 0;
+  padding-bottom: 92px;
+}
+.TableGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px 24px;
+  justify-content: center;
+  max-width: 1587px;
+  padding-bottom: 80px;
+}
 .Stages {
   display: flex;
-  flex-direction: row;
-  width: 100%;
-}
-.Stages:first-child {
-  background: linear-gradient(180deg, #ffe55b -23.8%, #ffcc00 109.49%);
+  padding-bottom: 24px;
 }
 .StageLine {
-  width: 30.8585%;
+  width: 611px;
   height: 20px;
   border-radius: 20px;
   background: #f3f0e9;

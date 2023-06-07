@@ -1,5 +1,5 @@
 import style from './OperationSelectorPage.module.css';
-import MainButton from '../MainButton/MainButton';
+import SetButton from '../SetButton/SetButton';
 
 export default function OperationSelectorPage({ nextPage, operations, progress }) {
   return (
@@ -9,10 +9,7 @@ export default function OperationSelectorPage({ nextPage, operations, progress }
       </progress>
       <div className={style.OperationGrid}>
         {operations.map((text, i) => (
-          <MainButton key={i} styles={style.OperationButton} text={text} onClick={nextPage} />
-          // <button key={i} className={style.OperationButton} onClick={nextPage}>
-          //   {text}
-          // </button>
+          <SetButton key={i} text={text} onClick={nextPage} />
         ))}
       </div>
     </main>
