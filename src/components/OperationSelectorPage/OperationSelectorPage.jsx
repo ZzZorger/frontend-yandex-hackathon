@@ -1,17 +1,14 @@
 import style from './OperationSelectorPage.module.css';
-import SetButton from '../SetButton/SetButton';
+import ButtonsSet from '../ButtonsSet/ButtonsSet';
 
 export default function OperationSelectorPage({ nextPage, operations, progress }) {
   return (
     <main className={style.Content}>
-      <progress max={progress.maxValue} value={progress.value}>
+      <h2 className={style.Title}>Показатель за месяц</h2>
+      <progress className={style.Progress} max={progress.maxValue} value={progress.value}>
         {progress.operationsNum}
       </progress>
-      <div className={style.OperationGrid}>
-        {operations.map((text, i) => (
-          <SetButton key={i} text={text} onClick={nextPage} />
-        ))}
-      </div>
+      <ButtonsSet nextPage={nextPage} set={operations} />
     </main>
   );
 }

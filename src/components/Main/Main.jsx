@@ -3,6 +3,7 @@ import style from './Main.module.css';
 import OperationSelectorPage from '../OperationSelectorPage/OperationSelectorPage';
 import ScanTablePage from '../ScanTablePage/ScanTablePage';
 import ScanPrinterPage from '../ScanPrinterPage/ScanPrinterPage';
+import TaskSearchPage from '../TaskSearchPage/TaskSearchPage';
 import ScanProductPage from '../ScanProductPage/ScanProductPage';
 import BoxFillingPage from '../BoxFillingPage/BoxFillingPage';
 import EndAssemblyPage from '../EndAssemblyPage/EndAssemblyPage';
@@ -43,9 +44,11 @@ export default function Main(props) {
     if (props.onPath === props.path[0]) {
       return <OperationSelectorPage nextPage={props.nextPage} operations={operations} progress={progress} />;
     } else if (props.onPath === props.path[1]) {
-      return <ScanTablePage nextPage={props.nextPage} tables={tables} />;
+      return <ScanTablePage nextPage={props.nextPage} tables={tables} prevPage={props.prevPage} />;
     } else if (props.onPath === props.path[2]) {
-      return <ScanPrinterPage nextPage={props.nextPage} />;
+      return <ScanPrinterPage nextPage={props.nextPage} prevPage={props.prevPage} />;
+    } else if (props.onPath === props.path[3]) {
+      return <TaskSearchPage nextPage={props.nextPage} prevPage={props.prevPage} />;
     }
   }
   return (

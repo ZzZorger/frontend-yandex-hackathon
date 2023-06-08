@@ -1,9 +1,11 @@
 .Stages {
   display: flex;
+  width: 100%;
+  justify-content: center;
   padding-bottom: 24px;
 }
 .StageLine {
-  width: 611px;
+  width: 31.8229%;
   height: 20px;
   border-radius: 20px;
   background: #f3f0e9;
