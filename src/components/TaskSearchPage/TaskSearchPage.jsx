@@ -9,7 +9,7 @@ export default function TaskSearchPage({ nextPage, prevPage }) {
       <p className={style.Subtitle}>Обычно это занимает не больше минуты</p>
       <progress className={style.Progress} />
       <StagesBar stage={3} />
-      <BottomMenu takeBreak={true} prevPage={prevPage} />
+      <BottomMenu takeBreak={true} nextPage={nextPage} prevPage={prevPage} />
     </main>
   );
 }

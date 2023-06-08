@@ -12,7 +12,9 @@ export default function BottomMenu({ scaning, takeBreak, nextPage, prevPage }) {
         <button className={style.KeyboardButton}>Ввести с клавиатуры</button>
       </div>
       <div style={!takeBreak ? { display: 'none' } : { display: 'block' }} className={style.KeyboardBlock} onClick={nextPage}>
-        <button className={style.KeyboardButton}>Хочу на перерыв</button>
+        <button className={style.KeyboardButton} onClick={nextPage}>
+          Хочу на перерыв
+        </button>
       </div>
     </div>
   );

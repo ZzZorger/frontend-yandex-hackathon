@@ -51,9 +51,5 @@ export default function Main(props) {
       return <TaskSearchPage nextPage={props.nextPage} prevPage={props.prevPage} />;
     }
   }
-  return (
-    // <div className={style.Main}>
-    <Page />
-    // </div>
-  );
+  return <Page />;
 }

@@ -1,0 +1,49 @@
+.Content {
+  height: 112px;
+  display: flex;
+  margin: 0 24px;
+}
+.Nav {
+  position: absolute;
+  top: 28.38px;
+  display: flex;
+  align-items: center;
+}
+.Burger {
+  cursor: pointer;
+}
+.Logos {
+  display: flex;
+  padding-left: 40px;
+}
+.LogoY {
+  margin-right: 3.5px;
+  cursor: pointer;
+}
+.LogoYM {
+  margin-right: 11.5px;
+  cursor: pointer;
+}
+.Sign {
+  cursor: pointer;
+}
+.Title {
+  margin: 0 auto;
+  align-self: center;
+  font-family: 'YS Text';
+  font-weight: 500;
+  font-size: 28px;
+}
+.ProfileSection {
+  position: absolute;
+  right: 0;
+  top: 18px;
+  display: flex;
+  justify-self: right;
+  align-items: center;
+  margin-right: 24px;
+}
+.FuncMenu {
+  cursor: pointer;
+  margin-left: 18px;
+}
