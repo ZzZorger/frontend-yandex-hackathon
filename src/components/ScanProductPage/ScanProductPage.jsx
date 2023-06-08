@@ -9,7 +9,7 @@ export default function ScanProductPage({ nextPage }) {
     <>
       <MainButton text={'Есть проблема'} />
       <ScanProduct />
-      <MainButton styles={{ background: 'var(--active-bg-elem)' }} text={`Упакуйте товары и сканикуйте коробку`} nextPage={nextPage} />
+      <MainButton styles={{ background: 'var(--active-bg-elem)' }} text={`Заказ собран`} nextPage={nextPage} />
     </>
   );
 }

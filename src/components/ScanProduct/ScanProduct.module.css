@@ -1,8 +1,7 @@
 .ScanProduct {
-  margin: 0 48.0006px;
+  margin: 0 20px;
 }
 .ScanProductHeader {
-  font-family: 'YandexText', sans-serif;
   color: var(--main-text-color);
   display: flex;
   flex-direction: column;
@@ -13,11 +12,13 @@ h2 {
   margin: 0;
 }
 .ScanProductText {
+  font-family: 'YS Text', sans-serif;
   font-weight: 700;
   font-size: 48px;
   line-height: 50px;
 }
 .ScanProductСell {
+  font-family: 'YS Display', sans-serif;
   font-weight: 700;
   font-size: 72px;
   line-height: 84px;

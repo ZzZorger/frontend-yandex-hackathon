@@ -1,13 +1,6 @@
 .Main {
-  /* display: flex;
-  justify-content: space-between;
-  /* align-items: center; */
-  /* margin-top: 3.1111rem;
-  padding: 0 1.5rem;  */
-
   display: flex;
-  margin-top: 3.1111rem;
-  padding: 0 1.5rem;
-  /* flex-direction: row; */
+  margin-top: 60px;
+  padding: 0 24px;
   justify-content: space-between;
 }
