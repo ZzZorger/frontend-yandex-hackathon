@@ -32,13 +32,3 @@
   max-width: 1587px;
   padding-bottom: 80px;
 }
-.Stages {
-  display: flex;
-  padding-bottom: 24px;
-}
-.StageLine {
-  width: 611px;
-  height: 20px;
-  border-radius: 20px;
-  background: #f3f0e9;
-}

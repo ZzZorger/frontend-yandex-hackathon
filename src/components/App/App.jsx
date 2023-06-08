@@ -8,7 +8,7 @@ import { useState } from 'react';
 
 function App() {
   const navigate = useNavigate();
-  const [onPath, setOnPath] = useState('/table');
+  const [onPath, setOnPath] = useState('/printer');
 
   const path = ['/operation', '/table', '/printer', '/task', '/scan-cell', '/scan-goods', '/scan-package', '/fill-box', '/end-task'];
   function nextPage() {
