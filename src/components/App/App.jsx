@@ -8,9 +8,9 @@ import { useState } from 'react';
 
 function App() {
   const navigate = useNavigate();
-  const [onPath, setOnPath] = useState('/start');
+  const [onPath, setOnPath] = useState('/operation');
 
-  const path = ['/start', '/scan', '/main', '/box', '/finish'];
+  const path = ['/operation', '/table', '/printer', '/task', '/scan-cell', '/scan-goods', '/scan-package', '/fill-box', '/end-task'];
   function nextPage() {
     switch (onPath) {
       case path[0]:
@@ -33,12 +33,17 @@ function App() {
         setOnPath(path[0]);
         navigate(path[0]);
         break;
-
+    }
+  }
+  function prevPage() {
+    setOnPath(path[path.indexOf(onPath) - 1]);
+    navigate(path[path.indexOf(onPath) - 1]);
+  }
   return (
     <div className="body">
       <div className="page">
-        <Header onPath={onPath} />
-        <Main nextPage={nextPage} onPath={onPath} path={path} />
+        <Header onPath={onPath} path={path} />
+        <Main nextPage={nextPage} prevPage={prevPage} onPath={onPath} path={path} />
         <Footer />
       </div>
     </div>

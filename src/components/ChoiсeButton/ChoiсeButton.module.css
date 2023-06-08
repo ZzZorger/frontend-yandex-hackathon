@@ -1,0 +1,12 @@
+.ChoiсeButton {
+  margin: 0;
+  padding: 28px 32px;
+  border: 0;
+  border-radius: 32px;
+  cursor: pointer;
+  font-family: 'YS Text';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 44px;
+}
