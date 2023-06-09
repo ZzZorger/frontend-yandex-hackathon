@@ -17,6 +17,14 @@ const stretch = {
     backgroundColor: '#FFECCC',
   },
 };
+
+const nonPack = {
+  text: 'Упаковка не нужна',
+  img: Mark,
+  style: {
+    backgroundColor: '#FFD9DB',
+  },
+};
 // Подсказки которые будут на проде( в наших данных такой информации нет)
 const pack = {
   text: 'Пакет',

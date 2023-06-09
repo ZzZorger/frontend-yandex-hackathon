@@ -2,6 +2,7 @@ import style from './ScanProduct.module.css';
 import TextItem from '../TextItem/TextItem';
 import ListScanProducts from '../ListScanProducts/ListScanProducts';
 
+// коробки
 const yma = {
   text: 'Коробка YMA',
   style: {
@@ -12,15 +13,61 @@ const yma = {
 const ymb = {
   text: 'Коробка YMB',
   style: {
-    backgroundColor: '#FF0000',
+    backgroundColor: '#F29A00',
   },
 };
 
 const ymc = {
   text: 'Коробка YMC',
   style: {
-    backgroundColor: '#FF0000',
+    backgroundColor: '#8A35B3',
   },
+};
+
+// Пакеты
+
+const mya = {
+  text: 'Пакет MYA',
+  style: {
+    backgroundColor: '#F73E47',
+  },
+};
+
+const myb = {
+  text: 'Пакет MYB',
+  style: {
+    backgroundColor: '#A7070F',
+  },
+};
+
+const myс = {
+  text: 'Пакет MYC',
+  style: {
+    backgroundColor: '#25ADD6',
+  },
+};
+const myd = {
+  text: 'Пакет MYD',
+  style: {
+    backgroundColor: '#F5C401',
+  },
+};
+const mye = {
+  text: 'Пакет MYE',
+  style: {
+    backgroundColor: '#5D4A00',
+  },
+};
+
+const stretch = {
+  text: 'Стрейтч-плёнка',
+  style: {
+    backgroundColor: '#E0EEFF',
+  },
+};
+
+const nonPack = {
+  text: 'Коробка не требуется',
 };
 
 export default function ScanProduct() {
