@@ -1,0 +1,39 @@
+.Content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.Title {
+  font-family: 'YS Display';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 72px;
+  line-height: 84px;
+  text-align: center;
+  margin: 0;
+  padding-bottom: 12px;
+  padding-top: 120px;
+}
+.Subtitle {
+  font-family: 'YS Display';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 32px;
+  text-align: center;
+  margin: 0;
+  padding-bottom: 220px;
+}
+.Progress {
+  margin-bottom: 288px;
+  /* -webkit-appearance: none; */
+  accent-color: orange;
+  /* color: red; */
+  /* background: orange; */
+}
+progress::-webkit-progress-bar {
+  background-color: #f3f0e9;
+}
+/* progress::-webkit-progress-value {
+  background: green;
+} */
