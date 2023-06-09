@@ -1,12 +1,10 @@
 @font-face {
   font-weight: 500;
-  /* font-family: YandexDisplay; */
-  font-family: 'YS Display';
+  font-family: YS Display;
   src: url('./yandexSans/YS\ Display-Medium.ttf');
 }
 @font-face {
   font-weight: 500;
-  /* font-family: YandexText; */
-  font-family: 'YS Text';
+  font-family: YS Text;
   src: url('./yandexSans/YS\ Text-Medium.ttf');
 }
