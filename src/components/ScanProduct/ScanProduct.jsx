@@ -2,6 +2,27 @@ import style from './ScanProduct.module.css';
 import TextItem from '../TextItem/TextItem';
 import ListScanProducts from '../ListScanProducts/ListScanProducts';
 
+const yma = {
+  text: 'Коробка YMA',
+  style: {
+    backgroundColor: '#FF0000',
+  },
+};
+
+const ymb = {
+  text: 'Коробка YMB',
+  style: {
+    backgroundColor: '#FF0000',
+  },
+};
+
+const ymc = {
+  text: 'Коробка YMC',
+  style: {
+    backgroundColor: '#FF0000',
+  },
+};
+
 export default function ScanProduct() {
   return (
     <div className={style.ScanProduct}>
@@ -10,11 +31,9 @@ export default function ScanProduct() {
         <h2 className={style.ScanProductСell}>{'B - 09'}</h2>
       </div>
       <div className={style.ScanProductInformation}>
-        <TextItem styles={{ fontSize: '23.9994px', fontWeight: '500', padding: '10.4994px 23.9994px' }}>{`${5} товаров`}</TextItem>
-        <TextItem styles={{ fontSize: '23.9994px', fontWeight: '500', padding: '10.4994px 23.9994px' }}>{`Почта России`}</TextItem>
-        <TextItem
-          styles={{ fontSize: '23.9994px', fontWeight: '500', padding: '10.4994px 23.9994px', background: 'var( --active-bg-item)' }}
-        >{`коробка ${'YMF'}`}</TextItem>
+        <TextItem styles={{}}>{`${5} товаров`}</TextItem>
+        <TextItem styles={{}}>{`Почта России`}</TextItem>
+        <TextItem styles={yma.style}>{yma.text}</TextItem>
       </div>
       <div>
         <ListScanProducts />
