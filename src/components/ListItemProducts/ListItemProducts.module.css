@@ -31,6 +31,11 @@
   z-index: 2;
   width: 65px;
 }
+.productDescription {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
 
 .productText {
   font-family: 'YandexText', sans-serif;
@@ -38,7 +43,7 @@
   font-size: 18px;
   line-height: 22px;
   color: var(--main-text-color);
-  text-overflow: ellipsis;
+  /* text-overflow: ellipsis; */
   overflow: hidden;
   display: -webkit-box;
   -webkit-line-clamp: 2;
@@ -46,4 +51,7 @@
   margin-top: 13px;
   margin-right: 0;
   width: 271px;
+  min-height: 19px;
+
+  /* display: inline-block; */
 }
