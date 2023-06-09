@@ -7,6 +7,7 @@ import TaskSearchPage from '../TaskSearchPage/TaskSearchPage';
 import ScanProductPage from '../ScanProductPage/ScanProductPage';
 import BoxFillingPage from '../BoxFillingPage/BoxFillingPage';
 import EndAssemblyPage from '../EndAssemblyPage/EndAssemblyPage';
+import ScanBoxPage from '../ScanBoxPage/ScanBoxPage';
 
 export default function Main(props) {
   const operations = [
@@ -41,17 +42,19 @@ export default function Main(props) {
     'PACK-2',
   ];
   function Page() {
-    // if (props.onPath === props.path[0]) {
-    //   return <OperationSelectorPage nextPage={props.nextPage} operations={operations} progress={progress} />;
-    // } else if (props.onPath === props.path[1]) {
-    //   return <ScanTablePage nextPage={props.nextPage} tables={tables} prevPage={props.prevPage} />;
-    // } else if (props.onPath === props.path[2]) {
-    //   return <ScanPrinterPage nextPage={props.nextPage} prevPage={props.prevPage} />;
-    // } else if (props.onPath === props.path[3]) {
-    //   return <TaskSearchPage nextPage={props.nextPage} prevPage={props.prevPage} />;
-    // }
+    if (props.onPath === props.path[0]) {
+      return <OperationSelectorPage nextPage={props.nextPage} operations={operations} progress={progress} />;
+    } else if (props.onPath === props.path[1]) {
+      return <ScanTablePage nextPage={props.nextPage} tables={tables} prevPage={props.prevPage} />;
+    } else if (props.onPath === props.path[2]) {
+      return <ScanPrinterPage nextPage={props.nextPage} prevPage={props.prevPage} />;
+    } else if (props.onPath === props.path[3]) {
+      return <TaskSearchPage nextPage={props.nextPage} prevPage={props.prevPage} />;
+    }
+
+    // return <ScanBoxPage nextPage={props.nextPage} prevPage={props.prevPage} />;
     // return <BoxFillingPage nextPage={props.nextPage} prevPage={props.prevPage} />;
-    return <EndAssemblyPage nextPage={props.nextPage} prevPage={props.prevPage} />;
+    // return <EndAssemblyPage nextPage={props.nextPage} prevPage={props.prevPage} />;
   }
   return <Page />;
 }
