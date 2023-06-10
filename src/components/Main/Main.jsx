@@ -7,6 +7,7 @@ import TaskSearchPage from '../TaskSearchPage/TaskSearchPage';
 import ScanProductPage from '../ScanProductPage/ScanProductPage';
 import BoxFillingPage from '../BoxFillingPage/BoxFillingPage';
 import EndAssemblyPage from '../EndAssemblyPage/EndAssemblyPage';
+import ScanBoxPage from '../ScanBoxPage/ScanBoxPage';
 
 export default function Main(props) {
   const operations = [
@@ -50,6 +51,10 @@ export default function Main(props) {
     } else if (props.onPath === props.path[3]) {
       return <TaskSearchPage nextPage={props.nextPage} prevPage={props.prevPage} />;
     }
+
+    // return <ScanBoxPage nextPage={props.nextPage} prevPage={props.prevPage} />;
+    // return <BoxFillingPage nextPage={props.nextPage} prevPage={props.prevPage} />;
+    // return <EndAssemblyPage nextPage={props.nextPage} prevPage={props.prevPage} />;
   }
   return <Page />;
 }

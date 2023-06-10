@@ -1,13 +1,32 @@
+.BoxFillingPage {
+  display: flex;
+  flex-direction: column;
+}
+.BoxFillingContent {
+  display: flex;
+  margin-top: 60px;
+  padding: 0 24px;
+  justify-content: space-between;
+  margin-bottom: 68px;
+}
 h2 {
   margin: 0;
 }
-.BoxFillingText {
-  font-family: 'YandexDisplay', sans-serif;
+.BoxFillingHeader {
+  font-family: 'YS Display';
   font-weight: 700;
   font-size: 48px;
-  line-height: 63px;
+  line-height: 50px;
   text-align: center;
   letter-spacing: -0.02em;
   font-feature-settings: 'pnum' on, 'lnum' on;
-  margin-bottom: 159px;
+}
+.BoxFillingText {
+  display: block;
+  font-family: 'YS Display';
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 32px;
+  text-align: center;
+  margin-bottom: 202px;
 }
