@@ -54,8 +54,8 @@ export default function Main(props) {
 
     // return <ScanProductPage nextPage={props.nextPage} prevPage={props.prevPage} />;
     // return <ScanBoxPage nextPage={props.nextPage} prevPage={props.prevPage} />;
-    // return <BoxFillingPage nextPage={props.nextPage} prevPage={props.prevPage} />;
-    return <EndAssemblyPage nextPage={props.nextPage} prevPage={props.prevPage} />;
+    return <BoxFillingPage nextPage={props.nextPage} prevPage={props.prevPage} />;
+    // return <EndAssemblyPage nextPage={props.nextPage} prevPage={props.prevPage} />;
   }
   return <Page />;
 }

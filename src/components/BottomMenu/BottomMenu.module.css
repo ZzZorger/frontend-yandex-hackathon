@@ -21,7 +21,8 @@
   line-height: 31px;
   cursor: pointer;
 }
-.KeyboardBlock {
+.KeyboardBlock,
+.NewBox {
   display: flex;
   margin: 0 auto;
   padding: 20px;

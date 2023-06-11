@@ -15,7 +15,7 @@ export default function BoxFillingPage({ prevPage }) {
         </div>
         <MainButton styles={{ background: 'var(--active-bg-elem)' }} text={`Коробка закрыта`} />
       </div>
-      <BottomMenu prevPage={prevPage} />
+      <BottomMenu newBox={true} prevPage={prevPage} />
     </div>
   );
 }
