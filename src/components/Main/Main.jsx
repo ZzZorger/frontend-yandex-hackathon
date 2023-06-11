@@ -8,6 +8,7 @@ import ScanProductPage from '../ScanProductPage/ScanProductPage';
 import BoxFillingPage from '../BoxFillingPage/BoxFillingPage';
 import EndAssemblyPage from '../EndAssemblyPage/EndAssemblyPage';
 import ScanBoxPage from '../ScanBoxPage/ScanBoxPage';
+import BarcodePopup from '../BarcodePopup/BarcodePopup';
 
 export default function Main(props) {
   const operations = [
@@ -47,7 +48,15 @@ export default function Main(props) {
     } else if (props.onPath === props.path[1]) {
       return <ScanTablePage nextPage={props.nextPage} tables={tables} prevPage={props.prevPage} />;
     } else if (props.onPath === props.path[2]) {
-      return <ScanPrinterPage nextPage={props.nextPage} prevPage={props.prevPage} />;
+      return (
+        <ScanPrinterPage
+          nextPage={props.nextPage}
+          prevPage={props.prevPage}
+          openPopup={props.openPopup}
+          handlePopupOpen={props.handlePopupOpen}
+          handlePopupClose={props.handlePopupClose}
+        />
+      );
     } else if (props.onPath === props.path[3]) {
       return <TaskSearchPage nextPage={props.nextPage} prevPage={props.prevPage} />;
     }
