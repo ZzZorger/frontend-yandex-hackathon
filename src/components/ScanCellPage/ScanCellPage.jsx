@@ -12,7 +12,11 @@ export default function ScanCellPage({ nextPage, openPopup, handlePopupOpen, han
         {cells.length === 1 ? (
           <p className={style.Cell}>{cells[0]}</p>
         ) : (
-          cells.map((text, i) => <p className={`${style.Cell} ${style.RowCell}`}>{text}</p>)
+          cells.map((text, i) => (
+            <p key={i} className={`${style.Cell} ${style.RowCell}`}>
+              {text}
+            </p>
+          ))
         )}
       </div>
       <BottomMenu hideBackBtn={true} scaning={true} handlePopupOpen={handlePopupOpen} />
