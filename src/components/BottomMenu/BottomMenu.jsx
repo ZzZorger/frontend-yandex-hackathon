@@ -1,9 +1,10 @@
 import style from './BottomMenu.module.css';
 import keyboardIcon from '../../images/keyboardIcon.svg';
 
-export default function BottomMenu({ hideBackBtn, scaning, takeBreak, nextPage, prevPage, handlePopupOpen }) {
+export default function BottomMenu({ hideBackBtn, scaning, takeBreak, nextPage, prevPage, handlePopupOpen, onProblemsPage }) {
+  //background: #F3F0E9;
   return (
-    <div className={style.Content}>
+    <div style={onProblemsPage ? { background: '#FFA200' } : {}} className={style.Content}>
       <button style={hideBackBtn ? { display: 'none' } : { display: 'block' }} className={style.BackButton} onClick={prevPage}>
         Назад
       </button>

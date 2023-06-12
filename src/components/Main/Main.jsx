@@ -9,6 +9,7 @@ import BoxFillingPage from '../BoxFillingPage/BoxFillingPage';
 import EndAssemblyPage from '../EndAssemblyPage/EndAssemblyPage';
 import ScanBoxPage from '../ScanBoxPage/ScanBoxPage';
 import ScanCellPage from '../ScanCellPage/ScanCellPage';
+import ProblemsInitialPage from '../ProblemsFlow/ProblemsInitialPage/ProblemsInitialPage';
 
 export default function Main(props) {
   const operations = [
@@ -45,6 +46,7 @@ export default function Main(props) {
   const cells = ['B-09', 'B-10', 'B-11', 'B-10', 'B-11'];
   // const cells = ['B-09'];
   function Page() {
+    return <ProblemsInitialPage />;
     // if (props.onPath === props.path[0]) {
     //   return <OperationSelectorPage nextPage={props.nextPage} operations={operations} progress={progress} />;
     // } else if (props.onPath === props.path[1]) {
@@ -72,15 +74,15 @@ export default function Main(props) {
     //     />
     //   );
     // }
-    return (
-      <ScanCellPage
-        nextPage={props.nextPage}
-        openPopup={props.openPopup}
-        handlePopupOpen={props.handlePopupOpen}
-        handlePopupClose={props.handlePopupClose}
-        cells={cells}
-      />
-    );
+    // return (
+    //   <ScanCellPage
+    //     nextPage={props.nextPage}
+    //     openPopup={props.openPopup}
+    //     handlePopupOpen={props.handlePopupOpen}
+    //     handlePopupClose={props.handlePopupClose}
+    //     cells={cells}
+    //   />
+    // );
 
     // return <ScanBoxPage nextPage={props.nextPage} prevPage={props.prevPage} />;
     // return <BoxFillingPage nextPage={props.nextPage} prevPage={props.prevPage} />;
