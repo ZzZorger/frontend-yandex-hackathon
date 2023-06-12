@@ -1,10 +1,10 @@
 import style from './BottomMenu.module.css';
 import keyboardIcon from '../../images/keyboardIcon.svg';
 
-export default function BottomMenu({ scaning, takeBreak, nextPage, prevPage, handlePopupOpen }) {
+export default function BottomMenu({ hideBackBtn, scaning, takeBreak, nextPage, prevPage, handlePopupOpen }) {
   return (
     <div className={style.Content}>
-      <button className={style.BackButton} onClick={prevPage}>
+      <button style={hideBackBtn ? { display: 'none' } : { display: 'block' }} className={style.BackButton} onClick={prevPage}>
         Назад
       </button>
       <div style={!scaning ? { display: 'none' } : { display: 'block' }} className={style.KeyboardBlock} onClick={handlePopupOpen}>
