@@ -8,7 +8,7 @@ import ScanProductPage from '../ScanProductPage/ScanProductPage';
 import BoxFillingPage from '../BoxFillingPage/BoxFillingPage';
 import EndAssemblyPage from '../EndAssemblyPage/EndAssemblyPage';
 import ScanBoxPage from '../ScanBoxPage/ScanBoxPage';
-import BarcodePopup from '../BarcodePopup/BarcodePopup';
+import ScanCellPage from '../ScanCellPage/ScanCellPage';
 
 export default function Main(props) {
   const operations = [
@@ -42,24 +42,45 @@ export default function Main(props) {
     'PACK-1',
     'PACK-2',
   ];
+  const cells = ['B-09', 'B-10', 'B-11', 'B-10', 'B-11'];
+  // const cells = ['B-09'];
   function Page() {
-    if (props.onPath === props.path[0]) {
-      return <OperationSelectorPage nextPage={props.nextPage} operations={operations} progress={progress} />;
-    } else if (props.onPath === props.path[1]) {
-      return <ScanTablePage nextPage={props.nextPage} tables={tables} prevPage={props.prevPage} />;
-    } else if (props.onPath === props.path[2]) {
-      return (
-        <ScanPrinterPage
-          nextPage={props.nextPage}
-          prevPage={props.prevPage}
-          openPopup={props.openPopup}
-          handlePopupOpen={props.handlePopupOpen}
-          handlePopupClose={props.handlePopupClose}
-        />
-      );
-    } else if (props.onPath === props.path[3]) {
-      return <TaskSearchPage nextPage={props.nextPage} prevPage={props.prevPage} />;
-    }
+    // if (props.onPath === props.path[0]) {
+    //   return <OperationSelectorPage nextPage={props.nextPage} operations={operations} progress={progress} />;
+    // } else if (props.onPath === props.path[1]) {
+    //   return <ScanTablePage nextPage={props.nextPage} tables={tables} prevPage={props.prevPage} />;
+    // } else if (props.onPath === props.path[2]) {
+    //   return (
+    //     <ScanPrinterPage
+    //       nextPage={props.nextPage}
+    //       prevPage={props.prevPage}
+    //       openPopup={props.openPopup}
+    //       handlePopupOpen={props.handlePopupOpen}
+    //       handlePopupClose={props.handlePopupClose}
+    //     />
+    //   );
+    // } else if (props.onPath === props.path[3]) {
+    //   return <TaskSearchPage nextPage={props.nextPage} prevPage={props.prevPage} />;
+    // } else if (props.onPath === props.path[4]) {
+    //   return (
+    //     <ScanCellPage
+    //       nextPage={props.nextPage}
+    //       openPopup={props.openPopup}
+    //       handlePopupOpen={props.handlePopupOpen}
+    //       handlePopupClose={props.handlePopupClose}
+    //       cells={cells}
+    //     />
+    //   );
+    // }
+    return (
+      <ScanCellPage
+        nextPage={props.nextPage}
+        openPopup={props.openPopup}
+        handlePopupOpen={props.handlePopupOpen}
+        handlePopupClose={props.handlePopupClose}
+        cells={cells}
+      />
+    );
 
     // return <ScanBoxPage nextPage={props.nextPage} prevPage={props.prevPage} />;
     // return <BoxFillingPage nextPage={props.nextPage} prevPage={props.prevPage} />;
