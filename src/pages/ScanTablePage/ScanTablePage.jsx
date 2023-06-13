@@ -1,7 +1,7 @@
 import style from './ScanTablePage.module.css';
-import BottomMenu from '../BottomMenu/BottomMenu';
-import StagesBar from '../StagesBar/StagesBar';
-import ButtonsSet from '../ButtonsSet/ButtonsSet';
+import BottomMenu from '../../components/BottomMenu/BottomMenu';
+import StagesBar from '../../components/StagesBar/StagesBar';
+import ButtonsSet from '../../components/ButtonsSet/ButtonsSet';
 
 export default function ScanTablePage({ nextPage, tables, prevPage }) {
   return (

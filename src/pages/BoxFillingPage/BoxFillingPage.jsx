@@ -1,7 +1,7 @@
 import style from './BoxFillingPage.module.css';
-import boxOpen from './image/box open.png';
-import MainButton from '../MainButton/MainButton';
-import BottomMenu from '../BottomMenu/BottomMenu';
+import boxOpen from '../../images/boxOpen.png';
+import MainButton from '../../components/MainButton/MainButton';
+import BottomMenu from '../../components/BottomMenu/BottomMenu';
 
 export default function BoxFillingPage({ prevPage }) {
   return (

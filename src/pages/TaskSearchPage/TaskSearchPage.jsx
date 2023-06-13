@@ -1,6 +1,6 @@
 import style from './TaskSearchPage.module.css';
-import BottomMenu from '../BottomMenu/BottomMenu';
-import StagesBar from '../StagesBar/StagesBar';
+import BottomMenu from '../../components/BottomMenu/BottomMenu';
+import StagesBar from '../../components/StagesBar/StagesBar';
 
 export default function TaskSearchPage({ nextPage, prevPage }) {
   return (

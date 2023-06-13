@@ -1,8 +1,8 @@
 import style from './ScanProductPage.module.css';
 
-import MainButton from '../MainButton/MainButton';
-import ScanProduct from '../ScanProduct/ScanProduct';
-import TextItem from '../TextItem/TextItem';
+import MainButton from '../../components/MainButton/MainButton';
+import ScanProduct from '../../components/ScanProduct/ScanProduct';
+import TextItem from '../../components/TextItem/TextItem';
 
 export default function ScanProductPage({ nextPage }) {
   return (

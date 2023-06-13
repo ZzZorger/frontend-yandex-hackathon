@@ -8,14 +8,14 @@ import { useEffect, useState } from 'react';
 import Profile from '../Profile/Profile';
 
 export default function Header({ onPath, path }) {
-  const [titleStyle, setTitleStyle] = useState('');
-  useEffect(() => {
-    if (onPath === path[0]) {
-      setTitleStyle('Приступить к работе');
-    } else {
-      setTitleStyle('Упаковка');
-    }
-  });
+  const [titleStyle, setTitleStyle] = useState('Упаковка');
+  // useEffect(() => {
+  //   if (onPath === path[0]) {
+  //     setTitleStyle('Приступить к работе');
+  //   } else {
+  //     setTitleStyle('Упаковка');
+  //   }
+  // });
   return (
     <header className={style.Content}>
       <nav className={style.Nav}>

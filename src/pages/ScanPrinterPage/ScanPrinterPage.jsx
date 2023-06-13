@@ -1,8 +1,8 @@
 import style from './ScanPrinterPage.module.css';
 import barcodPrinter from '../../images/barcodePrinter.svg';
-import BottomMenu from '../BottomMenu/BottomMenu';
-import StagesBar from '../StagesBar/StagesBar';
-import BarcodePopup from '../BarcodePopup/BarcodePopup';
+import BottomMenu from '../../components/BottomMenu/BottomMenu';
+import StagesBar from '../../components/StagesBar/StagesBar';
+import BarcodePopup from '../../components/BarcodePopup/BarcodePopup';
 
 export default function ScanPrinterPage({ nextPage, prevPage, openPopup, handlePopupOpen, handlePopupClose }) {
   return (

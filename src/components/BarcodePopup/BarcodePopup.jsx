@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import style from './BarcodePopup.module.css';
+import { Link } from 'react-router-dom';
 
 export default function BarcodePopup(props) {
   // const [barcode, setBarcode] = useState('9234 5678 234 32');
@@ -27,9 +28,12 @@ export default function BarcodePopup(props) {
               <span className={style.InputSpan} name="Error" />
             </div>
           </fieldset>
-          <button className={style.SubmitButton} type="submit" onClick={props.onSubmit}>
+          <Link to={props.onSubmit} className={style.SubmitButton} onClick={props.onClose}>
             Применить
-          </button>
+          </Link>
+          {/* <button className={style.SubmitButton} type="submit" onClick={props.onSubmit}>
+            Применить
+          </button> */}
         </form>
       </div>
     </div>

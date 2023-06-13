@@ -1,5 +1,5 @@
 import style from './OperationSelectorPage.module.css';
-import ButtonsSet from '../ButtonsSet/ButtonsSet';
+import ButtonsSet from '../../components/ButtonsSet/ButtonsSet';
 
 export default function OperationSelectorPage({ nextPage, operations, progress }) {
   return (

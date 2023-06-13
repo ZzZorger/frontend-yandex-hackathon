@@ -1,6 +1,6 @@
-import MainButton from '../MainButton/MainButton';
+import MainButton from '../../components/MainButton/MainButton';
 import style from './EndAssemblyPage.module.css';
-import done from './Image/03. Индекс качества_ 2.jpg';
+import done from '../../images/indexKachestva.jpg';
 
 export default function EndAssemblyPage() {
   return (

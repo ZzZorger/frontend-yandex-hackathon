@@ -1,7 +1,7 @@
 import style from './ScanCellPage.module.css';
-import BottomMenu from '../BottomMenu/BottomMenu';
-import BarcodePopup from '../BarcodePopup/BarcodePopup';
-import MainButton from '../MainButton/MainButton';
+import BottomMenu from '../../components/BottomMenu/BottomMenu';
+import BarcodePopup from '../../components/BarcodePopup/BarcodePopup';
+import MainButton from '../../components/MainButton/MainButton';
 
 export default function ScanCellPage({ nextPage, openPopup, handlePopupOpen, handlePopupClose, cells }) {
   return (
