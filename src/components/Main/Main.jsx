@@ -9,6 +9,7 @@ import BoxFillingPage from '../BoxFillingPage/BoxFillingPage';
 import PackingFollowingBoxPage from '../PackingFollowingBoxPage/PackingFollowingBoxPage';
 import EndAssemblyPage from '../EndAssemblyPage/EndAssemblyPage';
 import ScanBoxPage from '../ScanBoxPage/ScanBoxPage';
+import ProblemWithTheOrderPage from '../ProblemWithTheOrderPage/ProblemWithTheOrderPage';
 
 export default function Main(props) {
   const operations = [
@@ -55,9 +56,11 @@ export default function Main(props) {
 
     // return <ScanProductPage nextPage={props.nextPage} prevPage={props.prevPage} />;
     // return <ScanBoxPage nextPage={props.nextPage} prevPage={props.prevPage} />;
-    return <PackingFollowingBoxPage nextPage={props.nextPage} prevPage={props.prevPage} />;
+    // return <PackingFollowingBoxPage nextPage={props.nextPage} prevPage={props.prevPage} />;
     // return <BoxFillingPage nextPage={props.nextPage} prevPage={props.prevPage} />;
     // return <EndAssemblyPage nextPage={props.nextPage} prevPage={props.prevPage} />;
+
+    return <ProblemWithTheOrderPage nextPage={props.nextPage} prevPage={props.prevPage} />;
   }
   return <Page />;
 }

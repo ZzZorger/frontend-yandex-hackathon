@@ -13,6 +13,9 @@ export default function ListProductInNewBox() {
   return (
     <ul className={style.ListProducts}>
       <ListItemProducts targetsStyle={targetsStyle} isActive={active} showText={'block'} />
+      <ListItemProducts targetsStyle={targetsStyle} isActive={active} showText={'block'} />
+      {/* <ListItemProducts targetsStyle={targetsStyle} isActive={active} showText={'block'} />
+      <ListItemProducts targetsStyle={targetsStyle} isActive={active} showText={'block'} /> */}
     </ul>
   );
 }

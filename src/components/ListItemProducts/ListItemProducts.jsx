@@ -48,7 +48,6 @@ const mark = {
 };
 
 export default function ListItemProducts({ targetsStyle, isActive, showText }) {
-  console.log(showText);
   return (
     <li
       className={style.productItem}
