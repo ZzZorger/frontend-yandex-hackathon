@@ -1,9 +1,9 @@
-import style from './ProblemsInitialPage.module.css';
-import BottomMenu from '../../components/BottomMenu/BottomMenu';
-import ButtonsSet from '../../components/ButtonsSet/ButtonsSet';
+import style from './OtherProblemsPage.module.css';
+import BottomMenu from '../../../components/BottomMenu/BottomMenu';
+import ButtonsSet from '../../../components/ButtonsSet/ButtonsSet';
 // import ButtonsSetProblems from '../../components/ButtonsSetProblems/ButtonsSetProblems';
 
-export default function ProblemsInitialPage({ prevPage }) {
+export default function OtherProblemsPage({ prevPage }) {
   const problems = ['Нет товара', 'Товар бракованный', 'Другая проблема'];
   return (
     <main className={style.Content}>

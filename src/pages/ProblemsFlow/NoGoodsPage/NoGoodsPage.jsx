@@ -1,6 +1,6 @@
 import style from './NoGoodsPage.module.css';
-import BottomMenu from '../../components/BottomMenu/BottomMenu';
-import ListScanProducts from '../../components/ListScanProducts/ListScanProducts';
+import BottomMenu from '../../../components/BottomMenu/BottomMenu';
+import ListScanProducts from '../../../components/ListScanProducts/ListScanProducts';
 
 export default function NoGoodsPage({ nextPage, prevPage }) {
   return (

@@ -1,5 +1,6 @@
 .Content {
-  position: relative;
+  position: absolute;
+  bottom: 0;
   background: #000000;
   display: flex;
   height: 28px;

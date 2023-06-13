@@ -14,7 +14,8 @@ import ScanProductPage from '../../pages/ScanProductPage/ScanProductPage';
 import BoxFillingPage from '../../pages/BoxFillingPage/BoxFillingPage';
 import EndAssemblyPage from '../../pages/EndAssemblyPage/EndAssemblyPage';
 import ScanBoxPage from '../../pages/ScanBoxPage/ScanBoxPage';
-import ProblemsInitialPage from '../../pages/ProblemsInitialPage/ProblemsInitialPage';
+import ProblemsInitialPage from '../../pages/ProblemsFlow/ProblemsInitialPage/ProblemsInitialPage';
+import OtherProblemsPage from '../../pages/ProblemsFlow/OtherProblemsPage/OtherProblemsPage';
 
 function App() {
   const operations = [
@@ -49,6 +50,8 @@ function App() {
     'PACK-2',
   ];
   const cells = ['B-09', 'B-10', 'B-11'];
+  const initialProblems = ['Нет товара', 'Товар бракованный', 'Другая проблема'];
+  const otherProblems = ['Сломан монитор', 'Сломан сканер', 'Сломан принтер', 'Позвать бригадира'];
   // const navigate = useNavigate();
   // const [onPath, setOnPath] = useState('/oper');
   const [openPopup, setOpenPopup] = useState(false);
@@ -125,7 +128,28 @@ function App() {
             }
           />
           {/* <Route path="/scan-goods" element={<ScanProductPage />} /> */}
-          <Route path="/problems" element={<ProblemsInitialPage />} />
+          <Route
+            path="/problems"
+            element={
+              <ProblemsInitialPage
+                problems={initialProblems}
+                text={'Укажите проблему'}
+                routes={['/no-goods', '/defect', '/other-problems']}
+              />
+            }
+          />
+          {/* <Route path="/other-problems" element={<OtherProblemsPage />} /> */}
+          <Route
+            path="/other-problems"
+            element={
+              <ProblemsInitialPage
+                problems={otherProblems}
+                text={'Другая проблема'}
+                // nextPage={'/problems'}
+                routes={['/no-goods', '/defect', '/other-problems', '/no-goods', '/defect']}
+              />
+            }
+          />
         </Routes>
 
         {/* <Main
