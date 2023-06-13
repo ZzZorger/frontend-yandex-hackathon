@@ -9,6 +9,7 @@ export default function ListScanProducts() {
       <ListItemProducts />
       <ListItemProducts />
       <ListItemProducts />
+      <ListItemProducts />
     </ul>
   );
 }
