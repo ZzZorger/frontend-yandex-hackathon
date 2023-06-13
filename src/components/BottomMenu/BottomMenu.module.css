@@ -21,6 +21,10 @@
   line-height: 31px;
   cursor: pointer;
 }
+.BackButtonProblems {
+  background: #f3f0e9;
+  color: #212121;
+}
 .KeyboardBlock {
   display: flex;
   margin: 0 auto;

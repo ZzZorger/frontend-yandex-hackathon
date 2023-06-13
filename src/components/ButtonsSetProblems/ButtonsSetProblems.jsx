@@ -1,5 +1,5 @@
 import style from './ButtonsSetProblems.module.css';
-import ChoiсeButton from '../../ChoiсeButton/ChoiсeButton';
+import ChoiсeButton from '../ChoiсeButton/ChoiсeButton';
 
 // Набор из ChoiceButton
 

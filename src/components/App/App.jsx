@@ -14,6 +14,7 @@ import ScanProductPage from '../../pages/ScanProductPage/ScanProductPage';
 import BoxFillingPage from '../../pages/BoxFillingPage/BoxFillingPage';
 import EndAssemblyPage from '../../pages/EndAssemblyPage/EndAssemblyPage';
 import ScanBoxPage from '../../pages/ScanBoxPage/ScanBoxPage';
+import ProblemsInitialPage from '../../pages/ProblemsInitialPage/ProblemsInitialPage';
 
 function App() {
   const operations = [
@@ -48,7 +49,7 @@ function App() {
     'PACK-2',
   ];
   const cells = ['B-09', 'B-10', 'B-11'];
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   // const [onPath, setOnPath] = useState('/oper');
   const [openPopup, setOpenPopup] = useState(false);
 
@@ -83,9 +84,7 @@ function App() {
   //   setOnPath(path[path.indexOf(onPath) - 1]);
   //   navigate(path[path.indexOf(onPath) - 1]);
   // }
-  function prevPage() {
-    navigate(-1);
-  }
+
   function handlePopupOpen() {
     setOpenPopup(true);
   }
@@ -100,25 +99,24 @@ function App() {
         <Routes>
           <Route exact path="/" element={<Navigate to={path[0]} />} />
           <Route path="/operation" element={<OperationSelectorPage operations={operations} progress={progress} nextPage={path[1]} />} />
-          <Route path="/table" element={<ScanTablePage tables={tables} nextPage={path[2]} prevPage={prevPage} />} />
+          <Route path="/table" element={<ScanTablePage tables={tables} nextPage={path[2]} />} />
           <Route
             path="/printer"
             element={
               <ScanPrinterPage
                 nextPage={path[3]}
-                prevPage={prevPage}
                 openPopup={openPopup}
                 handlePopupOpen={handlePopupOpen}
                 handlePopupClose={handlePopupClose}
               />
             }
           />
-          <Route path="/task" element={<TaskSearchPage nextPage="/scan-cell" prevPage={prevPage} />} />
+          <Route path="/task" element={<TaskSearchPage nextPage="/scan-cell" />} />
           <Route
             path="/scan-cell"
             element={
               <ScanCellPage
-                nextPage={path[0]}
+                nextPage="/scan-goods"
                 openPopup={openPopup}
                 handlePopupOpen={handlePopupOpen}
                 handlePopupClose={handlePopupClose}
@@ -126,6 +124,8 @@ function App() {
               />
             }
           />
+          {/* <Route path="/scan-goods" element={<ScanProductPage />} /> */}
+          <Route path="/problems" element={<ProblemsInitialPage />} />
         </Routes>
 
         {/* <Main
