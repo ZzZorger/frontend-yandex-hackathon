@@ -1,6 +1,6 @@
 import style from './ScanBoxPage.module.css';
-import MainButton from '../MainButton/MainButton';
-import BottomMenu from '../BottomMenu/BottomMenu';
+import MainButton from '../../components/MainButton/MainButton';
+import BottomMenu from '../../components/BottomMenu/BottomMenu';
 
 const yma = {
   text: 'YMA',

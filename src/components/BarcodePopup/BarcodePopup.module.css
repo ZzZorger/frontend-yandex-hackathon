@@ -90,6 +90,7 @@
   text-align: center;
 }
 .SubmitButton {
+  text-decoration: none;
   position: absolute;
   bottom: 0px;
   margin-bottom: 56px;
@@ -105,4 +106,5 @@
   background: #fed42b;
   border-radius: 24px;
   cursor: pointer;
+  color: #212121;
 }
