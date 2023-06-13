@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { Fragment, useState } from 'react';
 import style from './ListItemProducts.module.css';
 import IMEI from '../HintЕlement/image/IMEI.svg';
 import Mark from '../HintЕlement/image/Mark.svg';
@@ -47,18 +47,14 @@ const mark = {
   },
 };
 
-export default function ListItemProducts() {
-  const [isActive, setIsActive] = useState(false);
-
-  const targetsStyle = () => {
-    setIsActive((current) => !current);
-  };
+export default function ListItemProducts({ targetsStyle, isActive, showText }) {
+  console.log(showText);
   return (
     <li
       className={style.productItem}
       onClick={targetsStyle}
       style={{
-        backgroundColor: isActive ? '#F3F0E9' : '',
+        backgroundColor: isActive,
       }}
     >
       <div className={style.productImage}>
@@ -72,7 +68,7 @@ export default function ListItemProducts() {
           className={style.productText}
           // Добавится поле проверки с бека на наличие подсказки
           style={{
-            display: isActive ? 'block' : '-webkit-box',
+            display: showText,
           }}
         >
           {'Умные часы Apple Watch Series 7 45 мм Aluminium Case, (PRODUCT)RED'}

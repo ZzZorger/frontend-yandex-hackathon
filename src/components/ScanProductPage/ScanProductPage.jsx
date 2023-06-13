@@ -3,7 +3,7 @@ import MainButton from '../MainButton/MainButton';
 import ScanProduct from '../ScanProduct/ScanProduct';
 import BottomMenu from '../BottomMenu/BottomMenu';
 
-export default function ScanProductPage({ nextPage }) {
+export default function ScanProductPage({ nextPage, prevPage }) {
   return (
     <>
       <div className={style.ScanProductPage}>
@@ -11,7 +11,7 @@ export default function ScanProductPage({ nextPage }) {
         <ScanProduct />
         <MainButton styles={{ background: 'var(--active-bg-elem)' }} text={`Заказ собран`} nextPage={nextPage} />
       </div>
-      <BottomMenu />
+      <BottomMenu prevPage={prevPage} />
     </>
   );
 }
