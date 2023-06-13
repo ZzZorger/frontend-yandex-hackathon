@@ -1,7 +1,6 @@
 import { useNavigate, Routes, Route, Link, Navigate } from 'react-router-dom';
 
 import Header from '../Header/Header.jsx';
-import Main from '../Main/Main.jsx';
 import Footer from '../Footer/Footer.jsx';
 import './App.css';
 import { useState } from 'react';
@@ -52,42 +51,8 @@ function App() {
   const cells = ['B-09', 'B-10', 'B-11'];
   const initialProblems = ['Нет товара', 'Товар бракованный', 'Другая проблема'];
   const otherProblems = ['Сломан монитор', 'Сломан сканер', 'Сломан принтер', 'Позвать бригадира'];
-  // const navigate = useNavigate();
-  // const [onPath, setOnPath] = useState('/oper');
-  const [openPopup, setOpenPopup] = useState(false);
-
-  // const path = ['/operation', '/table', '/printer', '/task', '/scan-cell', '/scan-goods', '/scan-package', '/fill-box', '/end-task'];
   const path = ['/operation', '/table', '/printer', '/scan-cell', '/scan-goods', '/scan-package', '/fill-box', '/end-task'];
-  // function nextPage() {
-  //   handlePopupClose();
-  //   switch (onPath) {
-  //     case path[0]:
-  //       setOnPath(path[1]);
-  //       navigate(path[1]);
-  //       break;
-  //     case path[1]:
-  //       setOnPath(path[2]);
-  //       navigate(path[2]);
-  //       break;
-  //     case path[2]:
-  //       setOnPath(path[3]);
-  //       navigate(path[3]);
-  //       break;
-  //     case path[3]:
-  //       setOnPath(path[4]);
-  //       navigate(path[4]);
-  //       break;
-  //     case path[4]:
-  //       setOnPath(path[0]);
-  //       navigate(path[0]);
-  //       break;
-  //   }
-  // }
-  // function prevPage() {
-  //   setOnPath(path[path.indexOf(onPath) - 1]);
-  //   navigate(path[path.indexOf(onPath) - 1]);
-  // }
-
+  const [openPopup, setOpenPopup] = useState(false);
   function handlePopupOpen() {
     setOpenPopup(true);
   }
@@ -98,7 +63,6 @@ function App() {
     <div className="body">
       <div className="page">
         <Header />
-        {/* <Header onPath={onPath} path={path} /> */}
         <Routes>
           <Route exact path="/" element={<Navigate to={path[0]} />} />
           <Route path="/operation" element={<OperationSelectorPage operations={operations} progress={progress} nextPage={path[1]} />} />
@@ -138,29 +102,17 @@ function App() {
               />
             }
           />
-          {/* <Route path="/other-problems" element={<OtherProblemsPage />} /> */}
           <Route
             path="/other-problems"
             element={
               <ProblemsInitialPage
                 problems={otherProblems}
                 text={'Другая проблема'}
-                // nextPage={'/problems'}
                 routes={['/no-goods', '/defect', '/other-problems', '/no-goods', '/defect']}
               />
             }
           />
         </Routes>
-
-        {/* <Main
-          // nextPage={nextPage}
-          // prevPage={prevPage}
-          // onPath={onPath}
-          // path={path}
-          openPopup={openPopup}
-          handlePopupOpen={handlePopupOpen}
-          handlePopupClose={handlePopupClose}
-        /> */}
         <Footer />
       </div>
     </div>
