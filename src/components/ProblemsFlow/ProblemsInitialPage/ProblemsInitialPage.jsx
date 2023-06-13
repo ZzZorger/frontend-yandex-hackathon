@@ -2,7 +2,7 @@ import style from './ProblemsInitialPage.module.css';
 import BottomMenu from '../../BottomMenu/BottomMenu';
 import ButtonsSetProblems from '../ButtonsSetProblems/ButtonsSetProblems.jsx';
 
-export default function ProblemsInitialPage({ nextPage, tables, prevPage }) {
+export default function ProblemsInitialPage({ nextPage, prevPage }) {
   const problems = ['Нет товара', 'Товар бракованный', 'Другая проблема'];
   return (
     <main className={style.Content}>
