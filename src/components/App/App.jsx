@@ -64,14 +64,14 @@ function App() {
       <div className="page">
         <Header />
         <Routes>
-          <Route exact path="/" element={<Navigate to={path[0]} />} />
-          <Route path="/operation" element={<OperationSelectorPage operations={operations} progress={progress} nextPage={path[1]} />} />
-          <Route path="/table" element={<ScanTablePage tables={tables} nextPage={path[2]} />} />
+          <Route exact path="/" element={<Navigate to="/operation" />} />
+          <Route path="/operation" element={<OperationSelectorPage operations={operations} progress={progress} nextPage="/table" />} />
+          <Route path="/table" element={<ScanTablePage tables={tables} nextPage="/printer" />} />
           <Route
             path="/printer"
             element={
               <ScanPrinterPage
-                nextPage={path[3]}
+                nextPage="/task"
                 openPopup={openPopup}
                 handlePopupOpen={handlePopupOpen}
                 handlePopupClose={handlePopupClose}
