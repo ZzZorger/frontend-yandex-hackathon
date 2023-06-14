@@ -27,9 +27,10 @@
 .Progress {
   margin-bottom: 288px;
   /* -webkit-appearance: none; */
-  accent-color: orange;
-  /* color: red; */
-  /* background: orange; */
+  /* accent-color: linear-gradient(180deg, #ffe55b -23.8%, #ffcc00 109.49%); */
+  accent-color: #ffcc00;
+  width: 650px;
+  height: 28px;
 }
 progress::-webkit-progress-bar {
   background-color: #f3f0e9;
