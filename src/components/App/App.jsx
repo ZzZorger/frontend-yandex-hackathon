@@ -4,17 +4,17 @@ import Header from '../Header/Header.jsx';
 import Footer from '../Footer/Footer.jsx';
 import './App.css';
 import { useState } from 'react';
-import OperationSelectorPage from '../../pages/OperationSelectorPage/OperationSelectorPage';
-import ScanTablePage from '../../pages/ScanTablePage/ScanTablePage';
-import ScanPrinterPage from '../../pages/ScanPrinterPage/ScanPrinterPage';
-import TaskSearchPage from '../../pages/TaskSearchPage/TaskSearchPage';
-import ScanCellPage from '../../pages/ScanCellPage/ScanCellPage';
-import ScanProductPage from '../../pages/ScanProductPage/ScanProductPage';
-import BoxFillingPage from '../../pages/BoxFillingPage/BoxFillingPage';
-import EndAssemblyPage from '../../pages/EndAssemblyPage/EndAssemblyPage';
-import ScanBoxPage from '../../pages/ScanBoxPage/ScanBoxPage';
-import ProblemsInitialPage from '../../pages/ProblemsFlow/ProblemsInitialPage/ProblemsInitialPage';
-import OtherProblemsPage from '../../pages/ProblemsFlow/OtherProblemsPage/OtherProblemsPage';
+import OperationSelectorPage from '../../Pages/OperationSelectorPage/OperationSelectorPage.jsx';
+import ScanTablePage from '../../Pages/ScanTablePage/ScanTablePage.jsx';
+import ScanPrinterPage from '../../Pages/ScanPrinterPage/ScanPrinterPage.jsx';
+import TaskSearchPage from '../../Pages/TaskSearchPage/TaskSearchPage.jsx';
+import ScanCellPage from '../../Pages/ScanCellPage/ScanCellPage.jsx';
+import ScanProductPage from '../../Pages/ScanProductPage/ScanProductPage.jsx';
+import BoxFillingPage from '../../Pages/BoxFillingPage/BoxFillingPage.jsx';
+import EndAssemblyPage from '../../Pages/EndAssemblyPage/EndAssemblyPage.jsx';
+import ScanBoxPage from '../../Pages/ScanBoxPage/ScanBoxPage.jsx';
+import ProblemsInitialPage from '../../Pages/ProblemsFlow/ProblemsInitialPage/ProblemsInitialPage.jsx';
+import OtherProblemsPage from '../../Pages/OperationSelectorPage/OperationSelectorPage.jsx';
 
 function App() {
   const operations = [
