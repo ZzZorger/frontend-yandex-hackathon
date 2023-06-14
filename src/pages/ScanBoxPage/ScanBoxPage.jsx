@@ -74,11 +74,11 @@ export default function ScanBoxPage({ prevPage, nextPage }) {
     <>
       {/* Сканирование коробок */}
       {/* <div className={style.ScanBoxContent}>
-          <h2 className={style.ScanBoxHeader}>Сканируйте упаковку</h2>
-          <span style={mya.style} className={style.ScanBox}>
-            {mya.text}
-          </span>
-        </div> */}
+        <h2 className={style.ScanBoxHeader}>Сканируйте упаковку</h2>
+        <span style={mya.style} className={style.ScanBox}>
+          {mya.text}
+        </span>
+      </div> */}
 
       {/* Сканирование пакетов */}
       <div className={style.ScanPack}>
