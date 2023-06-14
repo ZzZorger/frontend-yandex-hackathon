@@ -21,21 +21,11 @@ export default function BottomMenu({ hideBackBtn, scaning, takeBreak, nextPage, 
         <img src={keyboardIcon} alt="Иконка клавиатуры" />
         <button className={style.KeyboardButton}>Ввести с клавиатуры</button>
       </div>
-      <div style={!takeBreak ? { display: 'none' } : { display: 'block' }} className={style.KeyboardBlock}>
-        {/* <Link to={nextPage} className={style.KeyboardButton}>
-          Хочу на перерыв
-        </Link> */}
+      <div style={!newBox ? { display: 'none' } : { display: 'block' }} className={style.NewBox} onClick={nextPage}>
+        <button className={style.KeyboardButton}>Нужна ещё одна коробка</button>
       </div>
-      {/* <div style={!takeBreak ? { display: 'none' } : { display: 'block' }} className={style.KeyboardBlock}>
-        <Link to={nextPage} className={style.KeyboardButton}>
-          Хочу на перерыв
-        </Link>
-      </div> */}
-      {/* <div style={!takeBreak ? { display: 'none' } : { display: 'block' }} className={style.KeyboardBlock} onClick={nextPage}>
-        <button className={style.KeyboardButton} onClick={nextPage}>
-          Хочу на перерыв
-        </button>
-      </div> */}
+      <div style={!takeBreak ? { display: 'none' } : { display: 'block' }} className={style.KeyboardBlock} onClick={nextPage} />
+      <div style={!takeBreak ? { display: 'none' } : { display: 'block' }} className={style.KeyboardBlock}></div>
     </div>
   );
 }

@@ -1,0 +1,22 @@
+.PackingFollowingBox {
+  margin-bottom: 36px;
+}
+
+.PackingFollowingBoxTitle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.PackingBoxHeader {
+  font-family: 'YS Display';
+  font-weight: 700;
+  font-size: 72px;
+  line-height: 84px;
+}
+.PackingBoxText {
+  font-family: 'YS Display';
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 32px;
+}

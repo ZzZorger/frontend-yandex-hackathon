@@ -27,7 +27,8 @@
   background: #f3f0e9;
   color: #212121;
 }
-.KeyboardBlock {
+.KeyboardBlock,
+NewBox {
   display: flex;
   margin: 0 auto;
   padding: 20px;

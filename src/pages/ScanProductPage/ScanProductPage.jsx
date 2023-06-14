@@ -1,15 +1,17 @@
 import style from './ScanProductPage.module.css';
+import MainButton from '../MainButton/MainButton';
+import ScanProduct from '../ScanProduct/ScanProduct';
+import BottomMenu from '../BottomMenu/BottomMenu';
 
-import MainButton from '../../components/MainButton/MainButton';
-import ScanProduct from '../../components/ScanProduct/ScanProduct';
-import TextItem from '../../components/TextItem/TextItem';
-
-export default function ScanProductPage({ nextPage }) {
+export default function ScanProductPage({ nextPage, prevPage }) {
   return (
     <>
-      <MainButton text={'Есть проблема'} />
-      <ScanProduct />
-      <MainButton styles={{ background: 'var(--active-bg-elem)' }} text={`Заказ собран`} nextPage={nextPage} />
+      <div className={style.ScanProductPage}>
+        <MainButton text={'Есть проблема'} />
+        <ScanProduct />
+        <MainButton styles={{ background: 'var(--active-bg-elem)' }} text={`Заказ собран`} nextPage={nextPage} />
+      </div>
+      <BottomMenu prevPage={prevPage} />
     </>
   );
 }

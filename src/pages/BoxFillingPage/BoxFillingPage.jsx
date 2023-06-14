@@ -13,9 +13,9 @@ export default function BoxFillingPage({ prevPage }) {
           <span className={style.BoxFillingText}>закройте коробку или просканируйте ещё одну</span>
           <img src={boxOpen} />
         </div>
-        <MainButton styles={{ background: 'var(--active-bg-elem)' }} text={`Закрыть коробку`} />
+        <MainButton styles={{ background: 'var(--active-bg-elem)' }} text={`Коробка закрыта`} />
       </div>
-      <BottomMenu prevPage={prevPage} />
+      <BottomMenu newBox={true} prevPage={prevPage} />
     </div>
   );
 }
