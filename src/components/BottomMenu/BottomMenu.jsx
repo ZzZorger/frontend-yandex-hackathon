@@ -2,7 +2,7 @@ import style from './BottomMenu.module.css';
 import keyboardIcon from '../../images/keyboardIcon.svg';
 import { useNavigate, Link } from 'react-router-dom';
 
-export default function BottomMenu({ hideBackBtn, scaning, takeBreak, nextPage, handlePopupOpen, onProblemsPage }) {
+export default function BottomMenu({ hideBackBtn, scaning, takeBreak, newBox, nextPage, handlePopupOpen, onProblemsPage }) {
   const navigate = useNavigate();
   function prevPage() {
     navigate(-1);

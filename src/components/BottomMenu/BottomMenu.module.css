@@ -28,7 +28,7 @@
   color: #212121;
 }
 .KeyboardBlock,
-NewBox {
+.NewBox {
   display: flex;
   margin: 0 auto;
   padding: 20px;

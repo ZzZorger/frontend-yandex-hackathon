@@ -11,10 +11,10 @@
   margin-top: 56px;
 }
 .ScanBoxContent {
-  display: flex;
   height: 828px;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 .ScanBoxHeader {
   font-family: 'YS Text';

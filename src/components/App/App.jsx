@@ -4,17 +4,17 @@ import Header from '../Header/Header.jsx';
 import Footer from '../Footer/Footer.jsx';
 import './App.css';
 import { useState } from 'react';
-import OperationSelectorPage from '../../Pages/OperationSelectorPage/OperationSelectorPage.jsx';
-import ScanTablePage from '../../Pages/ScanTablePage/ScanTablePage.jsx';
-import ScanPrinterPage from '../../Pages/ScanPrinterPage/ScanPrinterPage.jsx';
-import TaskSearchPage from '../../Pages/TaskSearchPage/TaskSearchPage.jsx';
-import ScanCellPage from '../../Pages/ScanCellPage/ScanCellPage.jsx';
-import ScanProductPage from '../../Pages/ScanProductPage/ScanProductPage.jsx';
-import BoxFillingPage from '../../Pages/BoxFillingPage/BoxFillingPage.jsx';
-import EndAssemblyPage from '../../Pages/EndAssemblyPage/EndAssemblyPage.jsx';
-import ScanBoxPage from '../../Pages/ScanBoxPage/ScanBoxPage.jsx';
-import ProblemsInitialPage from '../../Pages/ProblemsFlow/ProblemsInitialPage/ProblemsInitialPage.jsx';
-import OtherProblemsPage from '../../Pages/OperationSelectorPage/OperationSelectorPage.jsx';
+import OperationSelectorPage from '../../pages/OperationSelectorPage/OperationSelectorPage.jsx';
+import ScanTablePage from '../../pages/ScanTablePage/ScanTablePage.jsx';
+import ScanPrinterPage from '../../pages/ScanPrinterPage/ScanPrinterPage.jsx';
+import TaskSearchPage from '../../pages/TaskSearchPage/TaskSearchPage.jsx';
+import ScanCellPage from '../../pages/ScanCellPage/ScanCellPage.jsx';
+import ScanProductPage from '../../pages/ScanProductPage/ScanProductPage.jsx';
+import BoxFillingPage from '../../pages/BoxFillingPage/BoxFillingPage.jsx';
+import EndAssemblyPage from '../../pages/EndAssemblyPage/EndAssemblyPage.jsx';
+import ScanBoxPage from '../../pages/ScanBoxPage/ScanBoxPage.jsx';
+import ProblemsInitialPage from '../../pages/ProblemsFlow/ProblemsInitialPage/ProblemsInitialPage.jsx';
+import OtherProblemsPage from '../../pages/ProblemsFlow/OtherProblemsPage/OtherProblemsPage.jsx';
 
 function App() {
   const operations = [
@@ -91,7 +91,10 @@ function App() {
               />
             }
           />
-          {/* <Route path="/scan-goods" element={<ScanProductPage />} /> */}
+          <Route path="/scan-goods" element={<ScanProductPage />} />
+          <Route path="/scan-package" element={<ScanBoxPage />} />
+          <Route path="/fill-box" element={<BoxFillingPage />} />
+          <Route path="/end-task" element={<EndAssemblyPage />} />
           <Route
             path="/problems"
             element={
