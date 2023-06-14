@@ -1,6 +1,7 @@
 import style from './OtherProblemsPage.module.css';
 import BottomMenu from '../../../components/BottomMenu/BottomMenu';
 import ButtonsSet from '../../../components/ButtonsSet/ButtonsSet';
+import BrigadierPopup from '../../../components/BrigadierPopup/BrigadierPopup';
 // import ButtonsSetProblems from '../../components/ButtonsSetProblems/ButtonsSetProblems';
 
 export default function OtherProblemsPage({ prevPage }) {
@@ -16,6 +17,7 @@ export default function OtherProblemsPage({ prevPage }) {
         routes={['/no-goods', '/defect', '/other-problems']}
       />
       <BottomMenu prevPage={prevPage} onProblemsPage={true} />
+      <BrigadierPopup />
     </main>
   );
 }
