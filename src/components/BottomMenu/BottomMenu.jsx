@@ -2,7 +2,7 @@ import style from './BottomMenu.module.css';
 import keyboardIcon from '../../images/keyboardIcon.svg';
 import { useNavigate, Link } from 'react-router-dom';
 
-export default function BottomMenu({ hideBackBtn, scaning, takeBreak, nextPage, handlePopupOpen, onProblemsPage }) {
+export default function BottomMenu({ hideBackBtn, scaning, takeBreak, handlePopupOpen, onProblemsPage }) {
   const navigate = useNavigate();
   function prevPage() {
     navigate(-1);
@@ -20,7 +20,7 @@ export default function BottomMenu({ hideBackBtn, scaning, takeBreak, nextPage, 
         <img src={keyboardIcon} alt="Иконка клавиатуры" />
         <button className={style.KeyboardButton}>Ввести с клавиатуры</button>
       </div>
-      <Link style={!takeBreak ? { display: 'none' } : { display: 'block' }} className={style.KeyboardBlock} to={nextPage}>
+      <Link style={!takeBreak ? { display: 'none' } : { display: 'block' }} className={style.KeyboardBlock} to={'/scan-cell'}>
         <button className={style.KeyboardButton}>Хочу на перерыв</button>
       </Link>
     </div>
