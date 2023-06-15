@@ -4,22 +4,12 @@ import { Link } from 'react-router-dom';
 
 // Набор из ChoiceButton
 
-export default function ButtonsSet({ nextPage, set, btnStyle, setStyle, routes }) {
+export default function ButtonsSet({ nextPage, set, btnStyle, setStyle, routes, handlePopupOpen }) {
   return (
     <div style={setStyle} className={style.TableGrid}>
       {set.map((text, i) => (
-        // <ChoiсeButton key={i} styles={btnStyle} text={text} nextPage={nextPage} route={routes ? routes[i] : nextPage} />
-        <ChoiсeButton key={i} styles={btnStyle} text={text} route={routes ? routes[i] : nextPage} />
+        <ChoiсeButton key={i} styles={btnStyle} text={text} route={routes ? routes[i] : nextPage} handlePopupOpen={handlePopupOpen} />
       ))}
     </div>
   );
 }
-// export default function ButtonsSet({ nextPage, set, btnStyle, setStyle }) {
-//   return (
-//     <div style={setStyle} className={style.TableGrid}>
-//       {set.map((text, i) => (
-//         <ChoiсeButton styles={btnStyle} key={i} text={text} nextPage={nextPage} />
-//       ))}
-//     </div>
-//   );
-// }
