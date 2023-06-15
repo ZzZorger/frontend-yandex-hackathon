@@ -111,7 +111,10 @@ function App() {
               <ProblemsInitialPage
                 problems={otherProblems}
                 text={'Другая проблема'}
-                routes={['/no-goods', '/defect', '/other-problems', '/no-goods', '/defect']}
+                // routes={['/no-goods', '/defect', '/other-problems', '/no-goods', '/defect']}
+                openPopup={openPopup}
+                handlePopupOpen={handlePopupOpen}
+                handlePopupClose={handlePopupClose}
               />
             }
           />
