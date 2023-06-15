@@ -2,6 +2,7 @@ import style from './ScanBoxPage.module.css';
 import MainButton from '../../components/MainButton/MainButton';
 import BottomMenu from '../../components/BottomMenu/BottomMenu';
 import ProgressBar from '../../components/ProgressBar/ProgressBar';
+import BarcodePopup from '../../components/BarcodePopup/BarcodePopup';
 const yma = {
   text: 'YMA',
   style: {
@@ -69,7 +70,7 @@ const nonPack = {
   text: 'Коробка не требуется',
 };
 
-export default function ScanBoxPage({ prevPage, nextPage }) {
+export default function ScanBoxPage({ nextPage, openPopup, handlePopupOpen, handlePopupClose }) {
   return (
     <>
       {/* Сканирование коробок */}
@@ -82,18 +83,25 @@ export default function ScanBoxPage({ prevPage, nextPage }) {
 
       {/* Сканирование пакетов */}
       <div className={style.ScanPack}>
-        <MainButton text={'Есть проблема'} />
+        <MainButton text={'Есть проблема'} linkPath="/problems" />
         <div className={style.ScanPackContent}>
           <h2 className={style.ScanPackHeader}>Сканируйте сейф-пакеты</h2>
           <span className={style.ScanPackText}>Оцените сами, сколько хватит — максимум 3 штуки</span>
           {/* + прогресс бар с счеиком */}
           <ProgressBar />
         </div>
-        <MainButton styles={{ background: 'var(--active-bg-elem)' }} text={`Закрыть пакет`} nextPage={nextPage} />
+        <MainButton styles={{ background: 'var(--active-bg-elem)' }} text={`Закрыть пакет`} linkPath={nextPage} />
       </div>
 
       {/*scaning отрисовывается по условию  */}
-      <BottomMenu prevPage={prevPage} scaning={true} />
+      <BottomMenu scaning={true} handlePopupOpen={handlePopupOpen} />
+      <BarcodePopup
+        isOpen={openPopup}
+        onClose={handlePopupClose}
+        onSubmit=""
+        title={'Введите штрихкод пакета'}
+        initValue={'9234 5678 234 32'}
+      />
     </>
   );
 }

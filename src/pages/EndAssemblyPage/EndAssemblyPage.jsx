@@ -12,7 +12,7 @@ export default function EndAssemblyPage() {
         <h2 className={style.EndAssemblyHeader}>Поставьте коробку на конвейер</h2>
         <span className={style.EndAssemblyText}>Отличная работа!</span>
       </div>
-      <MainButton styles={{ background: 'var(--active-bg-elem)' }} text={'Готово'} />
+      <MainButton styles={{ background: 'var(--active-bg-elem)' }} text={'Готово'} linkPath="/task" />
     </div>
   );
 }
