@@ -97,9 +97,10 @@ function App() {
           <Route path="/scan-goods" element={<ScanProductPage />} />
           <Route path="/scan-package" element={<ScanBoxPage />} />
           <Route path="/fill-box" element={<BoxFillingPage />} />
-          {/* <Route path="/end-task" element={<EndAssemblyPage />} /> */}
 
-          <Route path="/end-task" element={<DefectItemOnConveyorPage />} />
+          {/* <Route path="/end-task" element={<EndAssemblyPage />} /> */}
+          {/* <Route path="/end-task" element={<DefectItemOnConveyorPage />} /> */}
+
           <Route
             path="/problems"
             element={
