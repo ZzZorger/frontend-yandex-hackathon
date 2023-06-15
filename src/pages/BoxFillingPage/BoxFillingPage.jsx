@@ -11,7 +11,7 @@ export default function BoxFillingPage({ prevPage }) {
         <div className={style.BoxFilling}>
           <h2 className={style.BoxFillingHeader}>Заполните пустоты бумагой</h2>
           <span className={style.BoxFillingText}>закройте коробку или просканируйте ещё одну</span>
-          <img src={boxOpen} />
+          <img src={boxOpen} alt="Изображение открытой коробки" />
         </div>
         <MainButton styles={{ background: 'var(--active-bg-elem)' }} text={`Коробка закрыта`} />
       </div>

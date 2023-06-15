@@ -16,6 +16,9 @@ import ScanBoxPage from '../../pages/ScanBoxPage/ScanBoxPage.jsx';
 import ProblemsInitialPage from '../../pages/ProblemsFlow/ProblemsInitialPage/ProblemsInitialPage.jsx';
 import OtherProblemsPage from '../../pages/ProblemsFlow/OtherProblemsPage/OtherProblemsPage.jsx';
 
+import ScanForemanPage from '../../pages/ProblemsFlow/ScanForemanPage/ScanForemanPage.jsx';
+import DefectItemOnConveyorPage from '../../pages/ProblemsFlow/DefectItemOnConveyorPage/DefectItemOnConveyorPage.jsx';
+
 function App() {
   const operations = [
     'Отборы',
@@ -94,7 +97,10 @@ function App() {
           <Route path="/scan-goods" element={<ScanProductPage />} />
           <Route path="/scan-package" element={<ScanBoxPage />} />
           <Route path="/fill-box" element={<BoxFillingPage />} />
-          <Route path="/end-task" element={<EndAssemblyPage />} />
+
+          {/* <Route path="/end-task" element={<EndAssemblyPage />} /> */}
+          {/* <Route path="/end-task" element={<DefectItemOnConveyorPage />} /> */}
+
           <Route
             path="/problems"
             element={

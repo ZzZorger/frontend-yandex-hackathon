@@ -1,7 +1,7 @@
 import style from './ScanBoxPage.module.css';
 import MainButton from '../../components/MainButton/MainButton';
 import BottomMenu from '../../components/BottomMenu/BottomMenu';
-
+import ProgressBar from '../../components/ProgressBar/ProgressBar';
 const yma = {
   text: 'YMA',
   style: {
@@ -87,6 +87,7 @@ export default function ScanBoxPage({ prevPage, nextPage }) {
           <h2 className={style.ScanPackHeader}>Сканируйте сейф-пакеты</h2>
           <span className={style.ScanPackText}>Оцените сами, сколько хватит — максимум 3 штуки</span>
           {/* + прогресс бар с счеиком */}
+          <ProgressBar />
         </div>
         <MainButton styles={{ background: 'var(--active-bg-elem)' }} text={`Закрыть пакет`} nextPage={nextPage} />
       </div>
