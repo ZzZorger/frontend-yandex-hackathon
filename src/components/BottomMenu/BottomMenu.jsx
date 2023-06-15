@@ -19,7 +19,9 @@ export default function BottomMenu({ hideBackBtn, scaning, takeBreak, newBox, ne
       </button>
       <div style={!scaning ? { display: 'none' } : { display: 'block' }} className={style.KeyboardBlock} onClick={handlePopupOpen}>
         <img src={keyboardIcon} alt="Иконка клавиатуры" />
-        <button className={style.KeyboardButton}>Ввести с клавиатуры</button>
+        <button style={onProblemsPage ? { background: '#FFA200' } : {}} className={style.KeyboardButton}>
+          Ввести с клавиатуры
+        </button>
       </div>
       <div style={!newBox ? { display: 'none' } : { display: 'block' }} className={style.NewBox} onClick={nextPage}>
         <button className={style.KeyboardButton}>Нужна ещё одна коробка</button>
