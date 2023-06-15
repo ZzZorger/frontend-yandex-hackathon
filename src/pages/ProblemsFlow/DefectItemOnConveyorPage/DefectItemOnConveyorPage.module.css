@@ -1,0 +1,29 @@
+.DefectItemOnConveyor {
+  display: flex;
+  justify-content: space-between;
+  margin: 60px 24px 0 24px;
+}
+.DefectItemOnConveyorContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 110px;
+}
+.DefectItemOnConveyorImage {
+  width: 317px;
+  height: 260px;
+}
+.DefectItemOnConveyorHeader {
+  font-family: 'YS Display';
+  font-weight: 700;
+  font-size: 72px;
+  line-height: 84px;
+  text-align: center;
+  margin-bottom: 12px;
+}
+.DefectItemOnConveyorText {
+  font-family: 'YS Display';
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 32px;
+}

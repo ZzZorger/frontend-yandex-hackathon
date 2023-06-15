@@ -17,6 +17,7 @@ import ProblemsInitialPage from '../../pages/ProblemsFlow/ProblemsInitialPage/Pr
 import OtherProblemsPage from '../../pages/ProblemsFlow/OtherProblemsPage/OtherProblemsPage.jsx';
 
 import ScanForemanPage from '../../pages/ProblemsFlow/ScanForemanPage/ScanForemanPage.jsx';
+import DefectItemOnConveyorPage from '../../pages/ProblemsFlow/DefectItemOnConveyorPage/DefectItemOnConveyorPage.jsx';
 
 function App() {
   const operations = [
@@ -98,7 +99,7 @@ function App() {
           <Route path="/fill-box" element={<BoxFillingPage />} />
           {/* <Route path="/end-task" element={<EndAssemblyPage />} /> */}
 
-          <Route path="/end-task" element={<ScanForemanPage />} />
+          <Route path="/end-task" element={<DefectItemOnConveyorPage />} />
           <Route
             path="/problems"
             element={

@@ -2,7 +2,6 @@ import style from './ScanForemanPage.module.css';
 import BottomMenu from '../../../components/BottomMenu/BottomMenu';
 import MainButton from '../../../components/MainButton/MainButton';
 import ListItemProducts from '../../../components/ListItemProducts/ListItemProducts';
-import ListScanProducts from '../../../components/ListScanProducts/ListScanProducts';
 
 export default function ScanForemanPage({ nextPage, prevPage }) {
   const active = 'rgba(254, 212, 43, 0.3)';
