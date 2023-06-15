@@ -2,7 +2,7 @@ import { useState } from 'react';
 import ListItemProducts from '../ListItemProducts/ListItemProducts';
 import style from './ListScanProducts.module.css';
 
-export default function ListScanProducts() {
+export default function ListScanProducts({ onProblemsPage }) {
   const [isActive, setIsActive] = useState(false);
   // const [showText, setshowText] = useState(true);
 
