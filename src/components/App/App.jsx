@@ -18,6 +18,7 @@ import ScanForemanPage from '../../pages/ProblemsFlow/ScanForemanPage/ScanForema
 import DefectItemOnConveyorPage from '../../pages/ProblemsFlow/DefectItemOnConveyorPage/DefectItemOnConveyorPage.jsx';
 import NoGoodsPage from '../../pages/ProblemsFlow/NoGoodsPage/NoGoodsPage.jsx';
 import ProblemWithOrderPage from '../../pages/ProblemsFlow/ProblemWithTheOrderPage/ProblemWithTheOrderPage.jsx';
+import newOrder from '../../Utilitis/newOrder.json';
 
 function App() {
   const operations = [
@@ -55,16 +56,17 @@ function App() {
   const initialProblems = ['Нет товара', 'Товар бракованный', 'Другая проблема'];
   const otherProblems = ['Сломан монитор', 'Сломан сканер', 'Сломан принтер', 'Позвать бригадира'];
   const path = ['/operation', '/table', '/printer', '/scan-cell', '/scan-goods', '/scan-package', '/fill-box', '/end-task'];
-  const [openPopup, setOpenPopup] = useState(false);
+  // const [openPopup, setOpenPopup] = useState(false);
+  const [openBarcodePopup, setOpenBarcodePopup] = useState(false);
   const [openBrigadierPopup, setOpenBrigadierPopup] = useState(false);
-  function handlePopupOpen() {
-    setOpenPopup(true);
+  function handleBarcodePopupOpen() {
+    setOpenBarcodePopup(true);
   }
   function handleBrigadierPopupOpen() {
     setOpenBrigadierPopup(true);
   }
   function handlePopupClose() {
-    setOpenPopup(false);
+    setOpenBarcodePopup(false);
     setOpenBrigadierPopup(false);
   }
   return (
@@ -80,20 +82,20 @@ function App() {
             element={
               <ScanPrinterPage
                 nextPage="/task"
-                openPopup={openPopup}
-                handlePopupOpen={handlePopupOpen}
+                openBarcodePopup={openBarcodePopup}
+                handleBarcodePopupOpen={handleBarcodePopupOpen}
                 handlePopupClose={handlePopupClose}
               />
             }
           />
-          <Route path="/task" element={<TaskSearchPage />} />
+          <Route path="/task" element={<TaskSearchPage newOrder={newOrder} />} />
           <Route
             path="/scan-cell"
             element={
               <ScanCellPage
                 nextPage="/scan-goods"
-                openPopup={openPopup}
-                handlePopupOpen={handlePopupOpen}
+                openBarcodePopup={openBarcodePopup}
+                handleBarcodePopupOpen={handleBarcodePopupOpen}
                 handlePopupClose={handlePopupClose}
                 cells={cells}
               />
@@ -105,8 +107,8 @@ function App() {
             element={
               <ScanBoxPage
                 nextPage="/fill-box"
-                openPopup={openPopup}
-                handlePopupOpen={handlePopupOpen}
+                openBarcodePopup={openBarcodePopup}
+                handleBarcodePopupOpen={handleBarcodePopupOpen}
                 handlePopupClose={handlePopupClose}
               />
             }
@@ -126,9 +128,9 @@ function App() {
             element={
               <ScanForemanPage
                 nextPage={''}
-                openPopup={openPopup}
+                openBarcodePopup={openBarcodePopup}
                 openBrigadierPopup={openBrigadierPopup}
-                handlePopupOpen={handlePopupOpen}
+                handleBarcodePopupOpen={handleBarcodePopupOpen}
                 handleBrigadierPopupOpen={handleBrigadierPopupOpen}
                 handlePopupClose={handlePopupClose}
               />
@@ -142,8 +144,8 @@ function App() {
               <ProblemsInitialPage
                 problems={otherProblems}
                 text={'Другая проблема'}
-                openPopup={openPopup}
-                handlePopupOpen={handlePopupOpen}
+                openBrigadierPopup={openBrigadierPopup}
+                handleBrigadierPopupOpen={handleBrigadierPopupOpen}
                 handlePopupClose={handlePopupClose}
               />
             }
