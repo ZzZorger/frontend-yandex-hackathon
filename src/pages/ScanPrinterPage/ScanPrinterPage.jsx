@@ -10,7 +10,7 @@ export default function ScanPrinterPage({ nextPage, prevPage, openPopup, handleP
       <h2 className={style.Title}>Отсканируйте принтер</h2>
       <img className={style.BarcodPrinter} src={barcodPrinter} alt="Штрихкод принтера" />
       <StagesBar stage={2} />
-      <BottomMenu scaning={true} prevPage={prevPage} handlePopupOpen={handlePopupOpen} />
+      <BottomMenu scaning={true} handlePopupOpen={handlePopupOpen} />
       <BarcodePopup
         isOpen={openPopup}
         onClose={handlePopupClose}

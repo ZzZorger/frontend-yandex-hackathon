@@ -2,16 +2,7 @@ import style from './BottomMenu.module.css';
 import keyboardIcon from '../../images/keyboardIcon.svg';
 import { useNavigate, Link } from 'react-router-dom';
 
-export default function BottomMenu({
-  hideBackBtn,
-  scaning,
-  takeBreak,
-  newBox,
-  nextPage,
-  handlePopupOpen,
-  onProblemsPage,
-  handlePopupClose,
-}) {
+export default function BottomMenu({ hideBackBtn, scaning, takeBreak, newBox, handlePopupOpen, onProblemsPage, handlePopupClose }) {
   const navigate = useNavigate();
   function prevPage() {
     handlePopupClose ? handlePopupClose() : {};
@@ -32,10 +23,13 @@ export default function BottomMenu({
           Ввести с клавиатуры
         </button>
       </div>
-      <div style={!newBox ? { display: 'none' } : { display: 'block' }} className={style.NewBox} onClick={nextPage}>
+      <Link style={!newBox ? { display: 'none' } : { display: 'block' }} className={style.NewBox} to={'/scan-cell'}>
         <button className={style.KeyboardButton}>Нужна ещё одна коробка</button>
-      </div>
-      <div style={!takeBreak ? { display: 'none' } : { display: 'block' }} className={style.KeyboardBlock} onClick={nextPage} />
+      </Link>
+
+      <Link style={!takeBreak ? { display: 'none' } : { display: 'block' }} className={style.KeyboardBlock} to={'/scan-cell'}>
+        <button className={style.KeyboardButton}>Хочу на перерыв</button>
+      </Link>
     </div>
   );
 }

@@ -1,4 +1,4 @@
-import { useNavigate, Routes, Route, Link, Navigate } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 
 import Header from '../Header/Header.jsx';
 import Footer from '../Footer/Footer.jsx';
@@ -14,10 +14,10 @@ import BoxFillingPage from '../../pages/BoxFillingPage/BoxFillingPage.jsx';
 import EndAssemblyPage from '../../pages/EndAssemblyPage/EndAssemblyPage.jsx';
 import ScanBoxPage from '../../pages/ScanBoxPage/ScanBoxPage.jsx';
 import ProblemsInitialPage from '../../pages/ProblemsFlow/ProblemsInitialPage/ProblemsInitialPage.jsx';
-import OtherProblemsPage from '../../pages/ProblemsFlow/OtherProblemsPage/OtherProblemsPage.jsx';
-
 import ScanForemanPage from '../../pages/ProblemsFlow/ScanForemanPage/ScanForemanPage.jsx';
 import DefectItemOnConveyorPage from '../../pages/ProblemsFlow/DefectItemOnConveyorPage/DefectItemOnConveyorPage.jsx';
+import NoGoodsPage from '../../pages/ProblemsFlow/NoGoodsPage/NoGoodsPage.jsx';
+import ProblemWithOrderPage from '../../pages/ProblemsFlow/ProblemWithTheOrderPage/ProblemWithTheOrderPage.jsx';
 
 function App() {
   const operations = [
@@ -56,32 +56,37 @@ function App() {
   const otherProblems = ['Сломан монитор', 'Сломан сканер', 'Сломан принтер', 'Позвать бригадира'];
   const path = ['/operation', '/table', '/printer', '/scan-cell', '/scan-goods', '/scan-package', '/fill-box', '/end-task'];
   const [openPopup, setOpenPopup] = useState(false);
+  const [openBrigadierPopup, setOpenBrigadierPopup] = useState(false);
   function handlePopupOpen() {
     setOpenPopup(true);
   }
+  function handleBrigadierPopupOpen() {
+    setOpenBrigadierPopup(true);
+  }
   function handlePopupClose() {
     setOpenPopup(false);
+    setOpenBrigadierPopup(false);
   }
   return (
     <div className="body">
       <div className="page">
         <Header />
         <Routes>
-          <Route exact path="/" element={<Navigate to={path[0]} />} />
-          <Route path="/operation" element={<OperationSelectorPage operations={operations} progress={progress} nextPage={path[1]} />} />
-          <Route path="/table" element={<ScanTablePage tables={tables} nextPage={path[2]} />} />
+          <Route exact path="/" element={<Navigate to="/operation" />} />
+          <Route path="/operation" element={<OperationSelectorPage operations={operations} progress={progress} nextPage="/table" />} />
+          <Route path="/table" element={<ScanTablePage tables={tables} nextPage="/printer" />} />
           <Route
             path="/printer"
             element={
               <ScanPrinterPage
-                nextPage={path[3]}
+                nextPage="/task"
                 openPopup={openPopup}
                 handlePopupOpen={handlePopupOpen}
                 handlePopupClose={handlePopupClose}
               />
             }
           />
-          <Route path="/task" element={<TaskSearchPage nextPage="/scan-cell" />} />
+          <Route path="/task" element={<TaskSearchPage />} />
           <Route
             path="/scan-cell"
             element={
@@ -94,30 +99,49 @@ function App() {
               />
             }
           />
-          <Route path="/scan-goods" element={<ScanProductPage />} />
-          <Route path="/scan-package" element={<ScanBoxPage />} />
-          <Route path="/fill-box" element={<BoxFillingPage />} />
+          <Route path="/scan-goods" element={<ScanProductPage nextPage="/scan-package" />} />
+          <Route
+            path="/scan-package"
+            element={
+              <ScanBoxPage
+                nextPage="/fill-box"
+                openPopup={openPopup}
+                handlePopupOpen={handlePopupOpen}
+                handlePopupClose={handlePopupClose}
+              />
+            }
+          />
+          <Route path="/fill-box" element={<BoxFillingPage nextPage="/end-task" />} />
 
-          {/* <Route path="/end-task" element={<EndAssemblyPage />} /> */}
+          <Route path="/end-task" element={<EndAssemblyPage />} />
           {/* <Route path="/end-task" element={<DefectItemOnConveyorPage />} /> */}
 
           <Route
             path="/problems"
+            element={<ProblemsInitialPage problems={initialProblems} text={'Укажите проблему'} routes={['goods', 'defect', 'other']} />}
+          />
+          <Route path="problems/goods" element={<NoGoodsPage />} />
+          <Route
+            path="problems/goods/brigadier"
             element={
-              <ProblemsInitialPage
-                problems={initialProblems}
-                text={'Укажите проблему'}
-                routes={['/no-goods', '/defect', '/other-problems']}
+              <ScanForemanPage
+                nextPage={''}
+                openPopup={openPopup}
+                openBrigadierPopup={openBrigadierPopup}
+                handlePopupOpen={handlePopupOpen}
+                handleBrigadierPopupOpen={handleBrigadierPopupOpen}
+                handlePopupClose={handlePopupClose}
               />
             }
           />
+          <Route path="/problems/defect" element={<ProblemWithOrderPage nextPage="conveyor" />} />
+          <Route path="/problems/defect/conveyor" element={<DefectItemOnConveyorPage nextPage="/task" />} />
           <Route
-            path="/other-problems"
+            path="problems/other"
             element={
               <ProblemsInitialPage
                 problems={otherProblems}
                 text={'Другая проблема'}
-                // routes={['/no-goods', '/defect', '/other-problems', '/no-goods', '/defect']}
                 openPopup={openPopup}
                 handlePopupOpen={handlePopupOpen}
                 handlePopupClose={handlePopupClose}
