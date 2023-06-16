@@ -9,7 +9,6 @@ function ListItemProducts({ activeColor, textBlok, textBox, product }) {
   // const [showText, setshowText] = useState(true);
 
   const handleClick = () => {
-    console.log('нажатие на кнопку');
     setIsActive((current) => !current);
     // setshowText((current) => !current);
   };
