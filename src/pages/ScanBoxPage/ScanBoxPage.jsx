@@ -70,7 +70,7 @@ const nonPack = {
   text: 'Коробка не требуется',
 };
 
-export default function ScanBoxPage({ nextPage, openPopup, handlePopupOpen, handlePopupClose }) {
+export default function ScanBoxPage({ nextPage, openBarcodePopup, handleBarcodePopupOpen, handlePopupClose }) {
   return (
     <>
       {/* Сканирование коробок */}
@@ -94,9 +94,9 @@ export default function ScanBoxPage({ nextPage, openPopup, handlePopupOpen, hand
       </div>
 
       {/*scaning отрисовывается по условию  */}
-      <BottomMenu scaning={true} handlePopupOpen={handlePopupOpen} />
+      <BottomMenu scaning={true} handlePopupOpen={handleBarcodePopupOpen} />
       <BarcodePopup
-        isOpen={openPopup}
+        isOpen={openBarcodePopup}
         onClose={handlePopupClose}
         onSubmit=""
         title={'Введите штрихкод пакета'}

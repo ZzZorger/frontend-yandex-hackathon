@@ -3,7 +3,15 @@ import BottomMenu from '../../../components/BottomMenu/BottomMenu';
 import ButtonsSet from '../../../components/ButtonsSet/ButtonsSet';
 import BrigadierPopup from '../../../components/BrigadierPopup/BrigadierPopup';
 
-export default function ProblemsInitialPage({ prevPage, problems, text, routes, openPopup, handlePopupOpen, handlePopupClose }) {
+export default function ProblemsInitialPage({
+  prevPage,
+  problems,
+  text,
+  routes,
+  openBrigadierPopup,
+  handleBrigadierPopupOpen,
+  handlePopupClose,
+}) {
   return (
     <main className={style.Content}>
       <h2 className={style.Title}>{text}</h2>
@@ -12,10 +20,10 @@ export default function ProblemsInitialPage({ prevPage, problems, text, routes, 
         btnStyle={{ width: '1120px' }}
         setStyle={{ flexDirection: 'column', gap: '24px' }}
         routes={routes}
-        handlePopupOpen={handlePopupOpen}
+        handlePopupOpen={handleBrigadierPopupOpen}
       />
       <BottomMenu prevPage={prevPage} onProblemsPage={true} handlePopupClose={handlePopupClose} />
-      <BrigadierPopup isOpen={openPopup} onClose={handlePopupClose} />
+      <BrigadierPopup isOpen={openBrigadierPopup} onClose={handlePopupClose} />
     </main>
   );
 }
