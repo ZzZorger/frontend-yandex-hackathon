@@ -16,6 +16,13 @@
 .Progress {
   margin-bottom: 146px;
 }
+.ProgressBar {
+  background: url(./image/image\ 1.png);
+  width: 519px;
+  height: 312px;
+  /* margin-bottom: 131px; */
+  margin-bottom: 65px;
+}
 .ProgressValue {
   margin: 0;
   font-family: 'YS Text';

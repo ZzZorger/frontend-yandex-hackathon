@@ -30,6 +30,8 @@
   accent-color: orange;
   /* color: red; */
   /* background: orange; */
+  height: 28px;
+  width: 680px;
 }
 progress::-webkit-progress-bar {
   background-color: #f3f0e9;

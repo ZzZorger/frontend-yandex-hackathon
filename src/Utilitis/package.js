@@ -1,4 +1,4 @@
-export default packageBox = [
+export default [
   { name: 'YMA', backgroundColor: '#FF0000' },
   { name: 'YMB', backgroundColor: '#F29A00' },
   { name: 'YMC', backgroundColor: '#8A35B3' },
