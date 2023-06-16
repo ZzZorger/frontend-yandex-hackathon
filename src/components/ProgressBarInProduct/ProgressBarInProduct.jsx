@@ -4,32 +4,31 @@ import style from './ProgressBarInProduct.module.css';
 export default function ProgressBarInProduct({ fullCount }) {
   const [progress, setProgress] = useState(1);
 
-  const Increment = () => {
+  const Increment = (event) => {
+    event.stopPropagation();
     if (progress < 4) {
       setProgress(progress + 1);
     }
   };
 
-  const Decrement = () => {
-    if (progress > 2) {
+  const Decrement = (event) => {
+    event.stopPropagation();
+    if (progress > 1) {
       setProgress(progress - 1);
     }
   };
-
-  //   const handleScanClick = () => {
-  //     if (progress < 3) {
-  //       setProgress(progress + 1);
-  //     }
-  //   };
 
   const getColor = () => {
     if (progress === 1) {
       return 'rgba(42, 173, 46, 0.25)';
     }
     if (progress === 2) {
-      return 'rgba(42, 173, 46, 0.75)';
+      return 'rgba(42, 173, 46, 0.50)';
     }
     if (progress === 3) {
+      return 'rgba(42, 173, 46, 0.75)';
+    }
+    if (progress === 4) {
       return 'rgba(42, 173, 46, 1)';
     }
   };
@@ -38,9 +37,12 @@ export default function ProgressBarInProduct({ fullCount }) {
       return '30%';
     }
     if (progress === 2) {
-      return '65%';
+      return '50%';
     }
     if (progress === 3) {
+      return '75%';
+    }
+    if (progress === 4) {
       return '100%';
     }
   };
@@ -50,10 +52,10 @@ export default function ProgressBarInProduct({ fullCount }) {
         <div className={style.ProgressBarFill} style={{ width: getWidth(), backgroundColor: getColor() }}></div>
       </div>
       <div className={style.buttons}>
-        <button className={style.buttonIncrement} onClick={Increment}>
+        <button className={style.buttonDecrement} onClick={Decrement}>
           -
         </button>
-        <button className={style.buttonDecrement} onClick={Decrement}>
+        <button className={style.buttonIncrement} onClick={Increment}>
           +
         </button>
       </div>
