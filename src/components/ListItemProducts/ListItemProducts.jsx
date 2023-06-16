@@ -1,64 +1,33 @@
 import React, { Fragment, useState } from 'react';
 import style from './ListItemProducts.module.css';
-import IMEI from '../HintЕlement/image/IMEI.svg';
-import Mark from '../HintЕlement/image/Mark.svg';
+import hints from '../../utilitis/hints';
 import HintЕlement from '../HintЕlement/HintЕlement';
 
-// Используемые подсказки
-const bubbleWrap = {
-  text: 'Пузырчатая плёнка',
-  style: {
-    backgroundColor: '#E0EEFF',
-  },
-};
-const stretch = {
-  text: 'Стрейтч-плёнка',
-  style: {
-    backgroundColor: '#FFECCC',
-  },
-};
+function ListItemProducts({ activeColor, textBlok, textBox, product }) {
+  const [isActive, setIsActive] = useState(false);
+  // const [showText, setshowText] = useState(true);
 
-const nonPack = {
-  text: 'Упаковка не нужна',
-  img: Mark,
-  style: {
-    backgroundColor: '#FFD9DB',
-  },
-};
-// Подсказки которые будут на проде( в наших данных такой информации нет)
-const pack = {
-  text: 'Пакет',
-  style: {
-    backgroundColor: '#FFECCC',
-  },
-};
-const imei = {
-  text: 'Отсканируйте IMEI',
-  img: IMEI,
-  style: {
-    backgroundColor: '#FFD9DB',
-  },
-};
-const mark = {
-  text: 'Отсканируйте IMEI',
-  img: Mark,
-  style: {
-    backgroundColor: '#FFD9DB',
-  },
-};
+  const handleClick = () => {
+    console.log('нажатие на кнопку');
+    setIsActive((current) => !current);
+    // setshowText((current) => !current);
+  };
 
-export default function ListItemProducts({ targetsStyle, isActive, showText }) {
+  const active = isActive ? activeColor : '';
+  const fullText = isActive ? textBlok : textBox;
+
+  console.log(hints[0].backgroundColor);
   return (
     <li
       className={style.productItem}
-      onClick={targetsStyle}
+      onClick={handleClick}
       style={{
-        backgroundColor: isActive,
+        backgroundColor: active,
       }}
     >
       <div className={style.productImage}>
-        <img src={'/'} alt="Изображение товара для сканирования"></img>
-        <div className={style.productCounter}>{`${1} шт.`}</div>
+        <img src={product.image} alt="Изображение товара для сканирования"></img>
+        <div className={style.productCounter}>{`${product.amount} шт.`}</div>
       </div>
 
       <div className={style.productDescription}>
@@ -67,14 +36,15 @@ export default function ListItemProducts({ targetsStyle, isActive, showText }) {
           className={style.productText}
           // Добавится поле проверки с бека на наличие подсказки
           style={{
-            display: showText,
+            display: fullText,
           }}
         >
-          {'Умные часы Apple Watch Series 7 45 мм Aluminium Case, (PRODUCT)RED'}
+          {product.name}
         </p>
         {/* Условная отрисовка этого компонента, данные для компонента выше, стили зависят от флага, который придет с бека */}
-        <HintЕlement styles={bubbleWrap.style} text={bubbleWrap.text} />
+        <HintЕlement styles={{ backgroundColor: hints[0].backgroundColor }} text={hints[0].name} />
       </div>
     </li>
   );
 }
+export default React.memo(ListItemProducts);

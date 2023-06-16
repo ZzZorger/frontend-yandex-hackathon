@@ -1,21 +1,18 @@
-import { useState } from 'react';
 import ListItemProducts from '../ListItemProducts/ListItemProducts';
 import style from './ListScanProducts.module.css';
+import newOrder from '../../utilitis/newOrder.json';
 
 export default function ListScanProducts({ onProblemsPage }) {
-  const [isActive, setIsActive] = useState(false);
-  // const [showText, setshowText] = useState(true);
+  const activeColor = '#F3F0E9';
+  const textBlok = 'block';
+  const textBox = '-webkit-box';
+  console.log('показвыем элементы списка');
 
-  const targetsStyle = () => {
-    setIsActive((current) => !current);
-    // setshowText((current) => !current);
-  };
-  const active = isActive ? '#F3F0E9' : '';
-  const fullText = isActive ? 'block' : '-webkit-box';
-  // через map + потестить при большом кол-ве айтемов
   return (
     <ul className={style.ListProducts}>
-      <ListItemProducts targetsStyle={targetsStyle} isActive={active} showText={fullText} />
+      {newOrder[0].sku.map((product) => (
+        <ListItemProducts key={product.id} activeColor={activeColor} textBox={textBox} textBlok={textBlok} product={product} />
+      ))}
     </ul>
   );
 }

@@ -1,7 +1,7 @@
 import style from './TaskSearchPage.module.css';
 import BottomMenu from '../../components/BottomMenu/BottomMenu';
 import StagesBar from '../../components/StagesBar/StagesBar';
-import newOrder from '../../Utilitis/newOrder.json';
+import newOrder from '../../utilitis/newOrder.json';
 
 export default function TaskSearchPage() {
   // на этой странице посылается запрос на бэк, на поиск задания

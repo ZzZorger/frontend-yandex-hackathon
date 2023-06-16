@@ -1,17 +1,11 @@
 import style from './ScanProduct.module.css';
 import TextItem from '../TextItem/TextItem';
 import ListScanProducts from '../ListScanProducts/ListScanProducts';
-import { Fragment } from 'react';
-// import { Fragment } from 'react';
-// import packageBox from '../../Utilitis/package.js';
-
-// for (var box of packageBox) {
-//   if (box.name === ) {
-
-//   }
-// }
+import newOrder from '../../utilitis/newOrder.json';
+import packageBox from '../../utilitis/package';
 
 export default function ScanProduct() {
+  console.log(packageBox);
   return (
     <div className={style.ScanProduct}>
       <div className={style.ScanProductHeader}>
@@ -32,11 +26,11 @@ export default function ScanProduct() {
         ))} */}
       </div>
       <div className={style.ScanProductInformation}>
-        {/* считать кол-во товаров */}
-        <TextItem styles={{}}>{`${5} товаров`}</TextItem>
+        {/* считать кол-во товаров, придет поле с бека */}
+        <TextItem styles={{}}>{`${newOrder[0].sku.length} товаров`}</TextItem>
         <TextItem styles={{}}>{`Почта России`}</TextItem>
         {/* Вывод массива из коробок */}
-        <TextItem styles={{ backgroundColor: '#FF0000' }}>{` Коробка ${'YMA'}`}</TextItem>
+        <TextItem styles={{ backgroundColor: packageBox[0].backgroundColor }}>{` Коробка ${packageBox[0].name}`}</TextItem>
       </div>
       <div>
         <ListScanProducts />
