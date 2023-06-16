@@ -2,6 +2,7 @@ import React, { Fragment, useState } from 'react';
 import style from './ListItemProducts.module.css';
 import hints from '../../utilitis/hints';
 import HintЕlement from '../HintЕlement/HintЕlement';
+import ProgressBarInProduct from '../ProgressBarInProduct/ProgressBarInProduct';
 
 function ListItemProducts({ activeColor, textBlok, textBox, product }) {
   const [isActive, setIsActive] = useState(false);
@@ -16,7 +17,6 @@ function ListItemProducts({ activeColor, textBlok, textBox, product }) {
   const active = isActive ? activeColor : '';
   const fullText = isActive ? textBlok : textBox;
 
-  console.log(hints[0].backgroundColor);
   return (
     <li
       className={style.productItem}
@@ -27,7 +27,12 @@ function ListItemProducts({ activeColor, textBlok, textBox, product }) {
     >
       <div className={style.productImage}>
         <img src={product.image} alt="Изображение товара для сканирования"></img>
-        <div className={style.productCounter}>{`${product.amount} шт.`}</div>
+
+        {product.amount > 1 && active === 'rgba(254, 212, 43, 0.3)' ? (
+          <ProgressBarInProduct fullCount={product.amount} />
+        ) : (
+          <div className={style.productCounter}>{`${product.amount} шт.`}</div>
+        )}
       </div>
 
       <div className={style.productDescription}>

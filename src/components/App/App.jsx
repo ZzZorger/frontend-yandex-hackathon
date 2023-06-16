@@ -18,6 +18,7 @@ import ScanForemanPage from '../../pages/ProblemsFlow/ScanForemanPage/ScanForema
 import DefectItemOnConveyorPage from '../../pages/ProblemsFlow/DefectItemOnConveyorPage/DefectItemOnConveyorPage.jsx';
 import NoGoodsPage from '../../pages/ProblemsFlow/NoGoodsPage/NoGoodsPage.jsx';
 import ProblemWithOrderPage from '../../pages/ProblemsFlow/ProblemWithTheOrderPage/ProblemWithTheOrderPage.jsx';
+import PackingFollowingBoxPage from '../../pages/PackingFollowingBoxPage/PackingFollowingBoxPage.jsx';
 
 function App() {
   const operations = [
@@ -113,7 +114,7 @@ function App() {
           />
           <Route path="/fill-box" element={<BoxFillingPage nextPage="/end-task" />} />
 
-          <Route path="/end-task" element={<EndAssemblyPage />} />
+          <Route path="/end-task" element={<PackingFollowingBoxPage />} />
           {/* <Route path="/end-task" element={<DefectItemOnConveyorPage />} /> */}
 
           <Route
