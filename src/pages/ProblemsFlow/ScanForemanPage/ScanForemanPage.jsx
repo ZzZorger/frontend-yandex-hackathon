@@ -7,10 +7,9 @@ import BarcodePopup from '../../../components/BarcodePopup/BarcodePopup';
 
 export default function ScanForemanPage({
   nextPage,
-  prevPage,
-  openPopup,
+  openBarcodePopup,
   openBrigadierPopup,
-  handlePopupOpen,
+  handleBarcodePopupOpen,
   handleBrigadierPopupOpen,
   handlePopupClose,
 }) {
@@ -27,10 +26,10 @@ export default function ScanForemanPage({
         <MainButton styles={{ background: 'var(--active-bg-elem)' }} text={`Позвать бригадира`} onClick={handleBrigadierPopupOpen} />
       </div>
 
-      <BottomMenu onProblemsPage={true} scaning={true} handlePopupClose={handlePopupClose} handlePopupOpen={handlePopupOpen} />
+      <BottomMenu onProblemsPage={true} scaning={true} handlePopupClose={handlePopupClose} handlePopupOpen={handleBarcodePopupOpen} />
       <BrigadierPopup isOpen={openBrigadierPopup} />
       <BarcodePopup
-        isOpen={openPopup}
+        isOpen={openBarcodePopup}
         onClose={handlePopupClose}
         onSubmit={nextPage}
         title={'Введите штрихкод бейжда'}

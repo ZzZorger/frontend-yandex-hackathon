@@ -4,15 +4,15 @@ import BottomMenu from '../../components/BottomMenu/BottomMenu';
 import StagesBar from '../../components/StagesBar/StagesBar';
 import BarcodePopup from '../../components/BarcodePopup/BarcodePopup';
 
-export default function ScanPrinterPage({ nextPage, prevPage, openPopup, handlePopupOpen, handlePopupClose }) {
+export default function ScanPrinterPage({ nextPage, openBarcodePopup, handleBarcodePopupOpen, handlePopupClose }) {
   return (
     <main className={style.Content}>
       <h2 className={style.Title}>Отсканируйте принтер</h2>
       <img className={style.BarcodPrinter} src={barcodPrinter} alt="Штрихкод принтера" />
       <StagesBar stage={2} />
-      <BottomMenu scaning={true} handlePopupOpen={handlePopupOpen} />
+      <BottomMenu scaning={true} handlePopupOpen={handleBarcodePopupOpen} />
       <BarcodePopup
-        isOpen={openPopup}
+        isOpen={openBarcodePopup}
         onClose={handlePopupClose}
         onSubmit={nextPage}
         title={'Введите штрихкод принтера'}

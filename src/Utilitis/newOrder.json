@@ -18,6 +18,10 @@
         "goods_wght": 2.0
       }
     ],
+    "cells": [
+      { "name": "B-09", "barcode": "111" },
+      { "name": "B-10", "barcode": "222" }
+    ],
     "status": "forming",
     "whs": 0,
     "box_num": null,
@@ -40,6 +44,7 @@
         "goods_wght": 3.0
       }
     ],
+    "cells": [{ "name": "B-09", "barcode": "111" }],
     "status": "forming",
     "whs": 0,
     "box_num": null,
