@@ -5,7 +5,6 @@ import newOrder from '../../utilitis/newOrder.json';
 import packageBox from '../../utilitis/package';
 
 export default function ScanProduct() {
-  console.log(packageBox);
   return (
     <div className={style.ScanProduct}>
       <div className={style.ScanProductHeader}>

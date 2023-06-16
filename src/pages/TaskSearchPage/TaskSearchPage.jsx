@@ -4,8 +4,7 @@ import StagesBar from '../../components/StagesBar/StagesBar';
 import newOrder from '../../utilitis/newOrder.json';
 
 export default function TaskSearchPage({ newOrder }) {
-  // console.log(newOrder[0]);
-  localStorage.setItem('order', JSON.stringify(newOrder[0]));
+  console.log(newOrder[0]);
   // на этой странице посылается запрос на бэк, на поиск задания
   // в ответ приходит json формат заказа
   return (

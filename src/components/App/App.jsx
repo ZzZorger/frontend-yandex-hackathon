@@ -19,6 +19,7 @@ import DefectItemOnConveyorPage from '../../pages/ProblemsFlow/DefectItemOnConve
 import NoGoodsPage from '../../pages/ProblemsFlow/NoGoodsPage/NoGoodsPage.jsx';
 import ProblemWithOrderPage from '../../pages/ProblemsFlow/ProblemWithTheOrderPage/ProblemWithTheOrderPage.jsx';
 import PackingFollowingBoxPage from '../../pages/PackingFollowingBoxPage/PackingFollowingBoxPage.jsx';
+import newOrder from '../../utilitis/newOrder.json';
 
 function App() {
   const operations = [
