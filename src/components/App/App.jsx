@@ -20,6 +20,7 @@ import NoGoodsPage from '../../pages/ProblemsFlow/NoGoodsPage/NoGoodsPage.jsx';
 import ProblemWithOrderPage from '../../pages/ProblemsFlow/ProblemWithTheOrderPage/ProblemWithTheOrderPage.jsx';
 import PackingFollowingBoxPage from '../../pages/PackingFollowingBoxPage/PackingFollowingBoxPage.jsx';
 import newOrder from '../../utilitis/newOrder.json';
+import newCells from '../../utilitis/newCells.json';
 
 function App() {
   const operations = [
@@ -89,14 +90,16 @@ function App() {
               />
             }
           />
-          <Route path="/task" element={<TaskSearchPage newOrder={newOrder} />} />
+          <Route path="/task" element={<TaskSearchPage newCells={newCells} />} />
           <Route
             path="/scan-cell"
             element={
               <ScanCellPage
                 nextPage="/scan-goods"
                 openBarcodePopup={openBarcodePopup}
+                openBrigadierPopup={openBrigadierPopup}
                 handleBarcodePopupOpen={handleBarcodePopupOpen}
+                handleBrigadierPopupOpen={handleBrigadierPopupOpen}
                 handlePopupClose={handlePopupClose}
                 cells={cells}
               />

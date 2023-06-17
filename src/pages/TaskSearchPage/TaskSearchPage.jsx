@@ -3,8 +3,8 @@ import BottomMenu from '../../components/BottomMenu/BottomMenu';
 import StagesBar from '../../components/StagesBar/StagesBar';
 import newOrder from '../../utilitis/newOrder.json';
 
-export default function TaskSearchPage({ newOrder }) {
-  console.log(newOrder[0]);
+export default function TaskSearchPage({ newCells }) {
+  localStorage.setItem('cells', JSON.stringify(newCells));
   // на этой странице посылается запрос на бэк, на поиск задания
   // в ответ приходит json формат заказа
   return (
