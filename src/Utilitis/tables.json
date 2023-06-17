@@ -1,56 +1,69 @@
 {
   "tables": [
     {
+      "id": 0,
       "name": "AD14PACK",
-      "status": "busy"
+      "available": false
     },
     {
+      "id": 1,
       "name": "AD1UPACK",
-      "status": "busy"
+      "available": false
     },
     {
+      "id": 2,
       "name": "APACK",
-      "status": "busy"
+      "available": false
     },
     {
+      "id": 3,
       "name": "APACK2",
-      "status": "busy"
+      "available": false
     },
     {
+      "id": 4,
       "name": "AUTOPACK1",
-      "status": "busy"
+      "available": false
     },
     {
+      "id": 5,
       "name": "GAVPACK1",
-      "status": "busy"
+      "available": false
     },
     {
+      "id": 6,
       "name": "IPACK",
-      "status": "busy"
+      "available": false
     },
     {
+      "id": 7,
       "name": "LTPACK",
-      "status": "busy"
+      "available": false
     },
     {
+      "id": 8,
       "name": "NEW_PACK",
-      "status": "busy"
+      "available": false
     },
     {
+      "id": 9,
       "name": "NON_PACK",
-      "status": "busy"
+      "available": false
     },
     {
+      "id": 10,
       "name": "NON_PACK_AL",
-      "status": "busy"
+      "available": false
     },
     {
+      "id": 11,
       "name": "PACK-1",
-      "status": "free"
+      "available": true
     },
     {
+      "id": 12,
       "name": "PACK-2",
-      "status": "free"
+      "available": true
     }
   ]
 }

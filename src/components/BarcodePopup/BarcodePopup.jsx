@@ -8,6 +8,12 @@ export default function BarcodePopup(props) {
   function handleBarcodeChange(e) {
     setBarcode(e.target.value);
   }
+  function submitButtonHandler() {
+    // props.onSubmitButton && props.onSubmitButton(barcode);
+    if (props.onSubmitButton) {
+      props.onSubmitButton(barcode, { background: '#2AAD2E', color: '#FFFFFF' });
+    }
+  }
   return (
     <div className={`${style.Popup} ${props.isOpen && style.PopupOpened}`}>
       <div className={style.Content}>
@@ -28,9 +34,14 @@ export default function BarcodePopup(props) {
               <span className={style.InputSpan} name="Error" />
             </div>
           </fieldset>
-          <Link to={props.onSubmit} className={style.SubmitButton} onClick={props.onClose}>
-            Применить
+          <Link to={props.onSubmit} className={style.SubmitLink} onClick={props.onClose}>
+            <button className={style.SubmitButton} type="submit" onClick={submitButtonHandler}>
+              Применить
+            </button>
           </Link>
+          {/* <Link to={props.onSubmit} className={style.SubmitButton} onClick={props.onClose}>
+            Применить
+          </Link> */}
           {/* <button className={style.SubmitButton} type="submit" onClick={props.onSubmit}>
             Применить
           </button> */}

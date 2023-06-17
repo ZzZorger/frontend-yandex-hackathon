@@ -1,6 +1,5 @@
 import style from './ButtonsSet.module.css';
 import ChoiсeButton from '../ChoiсeButton/ChoiсeButton';
-import { Link } from 'react-router-dom';
 
 // Набор из ChoiceButton
 
@@ -15,7 +14,7 @@ export default function ButtonsSet({ nextPage, set, btnStyle, setStyle, routes, 
           text={text}
           route={routes ? routes[i] : nextPage}
           handlePopupOpen={handlePopupOpen}
-          status={statuses[i]}
+          available={statuses[i]}
         />
       ))}
     </div>

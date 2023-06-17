@@ -6,7 +6,7 @@ export default function OperationSelectorPage({ nextPage, operations }) {
   const statuses = [];
   for (let i = 0; i < operations.operations.length; i++) {
     operationsNames.push(operations.operations[i].name);
-    statuses.push(operations.operations[i].status);
+    statuses.push(operations.operations[i].available);
   }
   return (
     <main className={style.Content}>
