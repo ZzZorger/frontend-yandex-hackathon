@@ -1,0 +1,56 @@
+{
+  "tables": [
+    {
+      "name": "AD14PACK",
+      "status": "busy"
+    },
+    {
+      "name": "AD1UPACK",
+      "status": "busy"
+    },
+    {
+      "name": "APACK",
+      "status": "busy"
+    },
+    {
+      "name": "APACK2",
+      "status": "busy"
+    },
+    {
+      "name": "AUTOPACK1",
+      "status": "busy"
+    },
+    {
+      "name": "GAVPACK1",
+      "status": "busy"
+    },
+    {
+      "name": "IPACK",
+      "status": "busy"
+    },
+    {
+      "name": "LTPACK",
+      "status": "busy"
+    },
+    {
+      "name": "NEW_PACK",
+      "status": "busy"
+    },
+    {
+      "name": "NON_PACK",
+      "status": "busy"
+    },
+    {
+      "name": "NON_PACK_AL",
+      "status": "busy"
+    },
+    {
+      "name": "PACK-1",
+      "status": "free"
+    },
+    {
+      "name": "PACK-2",
+      "status": "free"
+    }
+  ]
+}

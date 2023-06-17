@@ -1,0 +1,40 @@
+{
+  "operations": [
+    {
+      "name": "Отборы",
+      "status": "busy"
+    },
+    {
+      "name": "Упаковка",
+      "status": "free"
+    },
+    {
+      "name": "Сортировка по СД",
+      "status": "busy"
+    },
+    {
+      "name": "Пересоздание задания",
+      "status": "busy"
+    },
+    {
+      "name": "Консолидация",
+      "status": "busy"
+    },
+    {
+      "name": "Отгрузка",
+      "status": "busy"
+    },
+    {
+      "name": "Заказ пустых ТОТов",
+      "status": "busy"
+    },
+    {
+      "name": "Работа с пустыми ТОТами",
+      "status": "busy"
+    },
+    {
+      "name": "Новая упаковка",
+      "status": "busy"
+    }
+  ]
+}
