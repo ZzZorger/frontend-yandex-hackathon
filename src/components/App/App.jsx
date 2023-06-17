@@ -79,7 +79,7 @@ function App() {
         <Header />
         <Routes>
           <Route exact path="/" element={<Navigate to="/operation" />} />
-          <Route path="/operation" element={<OperationSelectorPage operations={operations} progress={progress} nextPage="/table" />} />
+          <Route path="/operation" element={<OperationSelectorPage operations={operations} nextPage="/table" />} />
           <Route path="/table" element={<ScanTablePage tables={tables} nextPage="/printer" />} />
           <Route
             path="/printer"
