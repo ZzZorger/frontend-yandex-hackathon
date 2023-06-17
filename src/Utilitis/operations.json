@@ -2,39 +2,39 @@
   "operations": [
     {
       "name": "Отборы",
-      "status": "busy"
+      "available": false
     },
     {
       "name": "Упаковка",
-      "status": "free"
+      "available": true
     },
     {
       "name": "Сортировка по СД",
-      "status": "busy"
+      "available": false
     },
     {
       "name": "Пересоздание задания",
-      "status": "busy"
+      "available": false
     },
     {
       "name": "Консолидация",
-      "status": "busy"
+      "available": false
     },
     {
       "name": "Отгрузка",
-      "status": "busy"
+      "available": false
     },
     {
       "name": "Заказ пустых ТОТов",
-      "status": "busy"
+      "available": false
     },
     {
       "name": "Работа с пустыми ТОТами",
-      "status": "busy"
+      "available": false
     },
     {
       "name": "Новая упаковка",
-      "status": "busy"
+      "available": false
     }
   ]
 }

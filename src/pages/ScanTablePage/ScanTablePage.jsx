@@ -8,9 +8,8 @@ export default function ScanTablePage({ nextPage, tables }) {
   const statuses = [];
   for (let i = 0; i < tables.tables.length; i++) {
     tablesNames.push(tables.tables[i].name);
-    statuses.push(tables.tables[i].status);
+    statuses.push(tables.tables[i].available);
   }
-  // console.log(statuses);
   return (
     <main className={style.Content}>
       <h2 className={style.Title}>Сканируйте штрих код стола</h2>
