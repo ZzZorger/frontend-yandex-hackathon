@@ -95,7 +95,9 @@ function App() {
               <ScanCellPage
                 nextPage="/scan-goods"
                 openBarcodePopup={openBarcodePopup}
+                openBrigadierPopup={openBrigadierPopup}
                 handleBarcodePopupOpen={handleBarcodePopupOpen}
+                handleBrigadierPopupOpen={handleBrigadierPopupOpen}
                 handlePopupClose={handlePopupClose}
                 cells={cells}
               />
