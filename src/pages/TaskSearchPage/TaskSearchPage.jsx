@@ -2,9 +2,8 @@ import style from './TaskSearchPage.module.css';
 import BottomMenu from '../../components/BottomMenu/BottomMenu';
 import StagesBar from '../../components/StagesBar/StagesBar';
 
-export default function TaskSearchPage({ newOrder }) {
-  // console.log(newOrder[0]);
-  localStorage.setItem('order', JSON.stringify(newOrder[0]));
+export default function TaskSearchPage({ newCells }) {
+  localStorage.setItem('cells', JSON.stringify(newCells));
   // на этой странице посылается запрос на бэк, на поиск задания
   // в ответ приходит json формат заказа
   return (

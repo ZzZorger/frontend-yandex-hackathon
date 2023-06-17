@@ -18,7 +18,8 @@ import ScanForemanPage from '../../pages/ProblemsFlow/ScanForemanPage/ScanForema
 import DefectItemOnConveyorPage from '../../pages/ProblemsFlow/DefectItemOnConveyorPage/DefectItemOnConveyorPage.jsx';
 import NoGoodsPage from '../../pages/ProblemsFlow/NoGoodsPage/NoGoodsPage.jsx';
 import ProblemWithOrderPage from '../../pages/ProblemsFlow/ProblemWithTheOrderPage/ProblemWithTheOrderPage.jsx';
-import newOrder from '../../Utilitis/newOrder.json';
+import newOrder from '../../utilitis/newOrder.json';
+import newCells from '../../utilitis/newCells.json';
 
 function App() {
   const operations = [
@@ -88,7 +89,7 @@ function App() {
               />
             }
           />
-          <Route path="/task" element={<TaskSearchPage newOrder={newOrder} />} />
+          <Route path="/task" element={<TaskSearchPage newCells={newCells} />} />
           <Route
             path="/scan-cell"
             element={
