@@ -6,16 +6,14 @@ import burger from '../../images/burger.svg';
 import funcMenu from '../../images/headerMenu.svg';
 import { useEffect, useState } from 'react';
 import Profile from '../Profile/Profile';
+import { useLocation } from 'react-router-dom';
 
 export default function Header({ onPath, path }) {
-  const [titleStyle, setTitleStyle] = useState('Упаковка');
-  // useEffect(() => {
-  //   if (onPath === path[0]) {
-  //     setTitleStyle('Приступить к работе');
-  //   } else {
-  //     setTitleStyle('Упаковка');
-  //   }
-  // });
+  const location = useLocation();
+  const [titleStyle, setTitleStyle] = useState('');
+  useEffect(() => {
+    setTitleStyle(location.pathname === '/operation' ? 'Приступить к работе' : 'Упаковка');
+  });
   return (
     <header className={style.Content}>
       <nav className={style.Nav}>

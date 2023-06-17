@@ -21,39 +21,41 @@ import ProblemWithOrderPage from '../../pages/ProblemsFlow/ProblemWithTheOrderPa
 import PackingFollowingBoxPage from '../../pages/PackingFollowingBoxPage/PackingFollowingBoxPage.jsx';
 import newOrder from '../../utilitis/newOrder.json';
 import newCells from '../../utilitis/newCells.json';
+import tables from '../../utilitis/tables.json';
+import operations from '../../utilitis/operations.json';
 
 function App() {
-  const operations = [
-    'Отборы',
-    'Упаковка',
-    'Сортировка по СД',
-    'Пересоздание задания',
-    'Консолидация',
-    'Отгрузка',
-    'Заказ пустых ТОТов',
-    'Работа с пустыми ТОТами',
-    'Новая упаковка',
-  ];
+  // const operations = [
+  //   'Отборы',
+  //   'Упаковка',
+  //   'Сортировка по СД',
+  //   'Пересоздание задания',
+  //   'Консолидация',
+  //   'Отгрузка',
+  //   'Заказ пустых ТОТов',
+  //   'Работа с пустыми ТОТами',
+  //   'Новая упаковка',
+  // ];
   const progress = {
     maxValue: 200,
     value: 125,
     operationsNum: 16,
   };
-  const tables = [
-    'AD14PACK',
-    'AD1UPACK',
-    'APACK',
-    'APACK2',
-    'AUTOPACK1',
-    'GAVPACK1',
-    'IPACK',
-    'LTPACK',
-    'NEW_PACK',
-    'NON_PACK',
-    'NON_PACK_AL',
-    'PACK-1',
-    'PACK-2',
-  ];
+  // const tables = [
+  //   'AD14PACK',
+  //   'AD1UPACK',
+  //   'APACK',
+  //   'APACK2',
+  //   'AUTOPACK1',
+  //   'GAVPACK1',
+  //   'IPACK',
+  //   'LTPACK',
+  //   'NEW_PACK',
+  //   'NON_PACK',
+  //   'NON_PACK_AL',
+  //   'PACK-1',
+  //   'PACK-2',
+  // ];
   const cells = ['B-09', 'B-10', 'B-11'];
   const initialProblems = ['Нет товара', 'Товар бракованный', 'Другая проблема'];
   const otherProblems = ['Сломан монитор', 'Сломан сканер', 'Сломан принтер', 'Позвать бригадира'];
@@ -77,7 +79,7 @@ function App() {
         <Header />
         <Routes>
           <Route exact path="/" element={<Navigate to="/operation" />} />
-          <Route path="/operation" element={<OperationSelectorPage operations={operations} progress={progress} nextPage="/table" />} />
+          <Route path="/operation" element={<OperationSelectorPage operations={operations} nextPage="/table" />} />
           <Route path="/table" element={<ScanTablePage tables={tables} nextPage="/printer" />} />
           <Route
             path="/printer"

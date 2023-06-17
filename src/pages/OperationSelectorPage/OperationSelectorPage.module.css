@@ -11,7 +11,7 @@
   font-size: 52px;
   line-height: 52px;
   align-items: center;
-  padding-bottom: 66px;
+  padding-bottom: 52px;
 }
 .Progress {
   margin-bottom: 146px;
@@ -21,7 +21,7 @@
   width: 519px;
   height: 312px;
   /* margin-bottom: 131px; */
-  margin-bottom: 65px;
+  margin-bottom: 130px;
 }
 .ProgressValue {
   margin: 0;
