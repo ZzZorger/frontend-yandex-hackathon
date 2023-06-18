@@ -15,6 +15,7 @@ export default function SearchNewBoxPage({ nextPage, openBarcodePopup, handleBar
         onSubmit={nextPage}
         title={'Введите штрихкод ячейки'}
         initValue={'9234 5678 234 32'}
+        isNewBox
         // onSubmitButton={submitCell}
       />
     </>

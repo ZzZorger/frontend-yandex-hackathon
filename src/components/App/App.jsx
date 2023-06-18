@@ -156,6 +156,7 @@ function App() {
             }
           />
           <Route path="/in-new-box" element={<PackingFollowingBoxPage nextPage="/end-task" />} />
+          <Route path="/end-task" element={<EndAssemblyPage />} />
 
           <Route
             path="/problems"

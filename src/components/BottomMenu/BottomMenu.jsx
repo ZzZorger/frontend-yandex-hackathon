@@ -23,7 +23,7 @@ export default function BottomMenu({ hideBackBtn, scaning, takeBreak, newBox, ha
           Ввести с клавиатуры
         </button>
       </div>
-      <Link style={!newBox ? { display: 'none' } : { display: 'block' }} className={style.NewBox} to={'/scan-package'}>
+      <Link style={!newBox ? { display: 'none' } : { display: 'block' }} className={style.NewBox} to={'/searchnewbox'}>
         <button className={style.KeyboardButton}>Нужна ещё одна коробка</button>
       </Link>
 
