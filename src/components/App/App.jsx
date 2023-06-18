@@ -1,11 +1,12 @@
-import { Routes, Route, Navigate } from 'react-router-dom';
+import { Routes, Route, Navigate, useNavigate } from 'react-router-dom';
 
 import Header from '../Header/Header.jsx';
 import Footer from '../Footer/Footer.jsx';
 import './App.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import OperationSelectorPage from '../../pages/OperationSelectorPage/OperationSelectorPage.jsx';
 import ScanTablePage from '../../pages/ScanTablePage/ScanTablePage.jsx';
+import { api } from '../../utilitis/Api.js';
 
 import ScanPrinterPage from '../../pages/ScanPrinterPage/ScanPrinterPage.jsx';
 import TaskSearchPage from '../../pages/TaskSearchPage/TaskSearchPage.jsx';
@@ -28,41 +29,36 @@ import barcodPrinter from '../../images/barcodePrinter.svg';
 import passportImg from '../../images/passport.svg';
 
 function App() {
-  // const operations = [
-  //   'Отборы',
-  //   'Упаковка',
-  //   'Сортировка по СД',
-  //   'Пересоздание задания',
-  //   'Консолидация',
-  //   'Отгрузка',
-  //   'Заказ пустых ТОТов',
-  //   'Работа с пустыми ТОТами',
-  //   'Новая упаковка',
-  // ];
-  const progress = {
-    maxValue: 200,
-    value: 125,
-    operationsNum: 16,
-  };
-  // const tables = [
-  //   'AD14PACK',
-  //   'AD1UPACK',
-  //   'APACK',
-  //   'APACK2',
-  //   'AUTOPACK1',
-  //   'GAVPACK1',
-  //   'IPACK',
-  //   'LTPACK',
-  //   'NEW_PACK',
-  //   'NON_PACK',
-  //   'NON_PACK_AL',
-  //   'PACK-1',
-  //   'PACK-2',
-  // ];
-  const cells = ['B-09', 'B-10', 'B-11'];
+  const navigate = useNavigate();
+  function handleLogin(barcode) {
+    console.log(barcode);
+    api
+      .getUserToken(barcode)
+      .then((res) => {
+        localStorage.setItem('token', res.token);
+        navigate('/operation');
+      })
+      .catch((err) => {
+        // добавить появление попапа ошибки
+        console.log(`Ошибка: ${err}`);
+      });
+  }
+  function handlePrinterScan(barcode) {
+    // console.log(localStorage.getItem('token'));
+    api
+      .postPrinter(barcode, localStorage.getItem('token'))
+      .then(() => {
+        navigate('/task');
+      })
+      .catch((err) => {
+        // добавить появление попапа ошибки
+        console.log(`Ошибка: ${err}`);
+      });
+  }
+
+  // const cells = ['B-09', 'B-10', 'B-11'];
   const initialProblems = ['Нет товара', 'Товар бракованный', 'Другая проблема'];
   const otherProblems = ['Сломан монитор', 'Сломан сканер', 'Сломан принтер', 'Позвать бригадира'];
-  const path = ['/operation', '/table', '/printer', '/scan-cell', '/scan-goods', '/scan-package', '/fill-box', '/end-task'];
   // const [openPopup, setOpenPopup] = useState(false);
   const [openBarcodePopup, setOpenBarcodePopup] = useState(false);
   const [openBrigadierPopup, setOpenBrigadierPopup] = useState(false);
@@ -94,6 +90,8 @@ function App() {
                 imgSrc={passportImg}
                 titleStyle={{ paddingBottom: '55px' }}
                 popupText="Введите штрихкод бэйджа"
+                initValue="ad481436-a8da-467a-96fc-167e3e999fb5"
+                handleLogin={handleLogin}
               />
             }
           />
@@ -112,6 +110,8 @@ function App() {
                 titleStyle={{ paddingBottom: '100px' }}
                 stagesBar={true}
                 popupText="Введите штрихкод принтера"
+                initValue="99e4e092-15e5-4391-803c-dcba23e5e9fa"
+                handleLogin={handlePrinterScan}
               />
             }
           />
@@ -126,7 +126,7 @@ function App() {
                 handleBarcodePopupOpen={handleBarcodePopupOpen}
                 handleBrigadierPopupOpen={handleBrigadierPopupOpen}
                 handlePopupClose={handlePopupClose}
-                cells={cells}
+                // cells={cells}
               />
             }
           />

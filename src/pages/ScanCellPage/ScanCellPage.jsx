@@ -3,7 +3,7 @@ import BottomMenu from '../../components/BottomMenu/BottomMenu';
 import BarcodePopup from '../../components/BarcodePopup/BarcodePopup';
 import MainButton from '../../components/MainButton/MainButton';
 import BrigadierPopup from '../../components/BrigadierPopup/BrigadierPopup';
-// import { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 export default function ScanCellPage({
   nextPage,
@@ -12,9 +12,12 @@ export default function ScanCellPage({
   handleBarcodePopupOpen,
   handleBrigadierPopupOpen,
   handlePopupClose,
-  cells,
 }) {
   const navigate = useNavigate();
+  const [navigateParam, setNavigateParam] = useState('');
+  useEffect(() => {
+    navigate(navigateParam);
+  }, [navigateParam]);
   // const [styles, setStyles] = useState({ color: '#212121' });
   const cellsArray = JSON.parse(localStorage.getItem('cells'));
   const cellsArrayNames = [];
@@ -29,21 +32,26 @@ export default function ScanCellPage({
       for (let i = 0; i < cellsArrayBarcodes.length; i++) {
         if (cellsArrayBarcodes[i] === barcode) {
           let scanningCell = document.getElementById(cellsArrayBarcodes[i]);
-          console.log(scanningCell);
+          // console.log(scanningCell);
           scanningCell.style.color = newStyles.color;
           scanningCell.style.background = newStyles.background;
+          // console.log(i, cellsArrayBarcodes.length);
           if (i === cellsArrayBarcodes.length - 1) {
-            console.log('last scan');
-            navigate('/scan-goods');
+            // console.log('last scan');
+            // navigate('/scan-goods');
+            setNavigateParam('/scan-goods');
           }
         }
         // if ((i = cellsArrayBarcodes.length - 1)) {
         //   navigate('/scan-goods');
         // }
       }
+    } else if (cellsArrayBarcodes.length === 1) {
+      setNavigateParam('/scan-goods');
     }
-    navigate('/scan-goods');
-    console.log('next');
+    // navigate('/scan-goods');
+    // setNavigateParam('/scan-goods');
+    // console.log('next');
   }
   // после сканирования всех ячеек, отправляется запрос на заказ
   return (

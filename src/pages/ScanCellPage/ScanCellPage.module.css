@@ -20,7 +20,7 @@
   flex-direction: row;
   padding-bottom: 350px;
   gap: 16px;
-  max-width: 782px;
+  /* max-width: 782px; */
   flex-wrap: wrap;
   white-space: nowrap;
 }
