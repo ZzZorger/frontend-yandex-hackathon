@@ -9,7 +9,7 @@ export default function ListProductInNewBox({ addproductInNewBox }) {
   for (let i = 0; i < order.skus.length; i++) {
     productsArray.push(order.skus[i]);
   }
-  console.log(productsArray);
+  // console.log(productsArray);
   return (
     <ul className={style.ListProducts}>
       {productsArray.map((product) => (
