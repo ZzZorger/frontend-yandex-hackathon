@@ -19,6 +19,7 @@ export default function BarcodePopup(props) {
     props.onClick();
     props.onClose();
   };
+
   return (
     <div className={`${style.Popup} ${props.isOpen && style.PopupOpened}`}>
       <div className={style.Content}>
@@ -47,7 +48,6 @@ export default function BarcodePopup(props) {
           {/* <Link to={props.onSubmit} className={style.SubmitButton} onClick={props.onClose}>
             Применить
           </Link> */}
-
           {/* {props.isPack ? (
             <button className={style.SubmitButton} type="button" onClick={props.handelClickBtn}></button>
           ) : ( */}
