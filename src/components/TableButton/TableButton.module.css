@@ -1,4 +1,4 @@
-.ChoiсeButton {
+.TableButton {
   margin: 0;
   padding: 28px 32px;
   border: 0;
@@ -12,6 +12,4 @@
   text-decoration: none;
   /* background: #f3f0e9; */
   color: #212121;
-  width: 1120px;
-  height: 100px;
 }

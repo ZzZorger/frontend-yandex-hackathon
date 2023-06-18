@@ -1,14 +1,22 @@
 import { useState } from 'react';
 import style from './BarcodePopup.module.css';
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 export default function BarcodePopup(props) {
+  const navigate = useNavigate();
   // const [barcode, setBarcode] = useState('9234 5678 234 32');
   const [barcode, setBarcode] = useState(props.initValue);
   function handleBarcodeChange(e) {
     setBarcode(e.target.value);
   }
   function submitButtonHandler() {
+    if (props.onSubmit) {
+      props.onSubmit(barcode);
+    }
+    // if (props.onSubmitButton) {
+    //   props.onSubmitButton(barcode);
+    // }
     // props.onSubmitButton && props.onSubmitButton(barcode);
     {
       props.isNewBox ? localStorage.getItem('newCartontype', barcode) : null;
@@ -16,6 +24,7 @@ export default function BarcodePopup(props) {
     console.log();
 
     if (props.onSubmitButton) {
+      // props.onSubmitButton(barcode);
       props.onSubmitButton(barcode, { background: '#2AAD2E', color: '#FFFFFF' });
     }
   }
