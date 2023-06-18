@@ -121,8 +121,8 @@ function App() {
           />
           <Route path="/fill-box" element={<BoxFillingPage nextPage="/end-task" />} />
 
-          <Route path="/end-task" element={<PackingFollowingBoxPage />} />
-          {/* <Route path="/end-task" element={<DefectItemOnConveyorPage />} /> */}
+          <Route path="/in-new-box" element={<PackingFollowingBoxPage nextPage="/end-task" />} />
+          <Route path="/end-task" element={<EndAssemblyPage />} />
 
           <Route
             path="/problems"

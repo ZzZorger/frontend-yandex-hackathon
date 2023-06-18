@@ -16,7 +16,8 @@ function ListItemProducts({ activeColor, textBlok, textBox, addproductInNewBox, 
 
     if (!isActive && addproductInNewBox) {
       const activeProduct = product;
-      addproductInNewBox(activeProduct);
+      // addproductInNewBox(activeProduct);
+      addproductInNewBox({ sku: activeProduct.sku, packaging_number: 1 });
     }
   };
 
