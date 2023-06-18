@@ -1,34 +1,26 @@
 import { useState } from 'react';
 import style from './ProgressBar.module.css';
 
-export default function ProgressBar() {
-  const [progress, setProgress] = useState(1);
-
-  const handleScanClick = () => {
-    if (progress < 3) {
-      setProgress(progress + 1);
-    }
-  };
-
+export default function ProgressBar({ count }) {
   const getColor = () => {
-    if (progress === 1) {
-      return 'rgba(42, 173, 46, 0.25)';
+    if (count === 1) {
+      return 'rgba(42, 173, 46, 0.33)';
     }
-    if (progress === 2) {
-      return 'rgba(42, 173, 46, 0.75)';
+    if (count === 2) {
+      return 'rgba(42, 173, 46, 0.66)';
     }
-    if (progress === 3) {
+    if (count === 3) {
       return 'rgba(42, 173, 46, 1)';
     }
   };
   const getWidth = () => {
-    if (progress === 1) {
+    if (count === 1) {
       return '30%';
     }
-    if (progress === 2) {
+    if (count === 2) {
       return '65%';
     }
-    if (progress === 3) {
+    if (count === 3) {
       return '100%';
     }
   };
@@ -37,7 +29,7 @@ export default function ProgressBar() {
       <div className={style.ProgressBar}>
         <div className={style.ProgressBarFill} style={{ width: getWidth(), backgroundColor: getColor() }}></div>
       </div>
-      <span className={style.ProgressBarLabel}>{progress} из 3 шт.</span>
+      <span className={style.ProgressBarLabel}>{count} из 3 шт.</span>
     </div>
   );
 }

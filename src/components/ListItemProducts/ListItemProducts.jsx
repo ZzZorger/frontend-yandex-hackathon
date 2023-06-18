@@ -4,17 +4,21 @@ import hints from '../../utilitis/hints';
 import HintЕlement from '../HintЕlement/HintЕlement';
 import ProgressBarInProduct from '../ProgressBarInProduct/ProgressBarInProduct';
 
-function ListItemProducts({ activeColor, textBlok, textBox, product }) {
+function ListItemProducts({ activeColor, textBlok, textBox, addproductInNewBox, product }) {
   const [isActive, setIsActive] = useState(false);
   // const [showText, setshowText] = useState(true);
 
-  const handleClick = () => {
-    setIsActive((current) => !current);
-    // setshowText((current) => !current);
-  };
-
   const active = isActive ? activeColor : '';
   const fullText = isActive ? textBlok : textBox;
+
+  const handleClick = () => {
+    setIsActive((current) => !current);
+
+    if (!isActive && addproductInNewBox === true) {
+      const activeProduct = product;
+      addproductInNewBox(activeProduct);
+    }
+  };
 
   return (
     <li
