@@ -6,6 +6,7 @@ import './App.css';
 import { useState } from 'react';
 import OperationSelectorPage from '../../pages/OperationSelectorPage/OperationSelectorPage.jsx';
 import ScanTablePage from '../../pages/ScanTablePage/ScanTablePage.jsx';
+
 import ScanPrinterPage from '../../pages/ScanPrinterPage/ScanPrinterPage.jsx';
 import TaskSearchPage from '../../pages/TaskSearchPage/TaskSearchPage.jsx';
 import ScanCellPage from '../../pages/ScanCellPage/ScanCellPage.jsx';
@@ -23,6 +24,8 @@ import newOrder from '../../utilitis/newOrder.json';
 import newCells from '../../utilitis/newCells.json';
 import tables from '../../utilitis/tables.json';
 import operations from '../../utilitis/operations.json';
+import barcodPrinter from '../../images/barcodePrinter.svg';
+import passportImg from '../../images/passport.svg';
 
 function App() {
   // const operations = [
@@ -78,7 +81,22 @@ function App() {
       <div className="page">
         <Header />
         <Routes>
-          <Route exact path="/" element={<Navigate to="/operation" />} />
+          <Route exact path="/" element={<Navigate to="/authorization" />} />
+          <Route
+            path="/authorization"
+            element={
+              <ScanPrinterPage
+                nextPage="/operation"
+                openBarcodePopup={openBarcodePopup}
+                handleBarcodePopupOpen={handleBarcodePopupOpen}
+                handlePopupClose={handlePopupClose}
+                titleText="Отсканируйте ваш бэйдж"
+                imgSrc={passportImg}
+                titleStyle={{ paddingBottom: '55px' }}
+                popupText="Введите штрихкод бэйджа"
+              />
+            }
+          />
           <Route path="/operation" element={<OperationSelectorPage operations={operations} nextPage="/table" />} />
           <Route path="/table" element={<ScanTablePage tables={tables} nextPage="/printer" />} />
           <Route
@@ -89,6 +107,11 @@ function App() {
                 openBarcodePopup={openBarcodePopup}
                 handleBarcodePopupOpen={handleBarcodePopupOpen}
                 handlePopupClose={handlePopupClose}
+                titleText="Отсканируйте принтер"
+                imgSrc={barcodPrinter}
+                titleStyle={{ paddingBottom: '100px' }}
+                stagesBar={true}
+                popupText="Введите штрихкод принтера"
               />
             }
           />

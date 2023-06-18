@@ -19,6 +19,7 @@ export default function BarcodePopup(props) {
     props.onClick();
     props.onClose();
   };
+
   return (
     <div className={`${style.Popup} ${props.isOpen && style.PopupOpened}`}>
       <div className={style.Content}>
