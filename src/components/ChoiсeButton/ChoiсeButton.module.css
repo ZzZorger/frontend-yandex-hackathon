@@ -10,6 +10,14 @@
   font-size: 40px;
   line-height: 44px;
   text-decoration: none;
-  background: #f3f0e9;
+  /* background: #f3f0e9; */
   color: #212121;
+}
+
+.Disabled {
+  background: red;
+}
+
+.Enabled {
+  background: blue;
 }

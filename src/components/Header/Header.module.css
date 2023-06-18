@@ -2,6 +2,7 @@
   height: 112px;
   display: flex;
   margin: 0;
+  border-bottom: 1px solid #e8e8e8;
 }
 .Nav {
   position: absolute;

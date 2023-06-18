@@ -1,0 +1,40 @@
+{
+  "operations": [
+    {
+      "name": "Отборы",
+      "available": false
+    },
+    {
+      "name": "Упаковка",
+      "available": true
+    },
+    {
+      "name": "Сортировка по СД",
+      "available": false
+    },
+    {
+      "name": "Пересоздание задания",
+      "available": false
+    },
+    {
+      "name": "Консолидация",
+      "available": false
+    },
+    {
+      "name": "Отгрузка",
+      "available": false
+    },
+    {
+      "name": "Заказ пустых ТОТов",
+      "available": false
+    },
+    {
+      "name": "Работа с пустыми ТОТами",
+      "available": false
+    },
+    {
+      "name": "Новая упаковка",
+      "available": false
+    }
+  ]
+}
