@@ -1,7 +1,7 @@
 import MainButton from '../../components/MainButton/MainButton';
 import style from './EndAssemblyPage.module.css';
 import done from '../../images/indexKachestva.jpg';
-import postCollectedOrder from '../../requests';
+import postCollectedOrder from '../../postCollectedOrder';
 
 export default function EndAssemblyPage() {
   function hemdelEndWork() {

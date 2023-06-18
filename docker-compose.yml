@@ -2,6 +2,6 @@ version: '3'
 
 services:
   backend:
-    image: dtankhaev/image_backend_ypacker:v1.0.0
+    image: dtankhaev/image_backend_ypacker:v1.00.00
     ports: 
       - "8000:8000"
