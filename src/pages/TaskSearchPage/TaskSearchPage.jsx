@@ -4,11 +4,29 @@ import StagesBar from '../../components/StagesBar/StagesBar';
 import newOrder from '../../utilitis/newOrder.json';
 import { useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
+import { api } from '../../utilitis/Api.js';
 
 export default function TaskSearchPage({ newCells }) {
   const navigate = useNavigate();
+  const token_ex = localStorage.getItem('token');
   useEffect(() => {
-    let timer = setTimeout(() => navigate('/scan-cell'), 5000);
+    // let timer = setTimeout(() => navigate('/scan-cell'), 5000);
+    let timer = setTimeout(
+      () =>
+        api
+          .getOrder(token_ex)
+          .then((res) => {
+            // запись
+            //localStorage.setItem('cells', res.cells);
+            //localStorage.setItem('orderkey', res.oldest_order);
+            //navigate('/scan-cell')
+            console.log(res);
+          })
+          .catch((err) => {
+            console.log(`Ошибка: ${err}`);
+          }),
+      2000,
+    );
     return () => {
       clearTimeout(timer);
     };

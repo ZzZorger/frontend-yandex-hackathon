@@ -14,7 +14,13 @@ export default function ScanPrinterPage({
   titleStyle,
   stagesBar,
   popupText,
+  initValue,
+  handleLogin,
 }) {
+  function loginSubmit(barcode) {
+    console.log(barcode);
+    handleLogin(barcode);
+  }
   return (
     <main className={style.Content}>
       <h2 style={titleStyle} className={style.Title}>
@@ -26,10 +32,11 @@ export default function ScanPrinterPage({
       <BarcodePopup
         isOpen={openBarcodePopup}
         onClose={handlePopupClose}
-        onSubmit={nextPage}
+        // onSubmit={nextPage}
+        onSubmit={loginSubmit}
         title={popupText}
         // title={'Введите штрихкод принтера'}
-        initValue={'9234 5678 234 32'}
+        initValue={initValue || '9234 5678 234 32'}
       />
     </main>
   );
