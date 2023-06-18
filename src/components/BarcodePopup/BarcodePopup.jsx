@@ -18,6 +18,11 @@ export default function BarcodePopup(props) {
     //   props.onSubmitButton(barcode);
     // }
     // props.onSubmitButton && props.onSubmitButton(barcode);
+    {
+      props.isNewBox ? localStorage.getItem('newCartontype', barcode) : null;
+    }
+    console.log();
+
     if (props.onSubmitButton) {
       // props.onSubmitButton(barcode);
       props.onSubmitButton(barcode, { background: '#2AAD2E', color: '#FFFFFF' });

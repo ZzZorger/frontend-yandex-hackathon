@@ -9,15 +9,9 @@ import { useState } from 'react';
 export default function ScanBoxPage({ nextPage, openBarcodePopup, handleBarcodePopupOpen, handlePopupClose }) {
   const [count, setCount] = useState(0);
   const carrentPack = JSON.parse(localStorage.getItem('carrentPack'));
-
-  // let carrentPack = null;
+  const order = JSON.parse(localStorage.getItem('order'));
+  console.log(order);
   let currentType = '';
-  // const mockPack = 'MYA';
-  // const mockPacket = '9234 5678 234 32';
-
-  // if (mockPack in packages) {
-  //   carrentPack = packages[mockPack];
-  // }
   if (carrentPack.type === 'box') {
     currentType = 'box';
   } else currentType = 'packet';
@@ -27,6 +21,16 @@ export default function ScanBoxPage({ nextPage, openBarcodePopup, handleBarcodeP
       setCount(count + 1);
     }
   };
+
+  function submitBox(barcode) {
+    if (order.recommended_cartontype === barcode) {
+      console.log('все ок');
+      // localStorage.setItem('recommended_cartontype', order.recommended_cartontype);
+    }
+    console.log(order.recommended_cartontype);
+    console.log(barcode);
+  }
+
   return (
     <>
       {/* Сканирование коробок */}
@@ -73,6 +77,7 @@ export default function ScanBoxPage({ nextPage, openBarcodePopup, handleBarcodeP
           onSubmit={nextPage}
           title={'Введите штрихкод пакета'}
           initValue={'9234 5678 234 32'}
+          onSubmitButton={submitBox}
         />
       )}
     </>

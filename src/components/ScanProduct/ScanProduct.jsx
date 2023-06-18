@@ -7,7 +7,7 @@ import newCells from '../../utilitis/newCells.json';
 import { packages } from '../../utilitis/package';
 
 export default function ScanProduct() {
-  localStorage.setItem('order', JSON.stringify(newOrder));
+  localStorage.setItem('order', JSON.stringify(newCells));
 
   const order = JSON.parse(localStorage.getItem('order'));
   const dataCells = JSON.parse(localStorage.getItem('cells'));

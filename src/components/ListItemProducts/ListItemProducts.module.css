@@ -4,7 +4,7 @@ li {
 .productItem {
   padding: 16px;
   width: 271px;
-  min-height: 462px;
+  max-height: 462px;
   background: #ffffff;
   border-radius: 24px;
 }

@@ -16,20 +16,23 @@ export default function ButtonsSet({ btnType, nextPage, set, btnStyle, setStyle,
       </div>
     );
   }
-  return (
-    <div style={setStyle} className={style.TableGrid}>
-      {set.map((text, i) => (
-        <ChoiсeButton
-          key={i}
-          id={i + 1}
-          styles={btnStyle}
-          text={text}
-          route={routes ? routes[i] : nextPage}
-          handlePopupOpen={handlePopupOpen}
-          available={statuses[i]}
-          postTable={postTable}
-        />
-      ))}
-    </div>
-  );
-}
+// export default function ButtonsSet({ nextPage, set, btnStyle, setStyle, routes, handlePopupOpen, statuses }) {
+//   console.log(statuses);
+// >>>>>>> app/alex
+//   return (
+//     <div style={setStyle} className={style.TableGrid}>
+//       {set.map((text, i) => (
+//         <ChoiсeButton
+//           key={i}
+//           id={i + 1}
+//           styles={btnStyle}
+//           text={text}
+//           route={routes ? routes[i] : nextPage}
+//           handlePopupOpen={handlePopupOpen}
+//           available={statuses[i]}
+//           postTable={postTable}
+//         />
+//       ))}
+//     </div>
+//   );
+// }
