@@ -29,6 +29,7 @@ export default function PackingFollowingBoxPage({ nextPage, prevPage }) {
   const sendDtailsORder = () => {
     preparingDataForTheRequest();
     postBox(productInNewBox, productInMainBox);
+    console.log('отправляем запрос');
   };
 
   return (
@@ -36,13 +37,7 @@ export default function PackingFollowingBoxPage({ nextPage, prevPage }) {
       <div className={style.PackingFollowingBoxPage}>
         <MainButton text={'Есть проблема'} />
         <PackingFollowingBox addproductInNewBox={addproductInNewBox} />
-        <MainButton
-          onClick={sendDtailsORder}
-          styles={{ background: 'var(--active-bg-elem)' }}
-          text={`Заказ собран`}
-          nextPage={nextPage}
-          isDisabled={isDisabled}
-        />
+        <MainButton onClick={sendDtailsORder} styles={{ background: 'var(--active-bg-elem)' }} text={`Заказ собран`} linkPath={nextPage} />
       </div>
       <BottomMenu newBox={true} prevPage={prevPage} />
     </>
