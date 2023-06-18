@@ -26,6 +26,7 @@ import tables from '../../utilitis/tables.json';
 import operations from '../../utilitis/operations.json';
 import barcodPrinter from '../../images/barcodePrinter.svg';
 import passportImg from '../../images/passport.svg';
+import SearchNewBoxPage from '../../pages/SearchNewBoxPage/SearchNewBoxPage.jsx';
 
 function App() {
   // const operations = [
@@ -143,9 +144,18 @@ function App() {
             }
           />
           <Route path="/fill-box" element={<BoxFillingPage nextPage="/end-task" />} />
-
+          <Route
+            path="/searchnewbox"
+            element={
+              <SearchNewBoxPage
+                nextPage="/in-new-box"
+                openBarcodePopup={openBarcodePopup}
+                handleBarcodePopupOpen={handleBarcodePopupOpen}
+                handlePopupClose={handlePopupClose}
+              />
+            }
+          />
           <Route path="/in-new-box" element={<PackingFollowingBoxPage nextPage="/end-task" />} />
-          <Route path="/end-task" element={<EndAssemblyPage />} />
 
           <Route
             path="/problems"
