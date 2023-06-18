@@ -8,15 +8,16 @@ import { useState } from 'react';
 
 export default function ScanBoxPage({ nextPage, openBarcodePopup, handleBarcodePopupOpen, handlePopupClose }) {
   const [count, setCount] = useState(0);
+  const carrentPack = JSON.parse(localStorage.getItem('carrentPack'));
 
-  let carrentPack = null;
+  // let carrentPack = null;
   let currentType = '';
   const mockPack = 'MYA';
   // const mockPacket = '9234 5678 234 32';
 
-  if (mockPack in packages) {
-    carrentPack = packages[mockPack];
-  }
+  // if (mockPack in packages) {
+  //   carrentPack = packages[mockPack];
+  // }
   if (carrentPack.type === 'box') {
     currentType = 'box';
   } else currentType = 'packet';
@@ -58,8 +59,10 @@ export default function ScanBoxPage({ nextPage, openBarcodePopup, handleBarcodeP
         isOpen={openBarcodePopup}
         onClose={handlePopupClose}
         onClick={handleClick}
+        onSubmit={nextPage}
         title={'Введите штрихкод пакета'}
         initValue={'9234 5678 234 32'}
+        // isPack={true}
       />
     </>
   );

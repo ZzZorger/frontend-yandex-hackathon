@@ -17,13 +17,14 @@ export default function ScanProduct() {
   const mockPack = 'YMC';
 
   if (mockPack in packages) {
-    console.log(packages[mockPack].name);
+    // console.log(packages[mockPack].name);
+    localStorage.setItem('carrentPack', JSON.stringify(packages[mockPack]));
   }
 
   for (let i = 0; i < dataCells.cells.length; i++) {
     cellsArray.push(dataCells.cells[0].name);
   }
-  console.log(carrentPack);
+
   return (
     <div className={style.ScanProduct}>
       <div className={style.ScanProductHeader}>

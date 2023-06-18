@@ -14,7 +14,7 @@ function ListItemProducts({ activeColor, textBlok, textBox, addproductInNewBox, 
   const handleClick = () => {
     setIsActive((current) => !current);
 
-    if (!isActive) {
+    if (!isActive && addproductInNewBox === true) {
       const activeProduct = product;
       addproductInNewBox(activeProduct);
     }

@@ -14,6 +14,11 @@ export default function BarcodePopup(props) {
       props.onSubmitButton(barcode, { background: '#2AAD2E', color: '#FFFFFF' });
     }
   }
+
+  const handelClickBtn = () => {
+    props.onClick();
+    props.onClose();
+  };
   return (
     <div className={`${style.Popup} ${props.isOpen && style.PopupOpened}`}>
       <div className={style.Content}>
@@ -42,10 +47,14 @@ export default function BarcodePopup(props) {
           {/* <Link to={props.onSubmit} className={style.SubmitButton} onClick={props.onClose}>
             Применить
           </Link> */}
-          <button className={style.SubmitButton} type="submit" onClick={props.onSubmit}>
+
+          {/* {props.isPack ? (
+            <button className={style.SubmitButton} type="button" onClick={props.handelClickBtn}></button>
+          ) : ( */}
+          {/* <button className={style.SubmitButton} type="submit" onClick={props.onSubmit}>
             Применить
-          </button>
-          {isPack ? <button className={style.SubmitButton} type="button" onClick={props.handelClickBtn}></button> : null}
+          </button> */}
+          {/* )} */}
         </form>
       </div>
     </div>
