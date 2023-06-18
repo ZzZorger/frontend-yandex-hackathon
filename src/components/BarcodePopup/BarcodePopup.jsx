@@ -8,6 +8,12 @@ export default function BarcodePopup(props) {
   function handleBarcodeChange(e) {
     setBarcode(e.target.value);
   }
+
+  const handelClickBtn = () => {
+    props.onClick();
+    props.onClose();
+  };
+
   return (
     <div className={`${style.Popup} ${props.isOpen && style.PopupOpened}`}>
       <div className={style.Content}>
@@ -28,12 +34,12 @@ export default function BarcodePopup(props) {
               <span className={style.InputSpan} name="Error" />
             </div>
           </fieldset>
-          <Link to={props.onSubmit} className={style.SubmitButton} onClick={props.onClose}>
+          {/* <Link to={props.onSubmit} className={style.SubmitButton} onClick={props.onClose}>
             Применить
-          </Link>
-          {/* <button className={style.SubmitButton} type="submit" onClick={props.onSubmit}>
+          </Link> */}
+          <button className={style.SubmitButton} type="button" onClick={handelClickBtn}>
             Применить
-          </button> */}
+          </button>
         </form>
       </div>
     </div>

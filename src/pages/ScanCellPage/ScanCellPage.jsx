@@ -5,7 +5,8 @@ import MainButton from '../../components/MainButton/MainButton';
 import BrigadierPopup from '../../components/BrigadierPopup/BrigadierPopup';
 
 export default function ScanCellPage({ nextPage, openBarcodePopup, handleBarcodePopupOpen, handlePopupClose, cells }) {
-  const order = JSON.parse(localStorage.getItem('order'));
+  // const order = JSON.parse(localStorage.getItem('order'));
+  const order = JSON.parse(localStorage.getItem('cells'));
   const cellsArray = [];
   for (let i = 0; i < order.cells.length; i++) {
     cellsArray.push(order.cells[i].name);

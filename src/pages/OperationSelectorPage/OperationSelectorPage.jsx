@@ -5,14 +5,7 @@ export default function OperationSelectorPage({ nextPage, operations, progress }
   return (
     <main className={style.Content}>
       <h2 className={style.Title}>Показатель за месяц</h2>
-      <div className={style.ProgressBar}>
-        {/* <p className={style.ProgressValue}>{progress.value}%</p>
-        <p className={style.ProgressPerHour}>{progress.operationsNum} операций в час</p> */}
-      </div>
-
-      {/* <progress className={style.Progress} max={progress.maxValue} value={progress.value}>
-        {progress.operationsNum}
-      </progress> */}
+      <div className={style.ProgressBar}></div>
       <ButtonsSet nextPage={nextPage} set={operations} />
     </main>
   );
