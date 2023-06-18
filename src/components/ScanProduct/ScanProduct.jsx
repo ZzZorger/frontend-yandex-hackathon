@@ -14,7 +14,7 @@ export default function ScanProduct() {
   const cellsArray = [];
 
   const carrentPack = null;
-  const mockPack = 'MYA';
+  const mockPack = 'YMA';
 
   if (mockPack in packages) {
     // console.log(packages[mockPack].name);
