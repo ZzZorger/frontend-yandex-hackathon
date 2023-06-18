@@ -3,6 +3,7 @@ import BottomMenu from '../../components/BottomMenu/BottomMenu';
 import BarcodePopup from '../../components/BarcodePopup/BarcodePopup';
 
 export default function SearchNewBoxPage({ nextPage, openBarcodePopup, handleBarcodePopupOpen, handlePopupClose }) {
+  // localStorage.setItem('new_cartontype', barcode);
   return (
     <>
       <div className={style.ScanBoxContent}>

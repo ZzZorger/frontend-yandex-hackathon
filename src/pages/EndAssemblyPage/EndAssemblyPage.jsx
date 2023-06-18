@@ -1,8 +1,13 @@
 import MainButton from '../../components/MainButton/MainButton';
 import style from './EndAssemblyPage.module.css';
 import done from '../../images/indexKachestva.jpg';
+import postCollectedOrder from '../../requests';
 
 export default function EndAssemblyPage() {
+  function hemdelEndWork() {
+    postCollectedOrder();
+  }
+
   return (
     <div className={style.EndAssemblyContent}>
       <MainButton styles={{ visibility: 'hidden ' }} />
@@ -12,7 +17,7 @@ export default function EndAssemblyPage() {
         <h2 className={style.EndAssemblyHeader}>Поставьте коробку на конвейер</h2>
         <span className={style.EndAssemblyText}>Отличная работа!</span>
       </div>
-      <MainButton styles={{ background: 'var(--active-bg-elem)' }} text={'Готово'} linkPath="/task" />
+      <MainButton onClick={hemdelEndWork} styles={{ background: 'var(--active-bg-elem)' }} text={'Готово'} linkPath="/task" />
     </div>
   );
 }
