@@ -42,9 +42,10 @@ export default function BarcodePopup(props) {
           {/* <Link to={props.onSubmit} className={style.SubmitButton} onClick={props.onClose}>
             Применить
           </Link> */}
-          {/* <button className={style.SubmitButton} type="submit" onClick={props.onSubmit}>
+          <button className={style.SubmitButton} type="submit" onClick={props.onSubmit}>
             Применить
-          </button> */}
+          </button>
+          {isPack ? <button className={style.SubmitButton} type="button" onClick={props.handelClickBtn}></button> : null}
         </form>
       </div>
     </div>

@@ -4,7 +4,6 @@ import ScanProduct from '../../components/ScanProduct/ScanProduct';
 import BottomMenu from '../../components/BottomMenu/BottomMenu';
 
 export default function ScanProductPage({ nextPage }) {
-  // Страница скана товаров
   return (
     <>
       <div className={style.ScanProductPage}>

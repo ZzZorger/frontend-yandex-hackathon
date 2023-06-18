@@ -12,8 +12,7 @@
 }
 .ProgressBarFill {
   height: 100%;
-  border-top-left-radius: 100px;
-  border-bottom-left-radius: 100px;
+  border-radius: 100px;
   background: gba(42, 173, 46, 0.25);
   transition: width 0.5s ease-out;
 }

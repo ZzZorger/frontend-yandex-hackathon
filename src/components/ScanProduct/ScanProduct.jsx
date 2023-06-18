@@ -1,35 +1,53 @@
 import style from './ScanProduct.module.css';
+import { Fragment } from 'react';
 import TextItem from '../TextItem/TextItem';
 import ListScanProducts from '../ListScanProducts/ListScanProducts';
 import newOrder from '../../utilitis/newOrder.json';
-import packageBox from '../../utilitis/package';
+import newCells from '../../utilitis/newCells.json';
+import { packages } from '../../utilitis/package';
 
 export default function ScanProduct() {
+  localStorage.setItem('cells', JSON.stringify(newCells));
+
+  const order = JSON.parse(localStorage.getItem('order'));
+  const dataCells = JSON.parse(localStorage.getItem('cells'));
+  const cellsArray = [];
+
+  const carrentPack = null;
+  const mockPack = 'YMC';
+
+  if (mockPack in packages) {
+    console.log(packages[mockPack].name);
+  }
+
+  for (let i = 0; i < dataCells.cells.length; i++) {
+    cellsArray.push(dataCells.cells[0].name);
+  }
+  console.log(carrentPack);
   return (
     <div className={style.ScanProduct}>
       <div className={style.ScanProductHeader}>
-        {/* если ячеек больше чем одна то текст: "Упакуйте товары из ячеек" */}
-        <h2 className={style.ScanProductText}>{'Упакуйте товары из ячейки'}</h2>
-        {/* Обработать этот кейс с данными */}
-        {/* {DataMenu.map((ItemMenu, id) => (
-          <Fragment key={id}> */}
-        {/* протестить когда тут несколько ячеек */}
-        <div className={style.ScanProductСells}>
-          <h2 className={style.ScanProductСell}>{'B - 09'}</h2>
-          <h2 className={style.ScanProductСell}>{'B - 09'}</h2>
-          <h2 className={style.ScanProductСell}>{'B - 09'}</h2>
-        </div>
+        {cellsArray.length > 1 ? (
+          <h2 className={style.ScanProductText}>{'Упакуйте товары из ячеек'}</h2>
+        ) : (
+          <h2 className={style.ScanProductText}>{'Упакуйте товары из ячейки'}</h2>
+        )}
 
-        {/* {id < DataMenu.length - 1 && <span className={styles.ProductСellRound} />}
-          </Fragment>
-        ))} */}
+        <div className={style.ScanProductСells}>
+          {cellsArray.map((cell, id) => (
+            <h2 key={id} className={style.ScanProductСell}>
+              {cell}
+              {id < cellsArray.length - 1 && <span className={style.ProductСellRound} />}
+            </h2>
+          ))}
+        </div>
       </div>
       <div className={style.ScanProductInformation}>
         {/* считать кол-во товаров, придет поле с бека */}
-        <TextItem styles={{}}>{`${newOrder[0].sku.length} товаров`}</TextItem>
+        <TextItem styles={{}}>{`${order.total_skus_quantity} товаров`}</TextItem>
         <TextItem styles={{}}>{`Почта России`}</TextItem>
         {/* Вывод массива из коробок */}
-        <TextItem styles={{ backgroundColor: packageBox[0].backgroundColor }}>{` Коробка ${packageBox[0].name}`}</TextItem>
+        <TextItem styles={{ backgroundColor: packages[mockPack].backgroundColor }}>{` Коробка ${packages[mockPack].name}`}</TextItem>
       </div>
       <div>
         <ListScanProducts />

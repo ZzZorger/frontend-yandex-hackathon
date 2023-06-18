@@ -6,7 +6,6 @@
   padding-left: 0;
   gap: 9px;
   height: 550px;
-  overflow-y: scroll;
   justify-content: center;
   align-items: center;
 }
