@@ -14,9 +14,10 @@ function ListItemProducts({ activeColor, textBlok, textBox, addproductInNewBox, 
   const handleClick = () => {
     setIsActive((current) => !current);
 
-    if (!isActive && addproductInNewBox === true) {
+    if (!isActive && addproductInNewBox) {
       const activeProduct = product;
-      addproductInNewBox(activeProduct);
+      // addproductInNewBox(activeProduct);
+      addproductInNewBox({ sku: activeProduct.sku, packaging_number: 1 });
     }
   };
 

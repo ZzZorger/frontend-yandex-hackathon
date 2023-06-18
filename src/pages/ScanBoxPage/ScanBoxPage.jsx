@@ -12,7 +12,7 @@ export default function ScanBoxPage({ nextPage, openBarcodePopup, handleBarcodeP
 
   // let carrentPack = null;
   let currentType = '';
-  const mockPack = 'MYA';
+  // const mockPack = 'MYA';
   // const mockPacket = '9234 5678 234 32';
 
   // if (mockPack in packages) {
@@ -55,15 +55,26 @@ export default function ScanBoxPage({ nextPage, openBarcodePopup, handleBarcodeP
 
       {/*scaning отрисовывается по условию  */}
       <BottomMenu scaning={true} handlePopupOpen={handleBarcodePopupOpen} />
-      <BarcodePopup
-        isOpen={openBarcodePopup}
-        onClose={handlePopupClose}
-        onClick={handleClick}
-        onSubmit={nextPage}
-        title={'Введите штрихкод пакета'}
-        initValue={'9234 5678 234 32'}
-        // isPack={true}
-      />
+      {currentType === 'packet' ? (
+        <BarcodePopup
+          isOpen={openBarcodePopup}
+          onClose={handlePopupClose}
+          onClick={handleClick}
+          onSubmit={nextPage}
+          title={'Введите штрихкод пакета'}
+          initValue={'9234 5678 234 32'}
+          isPack={true}
+        />
+      ) : (
+        <BarcodePopup
+          isOpen={openBarcodePopup}
+          onClose={handlePopupClose}
+          onClick={handleClick}
+          onSubmit={nextPage}
+          title={'Введите штрихкод пакета'}
+          initValue={'9234 5678 234 32'}
+        />
+      )}
     </>
   );
 }
