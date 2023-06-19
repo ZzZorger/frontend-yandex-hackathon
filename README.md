@@ -16,8 +16,12 @@
 2. Заустите Backend проекта `docker-compose -f docker-compose.yml up`
 3. Запустите проект с `npm run start`
 
-## стэк технологий:
+## Cтэк технологий:
 1. HTML
 2. CSS
 3. JS
 4. React
+
+5. Python
+
+6. Figma
