@@ -1,0 +1,41 @@
+.Content {
+  position: absolute;
+  bottom: 0;
+  background: #000000;
+  display: flex;
+  height: 28px;
+  align-items: center;
+  width: 100%;
+}
+.Adress {
+  position: absolute;
+  padding-left: 24px;
+  margin: 0;
+  font-family: 'YS Text';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #7e7e7e;
+}
+.Version {
+  margin: 0 auto;
+  font-family: 'YS Text';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #7e7e7e;
+}
+.Copyright {
+  position: absolute;
+  right: 0;
+  padding-right: 24px;
+  margin: 0;
+  font-family: 'YS Text';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #7e7e7e;
+}

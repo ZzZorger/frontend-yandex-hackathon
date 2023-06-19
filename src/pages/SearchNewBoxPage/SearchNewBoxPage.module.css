@@ -1,0 +1,13 @@
+.ScanBoxContent {
+  height: 828px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.ScanBoxHeader {
+  font-family: 'YS Text';
+  font-weight: 700;
+  font-size: 56px;
+  line-height: 68px;
+  padding-right: 12px;
+}

@@ -1,0 +1,44 @@
+.ScanProduct {
+  margin: 0 20px 18px;
+}
+.ScanProductHeader {
+  color: var(--main-text-color);
+  display: flex;
+  flex-direction: column;
+  gap: 3.9996px;
+  text-align: center;
+}
+h2 {
+  margin: 0;
+}
+.ScanProductText {
+  font-family: 'YS Text', sans-serif;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 50px;
+}
+.ScanProductСells {
+  display: flex;
+  justify-content: center;
+}
+.ScanProductСell {
+  font-family: 'YS Display', sans-serif;
+  font-weight: 700;
+  font-size: 72px;
+  line-height: 84px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+}
+.ProductСellRound {
+  padding: 0 16px 0 16px;
+  display: block;
+  width: 20px;
+  height: 20px;
+  background: url('./image/Ellipse\ 309.svg') no-repeat center center;
+}
+.ScanProductInformation {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
