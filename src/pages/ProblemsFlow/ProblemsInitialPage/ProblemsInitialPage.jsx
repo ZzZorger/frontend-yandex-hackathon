@@ -21,7 +21,7 @@ export default function ProblemsInitialPage({
         setStyle={{ flexDirection: 'column', gap: '24px' }}
         routes={routes}
         handlePopupOpen={handleBrigadierPopupOpen}
-        statuses
+        statuses={[true, true, true, true]}
       />
       <BottomMenu prevPage={prevPage} onProblemsPage={true} handlePopupClose={handlePopupClose} />
       <BrigadierPopup isOpen={openBrigadierPopup} onClose={handlePopupClose} />

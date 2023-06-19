@@ -16,11 +16,9 @@ export default function TaskSearchPage({ newCells }) {
         api
           .getOrder(token_ex)
           .then((res) => {
-            // запись
-            //localStorage.setItem('cells', res.cells);
-            //localStorage.setItem('orderkey', res.oldest_order);
-            //navigate('/scan-cell')
-            console.log(res);
+            localStorage.setItem('cells', JSON.stringify(res.cells));
+            localStorage.setItem('orderkey', JSON.stringify(res.oldest_order));
+            navigate('/scan-cell');
           })
           .catch((err) => {
             console.log(`Ошибка: ${err}`);

@@ -56,6 +56,18 @@ function App() {
         console.log(`Ошибка: ${err}`);
       });
   }
+  function handleGetOrderDetails(orderkey) {
+    api
+      .getOrderDetails(localStorage.getItem('token'), orderkey)
+      .then((res) => {
+        localStorage.setItem('order', JSON.stringify(res));
+        console.log(res);
+      })
+      .catch((err) => {
+        // добавить появление попапа ошибки
+        console.log(`Ошибка: ${err}`);
+      });
+  }
 
   // const cells = ['B-09', 'B-10', 'B-11'];
   const initialProblems = ['Нет товара', 'Товар бракованный', 'Другая проблема'];
@@ -127,6 +139,7 @@ function App() {
                 handleBarcodePopupOpen={handleBarcodePopupOpen}
                 handleBrigadierPopupOpen={handleBrigadierPopupOpen}
                 handlePopupClose={handlePopupClose}
+                handleGetOrderDetails={handleGetOrderDetails}
                 // cells={cells}
               />
             }

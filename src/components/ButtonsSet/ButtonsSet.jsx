@@ -16,7 +16,6 @@ export default function ButtonsSet({ btnType, nextPage, set, btnStyle, setStyle,
       </div>
     );
   }
-
   return (
     <div style={setStyle} className={style.TableGrid}>
       {set.map((text, i) => (

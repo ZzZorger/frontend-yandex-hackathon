@@ -12,46 +12,41 @@ export default function ScanCellPage({
   handleBarcodePopupOpen,
   handleBrigadierPopupOpen,
   handlePopupClose,
+  handleGetOrderDetails,
 }) {
+  // console.log(localStorage.getItem('orderkey'));
   const navigate = useNavigate();
   const [navigateParam, setNavigateParam] = useState('');
   useEffect(() => {
     navigate(navigateParam);
   }, [navigateParam]);
-  // const [styles, setStyles] = useState({ color: '#212121' });
+
   const cellsArray = JSON.parse(localStorage.getItem('cells'));
+
   const cellsArrayNames = [];
   const cellsArrayBarcodes = [];
 
-  for (let i = 0; i < cellsArray.cells.length; i++) {
-    cellsArrayNames.push(cellsArray.cells[i].name);
-    cellsArrayBarcodes.push(cellsArray.cells[i].barcode);
+  for (let i = 0; i < cellsArray.length; i++) {
+    cellsArrayNames.push(cellsArray[i].name);
+    cellsArrayBarcodes.push(cellsArray[i].barcode);
   }
   function submitCell(barcode, newStyles) {
     if (cellsArrayBarcodes.length > 1) {
       for (let i = 0; i < cellsArrayBarcodes.length; i++) {
         if (cellsArrayBarcodes[i] === barcode) {
           let scanningCell = document.getElementById(cellsArrayBarcodes[i]);
-          // console.log(scanningCell);
           scanningCell.style.color = newStyles.color;
           scanningCell.style.background = newStyles.background;
-          // console.log(i, cellsArrayBarcodes.length);
           if (i === cellsArrayBarcodes.length - 1) {
-            // console.log('last scan');
-            // navigate('/scan-goods');
+            handleGetOrderDetails(localStorage.getItem('orderkey'));
             setNavigateParam('/scan-goods');
           }
         }
-        // if ((i = cellsArrayBarcodes.length - 1)) {
-        //   navigate('/scan-goods');
-        // }
       }
     } else if (cellsArrayBarcodes.length === 1) {
+      handleGetOrderDetails(localStorage.getItem('orderkey'));
       setNavigateParam('/scan-goods');
     }
-    // navigate('/scan-goods');
-    // setNavigateParam('/scan-goods');
-    // console.log('next');
   }
   // после сканирования всех ячеек, отправляется запрос на заказ
   return (
@@ -75,7 +70,7 @@ export default function ScanCellPage({
         onClose={handlePopupClose}
         // onSubmit={nextPage}
         title={'Введите штрихкод ячейки'}
-        initValue={'9234 5678 234 32'}
+        initValue={'e66502c0-e4cf-42bd-b56b-79ed05833667'}
         onSubmitButton={submitCell}
       />
       <BrigadierPopup isOpen={openBrigadierPopup} />

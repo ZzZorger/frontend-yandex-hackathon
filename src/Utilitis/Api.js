@@ -62,6 +62,15 @@ class Api {
       }
     }).then((res) => this._getResponseData(res));
   }
+  getOrderDetails(token, orderKey) {
+    return fetch(`${this._server}/api/order/details/?orderkey=${orderKey}`.replace(/"/g, ''), {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json;charset=utf-8',
+        'Authorization': `Bearer ${token}`
+      }
+    }).then((res) => this._getResponseData(res));
+  }
 }
 // "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjg3MjAzNTIxLCJpYXQiOjE2ODcxMTcxMjEsImp0aSI6IjA2ODczNDFmYjM2OTQ0MGE4OTU0MjJhNjdmZDk5OTk1IiwidXNlcl9pZCI6ImFkNDgxNDM2LWE4ZGEtNDY3YS05NmZjLTE2N2UzZTk5OWZiNSJ9.O-oQtRYBMlrRWAhwZ2kA-LHPW0JMlKTE2OmVmDIxgA8"
 
