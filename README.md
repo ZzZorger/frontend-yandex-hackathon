@@ -22,7 +22,4 @@
 2. CSS
 3. JS
 4. React
-
-5. Python
-
-6. Figma
+5. Figma
