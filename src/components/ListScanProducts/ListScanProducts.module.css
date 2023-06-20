@@ -2,5 +2,8 @@
   list-style-type: none;
   display: flex;
   flex-wrap: wrap;
-  gap: 45px;
+  margin-top: 40px;
+  padding-left: 0;
+  gap: 9px;
+  height: 550px;
 }

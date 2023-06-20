@@ -1,0 +1,21 @@
+{
+  "orderkey": "7bffc343-37ec-4f44-b19b-4c898eeff2ff",
+  "recommended_cartontype": null,
+  "total_skus_quantity": 56,
+  "skus": [
+    {
+      "sku": "72332c7f-a38a-4595-840b-cc237ada0f37",
+      "name": "Гречка",
+      "image": "https://rskrf.ru/upload/iblock/030/03098d65d8e649642e5fda018138ed93.jpg",
+      "amount": 6,
+      "help_text": ["bubble_wrap", "stretch"]
+    },
+    {
+      "sku": "9ad35983-4d98-4779-8025-65803181ebf1",
+      "name": "Слайм",
+      "image": "https://molti-shop.ru/upload/iblock/45a/45ab3d02bda2334cc8f1e692051c5dce.jpg",
+      "amount": 50,
+      "help_text": ["bubble_wrap", "stretch"]
+    }
+  ]
+}

@@ -1,57 +1,58 @@
+li {
+  list-style-type: none;
+}
 .productItem {
-  width: 12.2222rem;
-  height: 21.1667rem;
+  padding: 16px;
+  width: 271px;
+  max-height: 462px;
+  background: #ffffff;
+  border-radius: 24px;
 }
-.copyBarcode {
-  color: inherit;
-  border: none;
-  padding: 0;
-  font: inherit;
-  cursor: pointer;
-  outline: inherit;
-  background: url('./images/Content\ copy.svg') no-repeat left center;
-  /* width: 1.3333rem; */
-  height: 1.3333rem;
-}
-.barcodeText {
-  padding-left: calc(1.3333rem + 0.7222rem);
-  text-align: center;
-  color: #0044ee;
+.productImage {
+  height: 271px;
+  width: 273px;
+  border-radius: 24px;
+  position: relative;
+  background: #f9f7f3;
 }
 
-.productImage {
-  display: block;
-  background: #f9f7f3;
-  border-radius: 16px;
-  width: 11.6667rem;
-  height: 11.6667rem;
-  position: relative;
-}
 .productCounter {
+  font-family: 'YS Text', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
   display: inline;
   background-color: #2aad2e;
   border-radius: 100px;
-  /* width: 7.4444rem;
-  height: 2.6667rem; */
   color: #ffffff;
   text-align: center;
   vertical-align: middle;
-  padding: 0.6944rem 2.6944rem;
+  padding: 15px 8px;
   position: absolute;
-  top: 7.5rem;
-  left: 1.7778rem;
+  top: 221px;
+  left: 191px;
   z-index: 2;
+  width: 65px;
 }
+.productDescription {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
 .productText {
-  font-family: 'YandexSans', sans-serif;
+  font-family: 'YandexText', sans-serif;
   font-weight: 400;
-  font-size: 1rem;
-  line-height: 1.2222rem;
+  font-size: 18px;
+  line-height: 22px;
   color: var(--main-text-color);
-  text-overflow: ellipsis;
+  /* text-overflow: ellipsis; */
   overflow: hidden;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   margin-top: 13px;
+  margin-right: 0;
+  width: 271px;
+  min-height: 19px;
 }

@@ -1,0 +1,29 @@
+.EndAssemblyContent {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 24px;
+  margin-bottom: 195px;
+  padding-top: 63px;
+}
+.EndAssembly {
+  font-family: 'YandexDisplay', sans-serif;
+  margin: 95px 74px 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+h2 {
+  margin: 0;
+}
+.EndAssemblyHeader {
+  font-weight: 700;
+  font-size: 72px;
+  line-height: 84px;
+  margin-top: 95px;
+}
+.EndAssemblyText {
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 32px;
+}

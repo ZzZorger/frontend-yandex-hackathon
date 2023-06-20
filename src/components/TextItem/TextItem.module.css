@@ -1,10 +1,14 @@
 .TextItem {
   display: inline;
-  font: 2.5rem 'YandexSans', sans-serif;
+  font-family: 'YS Text', sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 23px;
   text-align: center;
-  padding: 2rem 0.625rem;
+  padding: 12px 24px;
   color: var(--main-text-color);
   background: var(--main-bg-elem);
-  border-radius: 1.5rem;
+  border-radius: 100px;
   align-items: center;
+  margin-top: 15px;
 }

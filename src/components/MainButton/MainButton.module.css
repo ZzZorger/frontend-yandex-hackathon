@@ -1,14 +1,24 @@
 .MainButton {
-  font: 3rem 'YandexSans', sans-serif;
+  font-family: 'YS Display', sans-serif;
   font-weight: 500;
+  font-size: 48px;
+  line-height: 56px;
   border: none;
   border-radius: 1.5rem;
   color: var(--main-text-color);
   background: var(--main-bg-elem);
-  padding: auto 1rem;
   width: 18.5rem;
   height: 41.375rem;
   cursor: pointer;
-  line-height: 3.5rem;
   text-align: center;
+  margin-top: 20px;
+  text-decoration: none;
+  padding-top: 10px;
+}
+.MainButton:disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+.MainButton:hover {
+  background: #dedede;
 }

@@ -1,0 +1,14 @@
+.HintЕlement {
+  display: flex;
+  justify-content: space-around;
+  width: 271px;
+  height: 52px;
+  font-family: 'YS Text';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 23px;
+  border-radius: 12px;
+  align-items: center;
+  letter-spacing: -0.01em;
+}
