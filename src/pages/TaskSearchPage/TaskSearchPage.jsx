@@ -30,7 +30,7 @@ export default function TaskSearchPage({ newCells }) {
     };
   }, []);
   // setTimeout(() => navigate('/scan-cell'), 5000);
-  localStorage.setItem('cells', JSON.stringify(newCells));
+  // localStorage.setItem('cells', JSON.stringify(newCells));
   // на этой странице посылается запрос на бэк, на поиск задания
   // в ответ приходит json формат с ячейками
   // для того чтобы не перегружать запросами сервер, стоит задержка в 5 секунд
