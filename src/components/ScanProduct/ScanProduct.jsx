@@ -2,43 +2,43 @@ import style from './ScanProduct.module.css';
 import { Fragment } from 'react';
 import TextItem from '../TextItem/TextItem';
 import ListScanProducts from '../ListScanProducts/ListScanProducts';
-import newOrder from '../../utilitis/newOrder.json';
-import newCells from '../../utilitis/newCells.json';
+// import newOrder from '../../utilitis/newOrder.json';
+// import newCells from '../../utilitis/newCells.json';
 import { packages } from '../../utilitis/package';
 
 export default function ScanProduct() {
-  localStorage.setItem('order', JSON.stringify(newCells));
-
   const order = JSON.parse(localStorage.getItem('order'));
   const dataCells = JSON.parse(localStorage.getItem('cells'));
-  const cellsArray = [];
-
-  const carrentPack = null;
-  const mockPack = 'YMA';
-
-  if (mockPack in packages) {
-    // console.log(packages[mockPack].name);
-    localStorage.setItem('carrentPack', JSON.stringify(packages[mockPack]));
+  const mockPack = order.recommended_cartontype.cartontype;
+  let mockPackTypeText = '';
+  if (packages[mockPack].type === 'packet') {
+    mockPackTypeText = 'Пакет';
+  } else if (packages[mockPack].type === 'box') {
+    mockPackTypeText = 'Коробка';
   }
-
-  for (let i = 0; i < dataCells.cells.length; i++) {
-    cellsArray.push(dataCells.cells[0].name);
+  // let mockPack = '';
+  // console.log(order);
+  // console.log(order.recommended_cartontype);
+  // if (order.recommended_cartontype === null) {
+  //   mockPack = 'YMA';
+  // } else {
+  //   mockPack = order.recommended_cartontype.cartontype;
+  // }
+  // console.log(order);
+  // console.log(dataCells);
+  const cellsArrayNames = [];
+  for (let i = 0; i < dataCells.length; i++) {
+    cellsArrayNames.push(dataCells[i].name);
   }
-
   return (
     <div className={style.ScanProduct}>
       <div className={style.ScanProductHeader}>
-        {cellsArray.length > 1 ? (
-          <h2 className={style.ScanProductText}>{'Упакуйте товары из ячеек'}</h2>
-        ) : (
-          <h2 className={style.ScanProductText}>{'Упакуйте товары из ячейки'}</h2>
-        )}
-
+        <h2 className={style.ScanProductText}>{dataCells.length > 1 ? 'Упакуйте товары из ячеек' : 'Упакуйте товары из ячейки'}</h2>
         <div className={style.ScanProductСells}>
-          {cellsArray.map((cell, id) => (
-            <h2 key={id} className={style.ScanProductСell}>
+          {cellsArrayNames.map((cell, i) => (
+            <h2 key={i} className={style.ScanProductСell}>
               {cell}
-              {id < cellsArray.length - 1 && <span className={style.ProductСellRound} />}
+              {i < cellsArrayNames.length - 1 && <span className={style.ProductСellRound} />}
             </h2>
           ))}
         </div>
@@ -48,7 +48,7 @@ export default function ScanProduct() {
         <TextItem styles={{}}>{`${order.total_skus_quantity} товаров`}</TextItem>
         <TextItem styles={{}}>{`Почта России`}</TextItem>
         {/* Вывод массива из коробок */}
-        <TextItem styles={{ backgroundColor: packages[mockPack].backgroundColor }}>{` Коробка ${packages[mockPack].name}`}</TextItem>
+        <TextItem styles={{ backgroundColor: packages[mockPack].backgroundColor }}>{` ${mockPackTypeText} ${mockPack}`}</TextItem>
       </div>
       <div>
         <ListScanProducts />

@@ -21,9 +21,9 @@ import DefectItemOnConveyorPage from '../../pages/ProblemsFlow/DefectItemOnConve
 import NoGoodsPage from '../../pages/ProblemsFlow/NoGoodsPage/NoGoodsPage.jsx';
 import ProblemWithOrderPage from '../../pages/ProblemsFlow/ProblemWithTheOrderPage/ProblemWithTheOrderPage.jsx';
 import PackingFollowingBoxPage from '../../pages/PackingFollowingBoxPage/PackingFollowingBoxPage.jsx';
-import newOrder from '../../utilitis/newOrder.json';
-import newCells from '../../utilitis/newCells.json';
-import tables from '../../utilitis/tables.json';
+// import newOrder from '../../utilitis/newOrder.json';
+// import newCells from '../../utilitis/newCells.json';
+// import tables from '../../utilitis/tables.json';
 import operations from '../../utilitis/operations.json';
 import barcodPrinter from '../../images/barcodePrinter.svg';
 import passportImg from '../../images/passport.svg';
@@ -61,7 +61,9 @@ function App() {
       .getOrderDetails(localStorage.getItem('token'), orderkey)
       .then((res) => {
         localStorage.setItem('order', JSON.stringify(res));
-        console.log(res);
+      })
+      .then(() => {
+        navigate('/scan-goods');
       })
       .catch((err) => {
         // добавить появление попапа ошибки
@@ -109,7 +111,7 @@ function App() {
             }
           />
           <Route path="/operation" element={<OperationSelectorPage operations={operations} nextPage="/table" />} />
-          <Route path="/table" element={<ScanTablePage tables={tables} nextPage="/printer" />} />
+          <Route path="/table" element={<ScanTablePage nextPage="/printer" />} />
           <Route
             path="/printer"
             element={
@@ -128,7 +130,16 @@ function App() {
               />
             }
           />
-          <Route path="/task" element={<TaskSearchPage newCells={newCells} />} />
+          <Route
+            path="/task"
+            element={
+              <TaskSearchPage
+                openBrigadierPopup={openBrigadierPopup}
+                handleBrigadierPopupOpen={handleBrigadierPopupOpen}
+                handlePopupClose={handlePopupClose}
+              />
+            }
+          />
           <Route
             path="/scan-cell"
             element={
