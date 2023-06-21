@@ -5,8 +5,9 @@ import newOrder from '../../utilitis/newOrder.json';
 import { useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
 import { api } from '../../utilitis/Api.js';
+import BrigadierPopup from '../../components/BrigadierPopup/BrigadierPopup';
 
-export default function TaskSearchPage({ newCells }) {
+export default function TaskSearchPage({ openBrigadierPopup, handleBrigadierPopupOpen, handlePopupClose }) {
   const navigate = useNavigate();
   const token_ex = localStorage.getItem('token');
   useEffect(() => {
@@ -20,6 +21,7 @@ export default function TaskSearchPage({ newCells }) {
             navigate('/scan-cell');
           })
           .catch((err) => {
+            handleBrigadierPopupOpen();
             console.log(`Ошибка: ${err}`);
           }),
       2000,
@@ -40,6 +42,12 @@ export default function TaskSearchPage({ newCells }) {
       <progress className={style.Progress} />
       <StagesBar stage={3} />
       <BottomMenu takeBreak={true} />
+      <BrigadierPopup
+        isOpen={openBrigadierPopup}
+        onClose={handlePopupClose}
+        title={'Ой, что то пошло не так'}
+        subtitle={'кажется свободных заказов нет'}
+      />
     </main>
   );
 }
