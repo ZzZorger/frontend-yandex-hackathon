@@ -1,11 +1,15 @@
 import MainButton from '../../components/MainButton/MainButton';
 import style from './EndAssemblyPage.module.css';
 import done from '../../images/indexKachestva.jpg';
-import postCollectedOrder from '../../postCollectedOrder';
+// import postCollectedOrder from '../../postCollectedOrder';
+import { api } from '../../utilitis/Api.js';
 
 export default function EndAssemblyPage() {
   function hemdelEndWork() {
-    postCollectedOrder();
+    api.patchCollectedOrderStatus(JSON.parse(localStorage.getItem('orderkey')));
+    localStorage.removeItem('orderkey');
+    localStorage.removeItem('order');
+    localStorage.removeItem('cells');
   }
 
   return (
