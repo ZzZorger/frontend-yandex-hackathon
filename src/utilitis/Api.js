@@ -70,6 +70,18 @@ class Api {
       }
     }).then((res) => this._getResponseData(res));
   }
+  patchCollectedOrderStatus(orderKey) {
+    return fetch(`${this._server}/api/order/collected/`, {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json;charset=utf-8',
+      },
+      body: JSON.stringify({
+        orderkey: orderKey,
+        status: 'collected',
+      }),
+    }).then((res) => this._getResponseData(res));
+  }
 }
 
 const api = new Api({
