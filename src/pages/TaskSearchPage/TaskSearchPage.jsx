@@ -45,8 +45,8 @@ export default function TaskSearchPage({ openBrigadierPopup, handleBrigadierPopu
       <BrigadierPopup
         isOpen={openBrigadierPopup}
         onClose={handlePopupClose}
-        title={'Ой, что то пошло не так'}
-        subtitle={'кажется свободных заказов нет'}
+        title={'Ой, что то пошло не так:'}
+        subtitle={'для выбранного стола нет свободных заказов'}
       />
     </main>
   );
