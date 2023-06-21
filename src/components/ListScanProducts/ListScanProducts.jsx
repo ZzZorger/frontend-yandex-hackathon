@@ -1,9 +1,9 @@
 import ListItemProducts from '../ListItemProducts/ListItemProducts';
 import style from './ListScanProducts.module.css';
-import newOrder from '../../utilitis/newOrder.json';
+// import newOrder from '../../utilitis/newOrder.json';
 
-export default function ListScanProducts({ onProblemsPage }) {
-  localStorage.setItem('order', JSON.stringify(newOrder));
+export default function ListScanProducts() {
+  // localStorage.setItem('order', JSON.stringify(newOrder));
 
   const data = JSON.parse(localStorage.getItem('order'));
 

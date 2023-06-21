@@ -48,7 +48,6 @@ class Api {
         'Authorization': `Bearer ${token}`
       },
       body: JSON.stringify({
-        // confirmation_code: 'ad481436-a8da-467a-96fc-167e3e999fb5',
         barcode: barcodeText,
       }),
     }).then((res) => this._getResponseData(res));
@@ -71,9 +70,19 @@ class Api {
       }
     }).then((res) => this._getResponseData(res));
   }
+  patchCollectedOrderStatus(orderKey) {
+    return fetch(`${this._server}/api/order/collected/`, {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json;charset=utf-8',
+      },
+      body: JSON.stringify({
+        orderkey: orderKey,
+        status: 'collected',
+      }),
+    }).then((res) => this._getResponseData(res));
+  }
 }
-// "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjg3MjAzNTIxLCJpYXQiOjE2ODcxMTcxMjEsImp0aSI6IjA2ODczNDFmYjM2OTQ0MGE4OTU0MjJhNjdmZDk5OTk1IiwidXNlcl9pZCI6ImFkNDgxNDM2LWE4ZGEtNDY3YS05NmZjLTE2N2UzZTk5OWZiNSJ9.O-oQtRYBMlrRWAhwZ2kA-LHPW0JMlKTE2OmVmDIxgA8"
-
 
 const api = new Api({
   baseUrl: 'http://127.0.0.1:8000',

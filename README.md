@@ -9,9 +9,10 @@
 3. Дизайн: Царегородцева Лена, Лойченко Евгений.
 4. DS: Кузнецова Алена, Матушкин Николай, Салахетдинов Тимур.
 
-## Cсылка на Github Pages: 
+## Cсылка на Github Pages: https://zzzorger.github.io/frontend-yandex-hackathon/
 
 ## Инструкция к проекту:
+Прект необходимо развернуть локально, для это  надо:
 1. Установите небходисые зависимости с `npm install`
 2. Заустите Backend проекта `docker-compose -f docker-compose.yml up`
 3. Запустите проект с `npm run start`
@@ -21,7 +22,4 @@
 2. CSS
 3. JS
 4. React
-
-5. Python
-
-6. Figma
+5. Figma

@@ -39,13 +39,13 @@ export default function ScanCellPage({
           scanningCell.style.background = newStyles.background;
           if (i === cellsArrayBarcodes.length - 1) {
             handleGetOrderDetails(localStorage.getItem('orderkey'));
-            setNavigateParam('/scan-goods');
+            // setNavigateParam('/scan-goods');
           }
         }
       }
     } else if (cellsArrayBarcodes.length === 1) {
       handleGetOrderDetails(localStorage.getItem('orderkey'));
-      setNavigateParam('/scan-goods');
+      // setNavigateParam('/scan-goods');
     }
   }
   // после сканирования всех ячеек, отправляется запрос на заказ

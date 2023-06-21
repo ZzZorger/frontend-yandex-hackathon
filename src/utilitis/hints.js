@@ -1,6 +1,6 @@
 import IMEI from '../components/HintЕlement/image/IMEI.svg';
 import Mark from '../components/HintЕlement/image/Mark.svg';
-
+ 
 export default [
   { id: 'bubbleWrap', name: 'Пузырчатая плёнка', backgroundColor: '#E0EEFF' },
   { id: 'stretch', name: 'Стрейтч-плёнка', backgroundColor: '#FFECCC' },
