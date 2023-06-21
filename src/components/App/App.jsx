@@ -61,7 +61,9 @@ function App() {
       .getOrderDetails(localStorage.getItem('token'), orderkey)
       .then((res) => {
         localStorage.setItem('order', JSON.stringify(res));
-        console.log(res);
+      })
+      .then(() => {
+        navigate('/scan-goods');
       })
       .catch((err) => {
         // добавить появление попапа ошибки

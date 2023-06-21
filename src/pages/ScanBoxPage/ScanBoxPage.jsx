@@ -8,22 +8,23 @@ import { useState } from 'react';
 
 export default function ScanBoxPage({ nextPage, openBarcodePopup, handleBarcodePopupOpen, handlePopupClose }) {
   const [count, setCount] = useState(0);
-  const carrentPack = JSON.parse(localStorage.getItem('carrentPack'));
+  // const carrentPack = JSON.parse(localStorage.getItem('carrentPack'));
   const order = JSON.parse(localStorage.getItem('order'));
-  console.log(order);
+  const carrentPack = packages[order.recommended_cartontype.cartontype].type;
+  const packBarcode = order.recommended_cartontype.barcode;
+
   let currentType = '';
   if (carrentPack.type === 'box') {
     currentType = 'box';
   } else currentType = 'packet';
-
   const handleClick = () => {
     if (count < 3) {
       setCount(count + 1);
     }
   };
-
+  // console.log(order.recommended_cartontype.barcode);
   function submitBox(barcode) {
-    if (order.recommended_cartontype === barcode) {
+    if (packBarcode === barcode) {
       console.log('все ок');
       // localStorage.setItem('recommended_cartontype', order.recommended_cartontype);
     }
@@ -59,14 +60,25 @@ export default function ScanBoxPage({ nextPage, openBarcodePopup, handleBarcodeP
 
       {/*scaning отрисовывается по условию  */}
       <BottomMenu scaning={true} handlePopupOpen={handleBarcodePopupOpen} />
-      {currentType === 'packet' ? (
+
+      <BarcodePopup
+        isOpen={openBarcodePopup}
+        onClose={handlePopupClose}
+        onClick={handleClick}
+        onSubmit={nextPage}
+        title={'Введите штрихкод упаковки'}
+        initValue={packBarcode}
+        isPack={true}
+      />
+
+      {/* {currentType === 'packet' ? (
         <BarcodePopup
           isOpen={openBarcodePopup}
           onClose={handlePopupClose}
           onClick={handleClick}
           onSubmit={nextPage}
           title={'Введите штрихкод пакета'}
-          initValue={'9234 5678 234 32'}
+          initValue={packBarcode}
           isPack={true}
         />
       ) : (
@@ -76,10 +88,10 @@ export default function ScanBoxPage({ nextPage, openBarcodePopup, handleBarcodeP
           onClick={handleClick}
           onSubmit={nextPage}
           title={'Введите штрихкод пакета'}
-          initValue={'9234 5678 234 32'}
+          initValue={packBarcode}
           onSubmitButton={submitBox}
         />
-      )}
+      )} */}
     </>
   );
 }

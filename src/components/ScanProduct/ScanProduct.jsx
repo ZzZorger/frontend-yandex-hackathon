@@ -9,15 +9,23 @@ import { packages } from '../../utilitis/package';
 export default function ScanProduct() {
   const order = JSON.parse(localStorage.getItem('order'));
   const dataCells = JSON.parse(localStorage.getItem('cells'));
-  let mockPack = '';
-  console.log(order.recommended_cartontype);
-  if (order.recommended_cartontype === null) {
-    mockPack = 'YMA';
-  } else {
-    mockPack = order.recommended_cartontype.cartontype;
+  const mockPack = order.recommended_cartontype.cartontype;
+  let mockPackTypeText = '';
+  if (packages[mockPack].type === 'packet') {
+    mockPackTypeText = 'Пакет';
+  } else if (packages[mockPack].type === 'box') {
+    mockPackTypeText = 'Коробка';
   }
-  console.log(order);
-  console.log(dataCells);
+  // let mockPack = '';
+  // console.log(order);
+  // console.log(order.recommended_cartontype);
+  // if (order.recommended_cartontype === null) {
+  //   mockPack = 'YMA';
+  // } else {
+  //   mockPack = order.recommended_cartontype.cartontype;
+  // }
+  // console.log(order);
+  // console.log(dataCells);
   const cellsArrayNames = [];
   for (let i = 0; i < dataCells.length; i++) {
     cellsArrayNames.push(dataCells[i].name);
@@ -40,7 +48,7 @@ export default function ScanProduct() {
         <TextItem styles={{}}>{`${order.total_skus_quantity} товаров`}</TextItem>
         <TextItem styles={{}}>{`Почта России`}</TextItem>
         {/* Вывод массива из коробок */}
-        <TextItem styles={{ backgroundColor: packages[mockPack].backgroundColor }}>{` Коробка ${mockPack}`}</TextItem>
+        <TextItem styles={{ backgroundColor: packages[mockPack].backgroundColor }}>{` ${mockPackTypeText} ${mockPack}`}</TextItem>
       </div>
       <div>
         <ListScanProducts />
