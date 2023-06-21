@@ -14,7 +14,7 @@
 ## Инструкция к проекту:
 Прект необходимо развернуть локально, для это  надо:
 1. Установите небходисые зависимости с `npm install`
-2. Заустите Backend проекта `docker-compose -f docker-compose.yml up`
+2. Заустите Backend проекта `docker compose up` и потом `docker-compose -f docker-compose.yml up`
 3. Запустите проект с `npm run start`
 
 ## Cтэк технологий:
