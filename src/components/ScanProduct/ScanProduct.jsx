@@ -7,14 +7,14 @@ import newCells from '../../utilitis/newCells.json';
 import { packages } from '../../utilitis/package';
 
 export default function ScanProduct() {
-  localStorage.setItem('cells', JSON.stringify(newCells));
+  localStorage.setItem('order', JSON.stringify(newCells));
 
   const order = JSON.parse(localStorage.getItem('order'));
   const dataCells = JSON.parse(localStorage.getItem('cells'));
   const cellsArray = [];
 
   const carrentPack = null;
-  const mockPack = 'YMC';
+  const mockPack = 'YMA';
 
   if (mockPack in packages) {
     // console.log(packages[mockPack].name);

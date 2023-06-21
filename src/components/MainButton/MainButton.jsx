@@ -6,9 +6,15 @@ import style from './MainButton.module.css';
 export default function MainButton({ styles, text, onClick, linkPath, isDisabled }) {
   return (
     <Link to={linkPath}>
-      <button style={styles} className={style.MainButton} onClick={onClick} disabled={isDisabled}>
-        {text}
-      </button>
+      {isDisabled ? (
+        <button style={styles} className={style.MainButton} onClick={onClick} disabled={isDisabled}>
+          {text}
+        </button>
+      ) : (
+        <button style={styles} className={style.MainButton} onClick={onClick}>
+          {text}
+        </button>
+      )}
     </Link>
   );
 }

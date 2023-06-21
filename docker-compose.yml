@@ -1,0 +1,7 @@
+version: '3'
+
+services:
+  backend:
+    image: dtankhaev/image_backend_packer:v111.0.0
+    ports: 
+      - "8000:8000"

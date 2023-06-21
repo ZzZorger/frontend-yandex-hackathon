@@ -7,14 +7,13 @@ import ProgressBarInProduct from '../ProgressBarInProduct/ProgressBarInProduct';
 function ListItemProducts({ activeColor, textBlok, textBox, addproductInNewBox, product }) {
   const [isActive, setIsActive] = useState(false);
   // const [showText, setshowText] = useState(true);
-
   const active = isActive ? activeColor : '';
   const fullText = isActive ? textBlok : textBox;
 
   const handleClick = () => {
     setIsActive((current) => !current);
 
-    if (!isActive && addproductInNewBox === true) {
+    if (!isActive && addproductInNewBox) {
       const activeProduct = product;
       addproductInNewBox(activeProduct);
     }
@@ -29,7 +28,7 @@ function ListItemProducts({ activeColor, textBlok, textBox, addproductInNewBox, 
       }}
     >
       <div className={style.productImage}>
-        <img src={product.image} alt="Изображение товара для сканирования"></img>
+        <img style={{ maxHeight: '100%', maxWidth: '100%' }} src={product.image} alt="Изображение товара для сканирования"></img>
 
         {product.amount > 1 && active === 'rgba(254, 212, 43, 0.3)' ? (
           <ProgressBarInProduct fullCount={product.amount} />

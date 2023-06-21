@@ -1,16 +1,30 @@
 import { useState } from 'react';
 import style from './BarcodePopup.module.css';
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 export default function BarcodePopup(props) {
+  const navigate = useNavigate();
   // const [barcode, setBarcode] = useState('9234 5678 234 32');
   const [barcode, setBarcode] = useState(props.initValue);
   function handleBarcodeChange(e) {
     setBarcode(e.target.value);
   }
   function submitButtonHandler() {
+    if (props.onSubmit) {
+      props.onSubmit(barcode);
+    }
+    // if (props.onSubmitButton) {
+    //   props.onSubmitButton(barcode);
+    // }
     // props.onSubmitButton && props.onSubmitButton(barcode);
+    {
+      props.isNewBox ? localStorage.getItem('newCartontype', barcode) : null;
+    }
+    console.log();
+
     if (props.onSubmitButton) {
+      // props.onSubmitButton(barcode);
       props.onSubmitButton(barcode, { background: '#2AAD2E', color: '#FFFFFF' });
     }
   }
@@ -19,6 +33,7 @@ export default function BarcodePopup(props) {
     props.onClick();
     props.onClose();
   };
+
   return (
     <div className={`${style.Popup} ${props.isOpen && style.PopupOpened}`}>
       <div className={style.Content}>
@@ -39,18 +54,23 @@ export default function BarcodePopup(props) {
               <span className={style.InputSpan} name="Error" />
             </div>
           </fieldset>
-          <Link to={props.onSubmit} className={style.SubmitLink} onClick={props.onClose}>
-            <button className={style.SubmitButton} type="submit" onClick={submitButtonHandler}>
-              Применить
-            </button>
-          </Link>
+
           {/* <Link to={props.onSubmit} className={style.SubmitButton} onClick={props.onClose}>
             Применить
           </Link> */}
 
-          {/* {props.isPack ? (
-            <button className={style.SubmitButton} type="button" onClick={props.handelClickBtn}></button>
-          ) : ( */}
+          {props.isPack ? (
+            <button className={`${style.SubmitButton} ${style.SubmitLink}`} type="button" onClick={handelClickBtn}>
+              Применить
+            </button>
+          ) : (
+            <Link to={props.onSubmit} className={style.SubmitLink} onClick={props.onClose}>
+              <button className={style.SubmitButton} type="submit" onClick={submitButtonHandler}>
+                Применить
+              </button>
+            </Link>
+          )}
+
           {/* <button className={style.SubmitButton} type="submit" onClick={props.onSubmit}>
             Применить
           </button> */}

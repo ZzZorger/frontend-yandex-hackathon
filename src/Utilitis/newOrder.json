@@ -6,14 +6,14 @@
     {
       "sku": "72332c7f-a38a-4595-840b-cc237ada0f37",
       "name": "Гречка",
-      "image": "/media/sku_images/icons8-%D1%82%D0%B0%D0%B1%D0%BB%D0%B8%D1%86%D0%B0-64.png",
+      "image": "https://rskrf.ru/upload/iblock/030/03098d65d8e649642e5fda018138ed93.jpg",
       "amount": 6,
       "help_text": ["bubble_wrap", "stretch"]
     },
     {
       "sku": "9ad35983-4d98-4779-8025-65803181ebf1",
       "name": "Слайм",
-      "image": null,
+      "image": "https://molti-shop.ru/upload/iblock/45a/45ab3d02bda2334cc8f1e692051c5dce.jpg",
       "amount": 50,
       "help_text": ["bubble_wrap", "stretch"]
     }
