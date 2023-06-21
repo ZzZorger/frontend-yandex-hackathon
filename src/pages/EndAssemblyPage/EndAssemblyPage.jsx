@@ -7,6 +7,9 @@ import { api } from '../../utilitis/Api.js';
 export default function EndAssemblyPage() {
   function hemdelEndWork() {
     api.patchCollectedOrderStatus(JSON.parse(localStorage.getItem('orderkey')));
+    localStorage.removeItem('orderkey');
+    localStorage.removeItem('order');
+    localStorage.removeItem('cells');
   }
 
   return (
