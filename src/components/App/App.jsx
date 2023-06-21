@@ -130,7 +130,16 @@ function App() {
               />
             }
           />
-          <Route path="/task" element={<TaskSearchPage />} />
+          <Route
+            path="/task"
+            element={
+              <TaskSearchPage
+                openBrigadierPopup={openBrigadierPopup}
+                handleBrigadierPopupOpen={handleBrigadierPopupOpen}
+                handlePopupClose={handlePopupClose}
+              />
+            }
+          />
           <Route
             path="/scan-cell"
             element={
