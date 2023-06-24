@@ -31,8 +31,11 @@ import SearchNewBoxPage from '../../pages/SearchNewBoxPage/SearchNewBoxPage.jsx'
 
 function App() {
   const navigate = useNavigate();
+  const initialProblems = ['Нет товара', 'Товар бракованный', 'Другая проблема'];
+  const otherProblems = ['Сломан монитор', 'Сломан сканер', 'Сломан принтер', 'Позвать бригадира'];
+  const [openBarcodePopup, setOpenBarcodePopup] = useState(false);
+  const [openBrigadierPopup, setOpenBrigadierPopup] = useState(false);
   function handleLogin(barcode) {
-    console.log(barcode);
     api
       .getUserToken(barcode)
       .then((res) => {
@@ -41,6 +44,7 @@ function App() {
       })
       .catch((err) => {
         // добавить появление попапа ошибки
+        setOpenBrigadierPopup(true);
         console.log(`Ошибка: ${err}`);
       });
   }
@@ -53,10 +57,12 @@ function App() {
       })
       .catch((err) => {
         // добавить появление попапа ошибки
+        setOpenBrigadierPopup(true);
         console.log(`Ошибка: ${err}`);
       });
   }
   function handleGetOrderDetails(orderkey) {
+    console.log(orderkey);
     api
       .getOrderDetails(localStorage.getItem('token'), orderkey)
       .then((res) => {
@@ -67,16 +73,13 @@ function App() {
       })
       .catch((err) => {
         // добавить появление попапа ошибки
+        setOpenBrigadierPopup(true);
         console.log(`Ошибка: ${err}`);
       });
   }
 
   // const cells = ['B-09', 'B-10', 'B-11'];
-  const initialProblems = ['Нет товара', 'Товар бракованный', 'Другая проблема'];
-  const otherProblems = ['Сломан монитор', 'Сломан сканер', 'Сломан принтер', 'Позвать бригадира'];
-  // const [openPopup, setOpenPopup] = useState(false);
-  const [openBarcodePopup, setOpenBarcodePopup] = useState(false);
-  const [openBrigadierPopup, setOpenBrigadierPopup] = useState(false);
+
   function handleBarcodePopupOpen() {
     setOpenBarcodePopup(true);
   }
@@ -97,7 +100,6 @@ function App() {
             path="/authorization"
             element={
               <ScanPrinterPage
-                nextPage="/operation"
                 openBarcodePopup={openBarcodePopup}
                 handleBarcodePopupOpen={handleBarcodePopupOpen}
                 handlePopupClose={handlePopupClose}
@@ -107,6 +109,7 @@ function App() {
                 popupText="Введите штрихкод бэйджа"
                 initValue="ad481436-a8da-467a-96fc-167e3e999fb5"
                 handleLogin={handleLogin}
+                openBrigadierPopup={openBrigadierPopup}
               />
             }
           />
@@ -116,7 +119,6 @@ function App() {
             path="/printer"
             element={
               <ScanPrinterPage
-                nextPage="/task"
                 openBarcodePopup={openBarcodePopup}
                 handleBarcodePopupOpen={handleBarcodePopupOpen}
                 handlePopupClose={handlePopupClose}
@@ -127,6 +129,7 @@ function App() {
                 popupText="Введите штрихкод принтера"
                 initValue="99e4e092-15e5-4391-803c-dcba23e5e9fa"
                 handleLogin={handlePrinterScan}
+                openBrigadierPopup={openBrigadierPopup}
               />
             }
           />
@@ -144,14 +147,12 @@ function App() {
             path="/scan-cell"
             element={
               <ScanCellPage
-                nextPage="/scan-goods"
                 openBarcodePopup={openBarcodePopup}
                 openBrigadierPopup={openBrigadierPopup}
                 handleBarcodePopupOpen={handleBarcodePopupOpen}
-                handleBrigadierPopupOpen={handleBrigadierPopupOpen}
                 handlePopupClose={handlePopupClose}
                 handleGetOrderDetails={handleGetOrderDetails}
-                // cells={cells}
+                initValue="6630c885-2449-46cb-beec-91bfa1b9ab56"
               />
             }
           />

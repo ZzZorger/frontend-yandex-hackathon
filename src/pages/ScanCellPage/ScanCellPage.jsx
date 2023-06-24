@@ -3,24 +3,15 @@ import BottomMenu from '../../components/BottomMenu/BottomMenu';
 import BarcodePopup from '../../components/BarcodePopup/BarcodePopup';
 import MainButton from '../../components/MainButton/MainButton';
 import BrigadierPopup from '../../components/BrigadierPopup/BrigadierPopup';
-import { useState, useRef, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+
 export default function ScanCellPage({
-  nextPage,
   openBarcodePopup,
   openBrigadierPopup,
   handleBarcodePopupOpen,
-  handleBrigadierPopupOpen,
   handlePopupClose,
   handleGetOrderDetails,
+  initValue,
 }) {
-  // console.log(localStorage.getItem('orderkey'));
-  const navigate = useNavigate();
-  const [navigateParam, setNavigateParam] = useState('');
-  useEffect(() => {
-    navigate(navigateParam);
-  }, [navigateParam]);
-
   const cellsArray = JSON.parse(localStorage.getItem('cells'));
 
   const cellsArrayNames = [];
@@ -38,14 +29,12 @@ export default function ScanCellPage({
           scanningCell.style.color = newStyles.color;
           scanningCell.style.background = newStyles.background;
           if (i === cellsArrayBarcodes.length - 1) {
-            handleGetOrderDetails(localStorage.getItem('orderkey'));
-            // setNavigateParam('/scan-goods');
+            handleGetOrderDetails(barcode);
           }
         }
       }
     } else if (cellsArrayBarcodes.length === 1) {
-      handleGetOrderDetails(localStorage.getItem('orderkey'));
-      // setNavigateParam('/scan-goods');
+      handleGetOrderDetails(barcode);
     }
   }
   // после сканирования всех ячеек, отправляется запрос на заказ
@@ -68,12 +57,16 @@ export default function ScanCellPage({
       <BarcodePopup
         isOpen={openBarcodePopup}
         onClose={handlePopupClose}
-        // onSubmit={nextPage}
         title={'Введите штрихкод ячейки'}
-        initValue={'e66502c0-e4cf-42bd-b56b-79ed05833667'}
+        initValue={initValue}
         onSubmitButton={submitCell}
       />
-      <BrigadierPopup isOpen={openBrigadierPopup} />
+      <BrigadierPopup
+        isOpen={openBrigadierPopup}
+        onClose={handlePopupClose}
+        title={'Ой, что то пошло не так:'}
+        subtitle={'введен неверный штрихкод'}
+      />
     </main>
   );
 }

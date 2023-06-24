@@ -3,9 +3,9 @@ import style from './ScanPrinterPage.module.css';
 import BottomMenu from '../../components/BottomMenu/BottomMenu';
 import StagesBar from '../../components/StagesBar/StagesBar';
 import BarcodePopup from '../../components/BarcodePopup/BarcodePopup';
+import BrigadierPopup from '../../components/BrigadierPopup/BrigadierPopup';
 
 export default function ScanPrinterPage({
-  nextPage,
   openBarcodePopup,
   handleBarcodePopupOpen,
   handlePopupClose,
@@ -16,9 +16,9 @@ export default function ScanPrinterPage({
   popupText,
   initValue,
   handleLogin,
+  openBrigadierPopup,
 }) {
   function loginSubmit(barcode) {
-    console.log(barcode);
     handleLogin(barcode);
   }
   return (
@@ -32,11 +32,15 @@ export default function ScanPrinterPage({
       <BarcodePopup
         isOpen={openBarcodePopup}
         onClose={handlePopupClose}
-        // onSubmit={nextPage}
         onSubmit={loginSubmit}
         title={popupText}
-        // title={'Введите штрихкод принтера'}
         initValue={initValue || '9234 5678 234 32'}
+      />
+      <BrigadierPopup
+        isOpen={openBrigadierPopup}
+        onClose={handlePopupClose}
+        title={'Ой, что то пошло не так:'}
+        subtitle={'введен неверный штрихкод'}
       />
     </main>
   );
