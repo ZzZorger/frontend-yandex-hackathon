@@ -41,7 +41,7 @@ export default function TaskSearchPage({ openBrigadierPopup, handleBrigadierPopu
       <p className={style.Subtitle}>Обычно это занимает не больше минуты</p>
       <progress className={style.Progress} />
       <StagesBar stage={3} />
-      <BottomMenu takeBreak={true} />
+      <BottomMenu takeBreak={true} handlePopupClose={handlePopupClose} />
       <BrigadierPopup
         isOpen={openBrigadierPopup}
         onClose={handlePopupClose}

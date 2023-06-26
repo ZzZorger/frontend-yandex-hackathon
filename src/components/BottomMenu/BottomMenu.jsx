@@ -28,7 +28,9 @@ export default function BottomMenu({ hideBackBtn, scaning, takeBreak, newBox, ha
       </Link>
 
       <Link style={!takeBreak ? { display: 'none' } : { display: 'block' }} className={style.KeyboardBlock} to={'/operation'}>
-        <button className={style.KeyboardButton}>Хочу на перерыв</button>
+        <button className={style.KeyboardButton} onClick={handlePopupClose}>
+          Хочу на перерыв
+        </button>
       </Link>
     </div>
   );

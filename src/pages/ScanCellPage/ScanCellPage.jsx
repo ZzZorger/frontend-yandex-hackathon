@@ -3,6 +3,7 @@ import BottomMenu from '../../components/BottomMenu/BottomMenu';
 import BarcodePopup from '../../components/BarcodePopup/BarcodePopup';
 import MainButton from '../../components/MainButton/MainButton';
 import BrigadierPopup from '../../components/BrigadierPopup/BrigadierPopup';
+import { useNavigate } from 'react-router-dom';
 
 export default function ScanCellPage({
   openBarcodePopup,
@@ -12,11 +13,13 @@ export default function ScanCellPage({
   handleGetOrderDetails,
   initValue,
 }) {
+  const navigate = useNavigate();
+  function navigateToProblemsPage() {
+    navigate('/problems');
+  }
   const cellsArray = JSON.parse(localStorage.getItem('cells'));
-
   const cellsArrayNames = [];
   const cellsArrayBarcodes = [];
-
   for (let i = 0; i < cellsArray.length; i++) {
     cellsArrayNames.push(cellsArray[i].name);
     cellsArrayBarcodes.push(cellsArray[i].barcode);
@@ -40,7 +43,11 @@ export default function ScanCellPage({
   // после сканирования всех ячеек, отправляется запрос на заказ
   return (
     <main className={style.Content}>
-      <MainButton styles={{ position: 'absolute', left: '24px', marginTop: '83px' }} text={'Есть проблема'} linkPath="/problems" />
+      <MainButton
+        styles={{ position: 'absolute', left: '24px', marginTop: '83px' }}
+        text={'Есть проблема'}
+        onClick={navigateToProblemsPage}
+      />
       <h2 className={style.Title}>{cellsArrayNames.length > 1 ? 'Сканируйте ячейки' : 'Сканируйте ячейку'}</h2>
       <div className={style.CellsSection}>
         {cellsArrayNames.length === 1 ? (

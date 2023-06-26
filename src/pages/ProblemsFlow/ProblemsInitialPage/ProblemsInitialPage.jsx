@@ -24,7 +24,12 @@ export default function ProblemsInitialPage({
         statuses={[true, true, true, true]}
       />
       <BottomMenu prevPage={prevPage} onProblemsPage={true} handlePopupClose={handlePopupClose} />
-      <BrigadierPopup isOpen={openBrigadierPopup} onClose={handlePopupClose} />
+      <BrigadierPopup
+        isOpen={openBrigadierPopup}
+        onClose={handlePopupClose}
+        title={'Бригадир скоро подойдет'}
+        subtitle={'Подождите немного'}
+      />
     </main>
   );
 }

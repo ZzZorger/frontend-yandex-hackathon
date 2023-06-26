@@ -3,7 +3,7 @@ import BottomMenu from '../../../components/BottomMenu/BottomMenu';
 import ListScanProducts from '../../../components/ListScanProducts/ListScanProducts';
 import MainButton from '../../../components/MainButton/MainButton';
 
-export default function NoGoodsPage({ nextPage, prevPage }) {
+export default function NoGoodsPage() {
   return (
     <main className={style.Content}>
       <h2 className={style.Title}>Какого товара нет?</h2>
@@ -14,7 +14,7 @@ export default function NoGoodsPage({ nextPage, prevPage }) {
         linkPath="brigadier"
       />
       {/* <MainButton text="Готово" /> */}
-      <BottomMenu prevPage={prevPage} onProblemsPage={true} />
+      <BottomMenu onProblemsPage={true} />
     </main>
   );
 }

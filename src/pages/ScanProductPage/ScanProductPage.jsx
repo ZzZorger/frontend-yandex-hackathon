@@ -3,13 +3,13 @@ import MainButton from '../../components/MainButton/MainButton';
 import ScanProduct from '../../components/ScanProduct/ScanProduct';
 import BottomMenu from '../../components/BottomMenu/BottomMenu';
 
-export default function ScanProductPage({ nextPage }) {
+export default function ScanProductPage({ onCollectedOrder }) {
   return (
     <>
       <div className={style.ScanProductPage}>
-        <MainButton text={'Есть проблема'} linkPath="/problems" />
+        <MainButton text={'Есть проблема'} />
         <ScanProduct />
-        <MainButton styles={{ background: 'var(--active-bg-elem)' }} text={`Заказ собран`} linkPath={nextPage} />
+        <MainButton styles={{ background: 'var(--active-bg-elem)' }} text={`Заказ собран`} onClick={onCollectedOrder} />
       </div>
       <BottomMenu />
     </>

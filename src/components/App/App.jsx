@@ -62,7 +62,6 @@ function App() {
       });
   }
   function handleGetOrderDetails(orderkey) {
-    console.log(orderkey);
     api
       .getOrderDetails(localStorage.getItem('token'), orderkey)
       .then((res) => {
@@ -77,8 +76,27 @@ function App() {
         console.log(`Ошибка: ${err}`);
       });
   }
-
-  // const cells = ['B-09', 'B-10', 'B-11'];
+  function handlePatchCollectedOrderData() {
+    const order = JSON.parse(localStorage.getItem('order'));
+    const orderkey = order.orderkey;
+    const cartonTypes = [order.recommended_cartontype.barcode];
+    const skus = {
+      sku: order.skus[0].sku,
+      packaging_number: 0,
+    };
+    // console.log(order, orderkey, cartonTypes, cartonTypes.length, order.skus[0].sku);
+    api
+      .patchCollectedOrderData(orderkey, cartonTypes, cartonTypes.length, skus)
+      // .then((res) => {
+      //   console.log(res);
+      // })
+      .then(() => {
+        navigate('/fill-box');
+      })
+      .catch((err) => {
+        console.log(`Ошибка: ${err}`);
+      });
+  }
 
   function handleBarcodePopupOpen() {
     setOpenBarcodePopup(true);
@@ -156,7 +174,7 @@ function App() {
               />
             }
           />
-          <Route path="/scan-goods" element={<ScanProductPage nextPage="/scan-package" />} />
+          <Route path="/scan-goods" element={<ScanProductPage onCollectedOrder={handlePatchCollectedOrderData} />} />
           <Route
             path="/scan-package"
             element={
@@ -168,7 +186,7 @@ function App() {
               />
             }
           />
-          <Route path="/fill-box" element={<BoxFillingPage nextPage="/end-task" />} />
+          <Route path="/fill-box" element={<BoxFillingPage />} />
           <Route
             path="/searchnewbox"
             element={

@@ -82,6 +82,23 @@ class Api {
       }),
     }).then((res) => this._getResponseData(res));
   }
+  patchCollectedOrderData(orderKey, cartontypesBarcodeArray, totalPackages, skus) {
+    return fetch(`${this._server}/api/order/add-packaging-data/`, {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json;charset=utf-8',
+      },
+      body: JSON.stringify({
+        orderkey: orderKey,
+        selected_cartontypes: cartontypesBarcodeArray,
+        total_packages: totalPackages,
+        skus: [{
+          sku: skus.sku,
+          packaging_number: skus.packaging_number 
+        }]
+      }),
+    }).then((res) => this._getResponseData(res));
+  }
 }
 
 const api = new Api({
