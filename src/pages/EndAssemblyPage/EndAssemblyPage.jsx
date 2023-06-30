@@ -9,7 +9,7 @@ export default function EndAssemblyPage() {
   const navigate = useNavigate();
   function hemdelEndWork() {
     api
-      .patchCollectedOrderStatus(JSON.parse(localStorage.getItem('orderkey')))
+      .patchCollectedOrderStatus(localStorage.getItem('orderkey'))
       .then(() => {
         localStorage.removeItem('orderkey');
         localStorage.removeItem('order');
@@ -25,7 +25,7 @@ export default function EndAssemblyPage() {
 
   return (
     <div className={style.EndAssemblyContent}>
-      <MainButton styles={{ visibility: 'hidden ' }} />
+      <MainButton styles={{ visibility: 'hidden' }} />
       <div className={style.EndAssembly}>
         <img src={done} />
         {/* условие для надписи "Поставьте пакет на конвейер" */}

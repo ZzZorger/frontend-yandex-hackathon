@@ -5,16 +5,18 @@ import ProgressBar from '../../components/ProgressBar/ProgressBar';
 import BarcodePopup from '../../components/BarcodePopup/BarcodePopup';
 import { packages } from '../../utilitis/package';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export default function ScanBoxPage({ nextPage, openBarcodePopup, handleBarcodePopupOpen, handlePopupClose }) {
+  const navigate = useNavigate();
   const [count, setCount] = useState(0);
   // const carrentPack = JSON.parse(localStorage.getItem('carrentPack'));
   const order = JSON.parse(localStorage.getItem('order'));
-  const carrentPack = packages[order.recommended_cartontype.cartontype].type;
+  const currentPack = packages[order.recommended_cartontype.cartontype].type;
   const packBarcode = order.recommended_cartontype.barcode;
 
   let currentType = '';
-  if (carrentPack.type === 'box') {
+  if (currentPack.type === 'box') {
     currentType = 'box';
   } else currentType = 'packet';
   const handleClick = () => {
@@ -22,7 +24,9 @@ export default function ScanBoxPage({ nextPage, openBarcodePopup, handleBarcodeP
       setCount(count + 1);
     }
   };
-  // console.log(order.recommended_cartontype.barcode);
+  function closePack() {
+    navigate('/fill-box');
+  }
   function submitBox(barcode) {
     if (packBarcode === barcode) {
       console.log('все ок');
@@ -38,8 +42,8 @@ export default function ScanBoxPage({ nextPage, openBarcodePopup, handleBarcodeP
       {currentType === 'box' && (
         <div className={style.ScanBoxContent}>
           <h2 className={style.ScanBoxHeader}>Сканируйте упаковку</h2>
-          <span style={{ backgroundColor: carrentPack.backgroundColor }} className={style.ScanBox}>
-            {carrentPack.name}
+          <span style={{ backgroundColor: currentPack.backgroundColor }} className={style.ScanBox}>
+            {currentPack.name}
           </span>
         </div>
       )}
@@ -54,7 +58,7 @@ export default function ScanBoxPage({ nextPage, openBarcodePopup, handleBarcodeP
             {/* + прогресс бар с счеиком */}
             <ProgressBar count={count} />
           </div>
-          <MainButton styles={{ background: 'var(--active-bg-elem)' }} text={`Закрыть пакет`} linkPath={nextPage} />
+          <MainButton onClick={closePack} styles={{ background: 'var(--active-bg-elem)' }} text={`Закрыть пакет`} />
         </div>
       )}
 

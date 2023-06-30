@@ -17,7 +17,7 @@ export default function TaskSearchPage({ openBrigadierPopup, handleBrigadierPopu
           .getOrder(token_ex)
           .then((res) => {
             localStorage.setItem('cells', JSON.stringify(res.cells));
-            localStorage.setItem('orderkey', JSON.stringify(res.oldest_order));
+            localStorage.setItem('orderkey', res.oldest_order);
             navigate('/scan-cell');
           })
           .catch((err) => {

@@ -3,7 +3,7 @@ import { Routes, Route, Navigate, useNavigate } from 'react-router-dom';
 import Header from '../Header/Header.jsx';
 import Footer from '../Footer/Footer.jsx';
 import './App.css';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import OperationSelectorPage from '../../pages/OperationSelectorPage/OperationSelectorPage.jsx';
 import ScanTablePage from '../../pages/ScanTablePage/ScanTablePage.jsx';
 import { api } from '../../utilitis/Api.js';
@@ -21,9 +21,6 @@ import DefectItemOnConveyorPage from '../../pages/ProblemsFlow/DefectItemOnConve
 import NoGoodsPage from '../../pages/ProblemsFlow/NoGoodsPage/NoGoodsPage.jsx';
 import ProblemWithOrderPage from '../../pages/ProblemsFlow/ProblemWithTheOrderPage/ProblemWithTheOrderPage.jsx';
 import PackingFollowingBoxPage from '../../pages/PackingFollowingBoxPage/PackingFollowingBoxPage.jsx';
-// import newOrder from '../../utilitis/newOrder.json';
-// import newCells from '../../utilitis/newCells.json';
-// import tables from '../../utilitis/tables.json';
 import operations from '../../utilitis/operations.json';
 import barcodPrinter from '../../images/barcodePrinter.svg';
 import passportImg from '../../images/passport.svg';
@@ -43,20 +40,17 @@ function App() {
         navigate('/operation');
       })
       .catch((err) => {
-        // добавить появление попапа ошибки
         setOpenBrigadierPopup(true);
         console.log(`Ошибка: ${err}`);
       });
   }
   function handlePrinterScan(barcode) {
-    // console.log(localStorage.getItem('token'));
     api
       .postPrinter(barcode, localStorage.getItem('token'))
       .then(() => {
         navigate('/task');
       })
       .catch((err) => {
-        // добавить появление попапа ошибки
         setOpenBrigadierPopup(true);
         console.log(`Ошибка: ${err}`);
       });
@@ -71,7 +65,6 @@ function App() {
         navigate('/scan-goods');
       })
       .catch((err) => {
-        // добавить появление попапа ошибки
         setOpenBrigadierPopup(true);
         console.log(`Ошибка: ${err}`);
       });
@@ -84,14 +77,10 @@ function App() {
       sku: order.skus[0].sku,
       packaging_number: 0,
     };
-    // console.log(order, orderkey, cartonTypes, cartonTypes.length, order.skus[0].sku);
     api
       .patchCollectedOrderData(orderkey, cartonTypes, cartonTypes.length, skus)
-      // .then((res) => {
-      //   console.log(res);
-      // })
       .then(() => {
-        navigate('/fill-box');
+        navigate('/scan-package');
       })
       .catch((err) => {
         console.log(`Ошибка: ${err}`);
@@ -170,7 +159,7 @@ function App() {
                 handleBarcodePopupOpen={handleBarcodePopupOpen}
                 handlePopupClose={handlePopupClose}
                 handleGetOrderDetails={handleGetOrderDetails}
-                initValue="6630c885-2449-46cb-beec-91bfa1b9ab56"
+                initValue={localStorage.getItem('orderkey')}
               />
             }
           />

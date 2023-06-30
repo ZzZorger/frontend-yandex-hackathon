@@ -62,7 +62,8 @@ class Api {
     }).then((res) => this._getResponseData(res));
   }
   getOrderDetails(token, orderKey) {
-    return fetch(`${this._server}/api/order/details/?orderkey=${orderKey}`.replace(/"/g, ''), {
+    return fetch(`${this._server}/api/order/details/?orderkey=${orderKey}`, {
+    // return fetch(`${this._server}/api/order/details/?orderkey=${orderKey}`.replace(/"/g, ''), {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json;charset=utf-8',
